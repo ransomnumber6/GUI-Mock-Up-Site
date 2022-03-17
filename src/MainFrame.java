@@ -65,16 +65,17 @@ public class MainFrame extends javax.swing.JFrame {
         jFormattedTextField7 = new javax.swing.JFormattedTextField();
         jFormattedTextField8 = new javax.swing.JFormattedTextField();
         jButton7 = new javax.swing.JButton();
+        adminMenu = new javax.swing.JFrame();
         menu = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         login = new javax.swing.JButton();
-        userName = new javax.swing.JFormattedTextField();
         jButton6 = new javax.swing.JButton();
-        password = new javax.swing.JPasswordField();
+        passwordInput = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        userNameInput = new javax.swing.JTextField();
 
         jTextField2.setText("jTextField2");
 
@@ -305,6 +306,17 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        javax.swing.GroupLayout adminMenuLayout = new javax.swing.GroupLayout(adminMenu.getContentPane());
+        adminMenu.getContentPane().setLayout(adminMenuLayout);
+        adminMenuLayout.setHorizontalGroup(
+            adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        adminMenuLayout.setVerticalGroup(
+            adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         menu.setText("Menu");
@@ -328,19 +340,11 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        userName.setText("username");
-        userName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userNameActionPerformed(evt);
-            }
-        });
-
         jButton6.setText("Create Account");
 
-        password.setText("jPasswordField2");
-        password.addActionListener(new java.awt.event.ActionListener() {
+        passwordInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
+                passwordInputActionPerformed(evt);
             }
         });
 
@@ -358,7 +362,7 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 252, Short.MAX_VALUE)
+                .addGap(271, 271, 271)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(menu)
@@ -371,9 +375,12 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(jLabel6))
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(250, 250, 250))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(passwordInput, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                                .addGap(269, 269, 269))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(userNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -400,15 +407,15 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(menu))
-                .addGap(72, 72, 72)
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(userNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(16, 16, 16)
                 .addComponent(login)
                 .addGap(3, 3, 3)
                 .addComponent(jLabel7)
@@ -440,13 +447,41 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField11ActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-    if(user == adminUser && Password == adminPass) 
+    
+      Password = passwordInput.getText();
+      user = userNameInput.getText();
+      System.out.print(user + " "+ Password);
+      
+    if(user.equals(adminUser) && Password.equals( adminPass))
     {
-        this.menuJframe.setVisible(true);
+        this.adminMenu.setSize(800,800);
+        this.adminMenu.setVisible(true);
+        logIn = true;
+        this.dispose();
+        
     }
     else
     {
-        System.out.print("Failed Attempt");
+        for(int i = 0; i < customer.length; i++)
+        {
+            if(customer[i].equals(user))
+            {
+                for(int j = 0; i < customerPass.length; i++)
+                {
+                    if(customerPass[j].equals(Password))
+                    {
+                        this.menuJframe.setSize(800,800);
+                        this.menuJframe.setVisible(true);
+                        logIn = true;
+                        this.dispose();
+                    }
+                }
+            }
+            else
+            {
+                logIn = false;
+            }
+        }
     }
     }//GEN-LAST:event_loginActionPerformed
 
@@ -465,13 +500,9 @@ public class MainFrame extends javax.swing.JFrame {
         this.menuJframe.dispose();
     }//GEN-LAST:event_cartFromMenuActionPerformed
 
-    private void userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameActionPerformed
-     user = userName.getText();
-    }//GEN-LAST:event_userNameActionPerformed
-
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
-       Password = password.getText();        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordActionPerformed
+    private void passwordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputActionPerformed
+       Password = passwordInput.toString();        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordInputActionPerformed
 
     /**
      * @param args the command line arguments
@@ -510,10 +541,14 @@ public class MainFrame extends javax.swing.JFrame {
 String user, Password;
 String adminUser = "admin";
 String adminPass = "MyPass";
+String customer[] = {"Trevor"};
+String customerPass[] = {"password"};
+boolean logIn;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame Cart;
     private javax.swing.JFrame Confirmation;
     private javax.swing.JFrame CreateAcc;
+    private javax.swing.JFrame adminMenu;
     private javax.swing.JButton cartFromMenu;
     private javax.swing.JButton homeFromMenu;
     private javax.swing.JButton jButton3;
@@ -553,7 +588,7 @@ String adminPass = "MyPass";
     private javax.swing.JButton login;
     private javax.swing.JButton menu;
     private javax.swing.JFrame menuJframe;
-    private javax.swing.JPasswordField password;
-    private javax.swing.JFormattedTextField userName;
+    private javax.swing.JPasswordField passwordInput;
+    private javax.swing.JTextField userNameInput;
     // End of variables declaration//GEN-END:variables
 }
