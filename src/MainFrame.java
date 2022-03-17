@@ -6,15 +6,20 @@ import java.util.Random;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-/*
-* Adem was here
-*/
 
-/**
- *
- * @author New
- */
+
 public class MainFrame extends javax.swing.JFrame {
+    
+    //variables
+    String user, Password;
+    String adminUser = "admin";
+    String adminPass = "MyPass";
+    String customer[] = {"Trevor"};
+    String customerPass[] = {"password"};
+    boolean logIn;
+    Random rand = new Random();
+    double n = rand.nextDouble(30.00);
+    MainFrame.Customer custArry[] = null;
 
     /**
      * Creates new form MainFrame
@@ -24,6 +29,18 @@ public class MainFrame extends javax.swing.JFrame {
         
     }
     
+    public class Customer
+    {
+        String newFN, newLN, newAdd, User, password;
+        int newCard, coupoun;
+        
+    }
+    
+    public class Admin
+    {
+        String newFN, newLN, newAdd, User, password;
+        int newCard;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,8 +63,10 @@ public class MainFrame extends javax.swing.JFrame {
         userDisplay = new javax.swing.JLabel();
         queue = new javax.swing.JLabel();
         Cart = new javax.swing.JFrame();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        cartDisplay = new javax.swing.JTextArea();
+        cartUserDisplay = new javax.swing.JLabel();
+        cartQueueDisplay = new javax.swing.JLabel();
         Confirmation = new javax.swing.JFrame();
         jTextField4 = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -164,23 +183,39 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jScrollPane3.setViewportView(jTextPane1);
+        cartDisplay.setColumns(20);
+        cartDisplay.setRows(5);
+        jScrollPane1.setViewportView(cartDisplay);
+
+        cartUserDisplay.setText("jLabel9");
+
+        cartQueueDisplay.setText("jLabel10");
 
         javax.swing.GroupLayout CartLayout = new javax.swing.GroupLayout(Cart.getContentPane());
         Cart.getContentPane().setLayout(CartLayout);
         CartLayout.setHorizontalGroup(
             CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CartLayout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addGap(60, 60, 60)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(154, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CartLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cartUserDisplay)
+                .addGap(33, 33, 33)
+                .addComponent(cartQueueDisplay)
+                .addGap(27, 27, 27))
         );
         CartLayout.setVerticalGroup(
             CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CartLayout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cartUserDisplay)
+                    .addComponent(cartQueueDisplay))
+                .addGap(61, 61, 61)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(287, Short.MAX_VALUE))
         );
 
         jTextField4.setText("Confirmed");
@@ -463,36 +498,37 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
     
-      Password = passwordInput.getText();
+      Password = passwordInput.getText();                                       // passes inputted text to Password and user vars
       user = userNameInput.getText();
-      System.out.print(user + " "+ Password);
       
-    if(user.equals(adminUser) && Password.equals( adminPass))
+    if(user.equals(adminUser) && Password.equals( adminPass))                   // checks if strings are equal to admin information
     {
-        this.adminMenu.setSize(800,800);
+        this.adminMenu.setSize(800,800);                                        
         this.adminMenu.setVisible(true);
         logIn = true;
         this.dispose();
         
     }
-    else
+    else                                                                        // this section checks customer array and makes sure customer logins are correct
     {
-        for(int i = 0; i < customer.length; i++)
+        for(int i = 0; i < custArry.length; i++)
         {
-            if(customer[i].equals(user))
+            if(custArry[i].User.equals(user) && custArry[i].password.equals(Password))
             {
-                for(int j = 0; i < customerPass.length; i++)
-                {
-                    if(customerPass[j].equals(Password))
-                    {
-                        this.menuJframe.setSize(800,800);
-                        this.menuJframe.setVisible(true);
-                        userDisplay.setText("Current user: "+ user);
-                        queue.setText("Estimated wait: "+ Queue() + " mins");
-                        logIn = true;
-                        this.dispose();
-                    }
-                }
+                
+                    
+                this.menuJframe.setSize(800,800);                       // if everything matches customer menu will pop open with customer info
+                this.menuJframe.setVisible(true);
+                String curUserStr = "Current user: "+ custArry[i].newFN + " "+custArry[i].newLN;
+                userDisplay.setText(curUserStr);                        // text box shows current user
+                cartUserDisplay.setText(curUserStr);
+                String queueStr ="Estimated wait: "+ Queue() + " mins";
+                queue.setText(queueStr);                                // text box shows estimated wait time using random number generator in Queue()
+                cartQueueDisplay.setText(queueStr);
+                logIn = true;                                           // log in boolean for other pages to use
+                this.dispose();                                         // close old window
+                    
+                
             }
             else
             {
@@ -555,14 +591,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
     }
-String user, Password;
-String adminUser = "admin";
-String adminPass = "MyPass";
-String customer[] = {"Trevor"};
-String customerPass[] = {"password"};
-boolean logIn;
-Random rand = new Random();
-double n = rand.nextDouble(30.00);
+
 
 private double Queue()
 {
@@ -573,12 +602,43 @@ private double Queue()
    double num = Math.round(n);
     return num;
 }
+
+private void setCustInfo(String FirstName, String LastName, int card, String address, String username, String psswrd)
+{
+    
+    Customer cust = new Customer();
+    
+    cust.User = username;
+    cust.newFN = FirstName;
+    cust.newLN = LastName;
+    cust.newAdd = address;
+    cust.newCard = card;
+    cust.password = psswrd;
+    
+    
+    for(int i = 0; i < custArry.length; i++ )
+    {
+        if(custArry[i] == null)
+        {
+            custArry[i] = cust;
+        }
+    }
+    
+}
+
+private void getCustInfo(String FirstName, String LastName, int card, String address, String username)
+{
+    
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame Cart;
     private javax.swing.JFrame Confirmation;
     private javax.swing.JFrame CreateAcc;
     private javax.swing.JFrame adminMenu;
+    private javax.swing.JTextArea cartDisplay;
     private javax.swing.JButton cartFromMenu;
+    private javax.swing.JLabel cartQueueDisplay;
+    private javax.swing.JLabel cartUserDisplay;
     private javax.swing.JButton homeFromMenu;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton6;
@@ -598,8 +658,8 @@ private double Queue()
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField10;
@@ -612,7 +672,6 @@ private double Queue()
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JButton login;
     private javax.swing.JButton menu;
