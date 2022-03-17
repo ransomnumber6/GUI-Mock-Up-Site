@@ -1,3 +1,6 @@
+
+import java.util.Random;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -40,6 +43,8 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         homeFromMenu = new javax.swing.JButton();
         cartFromMenu = new javax.swing.JButton();
+        userDisplay = new javax.swing.JLabel();
+        queue = new javax.swing.JLabel();
         Cart = new javax.swing.JFrame();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
@@ -104,6 +109,10 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        userDisplay.setText("jLabel9");
+
+        queue.setText("jLabel10");
+
         javax.swing.GroupLayout menuJframeLayout = new javax.swing.GroupLayout(menuJframe.getContentPane());
         menuJframe.getContentPane().setLayout(menuJframeLayout);
         menuJframeLayout.setHorizontalGroup(
@@ -112,12 +121,6 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menuJframeLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(homeFromMenu)
-                        .addGap(36, 36, 36)
-                        .addComponent(cartFromMenu)
-                        .addContainerGap(338, Short.MAX_VALUE))
-                    .addGroup(menuJframeLayout.createSequentialGroup()
                         .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -125,7 +128,17 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(homeFromMenu)
+                        .addGap(36, 36, 36)
+                        .addComponent(cartFromMenu)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                        .addComponent(userDisplay)
+                        .addGap(18, 18, 18)
+                        .addComponent(queue)
+                        .addGap(59, 59, 59))))
         );
         menuJframeLayout.setVerticalGroup(
             menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,7 +146,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(homeFromMenu)
-                    .addComponent(cartFromMenu))
+                    .addComponent(cartFromMenu)
+                    .addComponent(userDisplay)
+                    .addComponent(queue))
                 .addGap(28, 28, 28)
                 .addComponent(jLabel8)
                 .addGap(18, 18, 18)
@@ -472,6 +487,8 @@ public class MainFrame extends javax.swing.JFrame {
                     {
                         this.menuJframe.setSize(800,800);
                         this.menuJframe.setVisible(true);
+                        userDisplay.setText("Current user: "+ user);
+                        queue.setText("Estimated wait: "+ Queue() + " mins");
                         logIn = true;
                         this.dispose();
                     }
@@ -544,6 +561,18 @@ String adminPass = "MyPass";
 String customer[] = {"Trevor"};
 String customerPass[] = {"password"};
 boolean logIn;
+Random rand = new Random();
+double n = rand.nextDouble(30.00);
+
+private double Queue()
+{
+    for(double i = n; i > 0; i--)
+    {
+        n = n - 0.0001;
+    }
+   double num = Math.round(n);
+    return num;
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame Cart;
     private javax.swing.JFrame Confirmation;
@@ -589,6 +618,8 @@ boolean logIn;
     private javax.swing.JButton menu;
     private javax.swing.JFrame menuJframe;
     private javax.swing.JPasswordField passwordInput;
+    private javax.swing.JLabel queue;
+    private javax.swing.JLabel userDisplay;
     private javax.swing.JTextField userNameInput;
     // End of variables declaration//GEN-END:variables
 }
