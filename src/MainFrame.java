@@ -24,6 +24,10 @@ public class MainFrame extends javax.swing.JFrame {
     MainFrame.custCart cart[] = null;
     String cartName = "<html>Item Name: <br> Price: </html>";
     
+    //constant
+    public final int HEIGHT = 1000;
+    public final int WIDTH = 1000;
+    
     
 
     /**
@@ -31,7 +35,7 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
-        this.setSize(1000,1000);
+        this.setSize(WIDTH, HEIGHT);
         if(cartOneNamePrice.getText().equals("nothing"))
         {
             cartOneNamePrice.setText("Nothing here");
@@ -117,6 +121,7 @@ public class MainFrame extends javax.swing.JFrame {
         itemTwoName = new javax.swing.JLabel();
         itemFourCost = new javax.swing.JLabel();
         addItemFour = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
         Cart = new javax.swing.JFrame();
         cartUserDisplay = new javax.swing.JLabel();
         cartQueueDisplay = new javax.swing.JLabel();
@@ -140,12 +145,9 @@ public class MainFrame extends javax.swing.JFrame {
         deleteFour = new javax.swing.JButton();
         deleteFive = new javax.swing.JButton();
         deleteSix = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         Confirmation = new javax.swing.JFrame();
         jTextField4 = new javax.swing.JTextField();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
         CreateAcc = new javax.swing.JFrame();
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
@@ -164,6 +166,15 @@ public class MainFrame extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         adminMenu = new javax.swing.JFrame();
         checkoutJFrame = new javax.swing.JFrame();
+        addressOption = new javax.swing.JComboBox<>();
+        cardOption = new javax.swing.JComboBox<>();
+        nameOption = new javax.swing.JComboBox<>();
+        checkoutAdd = new javax.swing.JLabel();
+        checkoutCard = new javax.swing.JLabel();
+        checkoutName = new javax.swing.JLabel();
+        complete = new javax.swing.JButton();
+        cancel = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         failedLogIn = new javax.swing.JDialog();
         fail = new javax.swing.JLabel();
         Exit = new javax.swing.JButton();
@@ -181,17 +192,17 @@ public class MainFrame extends javax.swing.JFrame {
         menuJframe.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BLT.jpg"))); // NOI18N
-        menuJframe.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 120, 231, 139));
+        menuJframe.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 231, 139));
 
         itemOneCost.setText("jLabel2");
-        menuJframe.getContentPane().add(itemOneCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 281, -1, -1));
+        menuJframe.getContentPane().add(itemOneCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, -1, -1));
 
         itemTwo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lemonchicken.jpg"))); // NOI18N
         itemTwo.setText("jLabel3");
-        menuJframe.getContentPane().add(itemTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 422, 222, 146));
+        menuJframe.getContentPane().add(itemTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 600, 222, 146));
 
         itemOneName.setText("Bacon Lettuce Tomato");
-        menuJframe.getContentPane().add(itemOneName, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 86, -1, -1));
+        menuJframe.getContentPane().add(itemOneName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
 
         homeFromMenu.setText("Home");
         homeFromMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -199,7 +210,7 @@ public class MainFrame extends javax.swing.JFrame {
                 homeFromMenuActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(homeFromMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 13, -1, -1));
+        menuJframe.getContentPane().add(homeFromMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, -1));
 
         cartFromMenu.setText("Cart");
         cartFromMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -207,13 +218,13 @@ public class MainFrame extends javax.swing.JFrame {
                 cartFromMenuActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(cartFromMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 13, -1, -1));
+        menuJframe.getContentPane().add(cartFromMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, -1, -1));
 
-        userDisplay.setText("jLabel9");
-        menuJframe.getContentPane().add(userDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(798, 32, -1, -1));
+        userDisplay.setText("Customer");
+        menuJframe.getContentPane().add(userDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 20, -1, -1));
 
-        queue.setText("jLabel10");
-        menuJframe.getContentPane().add(queue, new org.netbeans.lib.awtextra.AbsoluteConstraints(853, 32, -1, -1));
+        queue.setText("Queue Time");
+        menuJframe.getContentPane().add(queue, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, -1, -1));
 
         addItemOne.setText("Add");
         addItemOne.addActionListener(new java.awt.event.ActionListener() {
@@ -221,7 +232,7 @@ public class MainFrame extends javax.swing.JFrame {
                 addItemOneActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(addItemOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 277, -1, -1));
+        menuJframe.getContentPane().add(addItemOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, -1, -1));
 
         addItemTwo.setText("Add");
         addItemTwo.addActionListener(new java.awt.event.ActionListener() {
@@ -229,17 +240,17 @@ public class MainFrame extends javax.swing.JFrame {
                 addItemTwoActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(addItemTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 590, -1, -1));
+        menuJframe.getContentPane().add(addItemTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 770, -1, -1));
 
         itemTwoCost.setText("jLabel2");
-        menuJframe.getContentPane().add(itemTwoCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 590, -1, -1));
+        menuJframe.getContentPane().add(itemTwoCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 770, -1, -1));
 
         itemThree.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spaghett.jpg"))); // NOI18N
         itemThree.setText("jLabel2");
-        menuJframe.getContentPane().add(itemThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(522, 120, 197, 194));
+        menuJframe.getContentPane().add(itemThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 197, 194));
 
         itemThreeCost.setText("jLabel3");
-        menuJframe.getContentPane().add(itemThreeCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(572, 336, -1, -1));
+        menuJframe.getContentPane().add(itemThreeCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 510, -1, -1));
 
         addItemThree.setText("Add");
         addItemThree.addActionListener(new java.awt.event.ActionListener() {
@@ -247,23 +258,23 @@ public class MainFrame extends javax.swing.JFrame {
                 addItemThreeActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(addItemThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(636, 332, -1, -1));
+        menuJframe.getContentPane().add(addItemThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 510, -1, -1));
 
         itemThreeName.setText("jLabel8");
-        menuJframe.getContentPane().add(itemThreeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(522, 86, -1, -1));
+        menuJframe.getContentPane().add(itemThreeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, -1, -1));
 
         itemFourName.setText("jLabel2");
-        menuJframe.getContentPane().add(itemFourName, new org.netbeans.lib.awtextra.AbsoluteConstraints(522, 384, -1, -1));
+        menuJframe.getContentPane().add(itemFourName, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 560, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prociuttopizza.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
-        menuJframe.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(522, 418, 222, 154));
+        menuJframe.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 590, 222, 154));
 
         itemTwoName.setText("jLabel8");
-        menuJframe.getContentPane().add(itemTwoName, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 384, -1, -1));
+        menuJframe.getContentPane().add(itemTwoName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, -1, -1));
 
         itemFourCost.setText("jLabel8");
-        menuJframe.getContentPane().add(itemFourCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 594, -1, -1));
+        menuJframe.getContentPane().add(itemFourCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 770, -1, -1));
 
         addItemFour.setText("Add");
         addItemFour.addActionListener(new java.awt.event.ActionListener() {
@@ -271,7 +282,11 @@ public class MainFrame extends javax.swing.JFrame {
                 addItemFourActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(addItemFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 590, -1, -1));
+        menuJframe.getContentPane().add(addItemFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 770, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/name.jpg"))); // NOI18N
+        jLabel9.setText("jLabel9");
+        menuJframe.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 420, -1));
 
         Cart.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -279,43 +294,43 @@ public class MainFrame extends javax.swing.JFrame {
         Cart.getContentPane().add(cartUserDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
 
         cartQueueDisplay.setText("Queue Time");
-        Cart.getContentPane().add(cartQueueDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
+        Cart.getContentPane().add(cartQueueDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, -1, -1));
 
         cartOneNamePrice.setText("nothing");
-        Cart.getContentPane().add(cartOneNamePrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, -1, -1));
+        Cart.getContentPane().add(cartOneNamePrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
 
         cartOne.setText("jLabel2");
-        Cart.getContentPane().add(cartOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, -1, -1));
+        Cart.getContentPane().add(cartOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, -1, -1));
 
         cartTwo.setText("jLabel8");
-        Cart.getContentPane().add(cartTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, -1));
+        Cart.getContentPane().add(cartTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, -1, -1));
 
         cartTwoPriceName.setText("nothing");
-        Cart.getContentPane().add(cartTwoPriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, -1, -1));
+        Cart.getContentPane().add(cartTwoPriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, -1, -1));
 
         cartThree.setText("jLabel10");
-        Cart.getContentPane().add(cartThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
+        Cart.getContentPane().add(cartThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, -1, -1));
 
         cartThreePriceName.setText("nothing");
-        Cart.getContentPane().add(cartThreePriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, -1, -1));
+        Cart.getContentPane().add(cartThreePriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
 
         cartSix.setText("jLabel12");
-        Cart.getContentPane().add(cartSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, -1, -1));
+        Cart.getContentPane().add(cartSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, -1, -1));
 
         cartFourPriceName.setText("nothing");
-        Cart.getContentPane().add(cartFourPriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, -1, -1));
+        Cart.getContentPane().add(cartFourPriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
 
         cartFour.setText("jLabel2");
-        Cart.getContentPane().add(cartFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, -1, -1));
+        Cart.getContentPane().add(cartFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, -1, -1));
 
         cartFivePriceName.setText("nothing");
-        Cart.getContentPane().add(cartFivePriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
+        Cart.getContentPane().add(cartFivePriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 450, -1, -1));
 
         cartFive.setText("jLabel10");
-        Cart.getContentPane().add(cartFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, -1, -1));
+        Cart.getContentPane().add(cartFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, -1, -1));
 
         cartSixPriceName.setText("nothing");
-        Cart.getContentPane().add(cartSixPriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, -1, -1));
+        Cart.getContentPane().add(cartSixPriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, -1, -1));
 
         menuFromCart.setText("Menu");
         menuFromCart.addActionListener(new java.awt.event.ActionListener() {
@@ -323,7 +338,7 @@ public class MainFrame extends javax.swing.JFrame {
                 menuFromCartActionPerformed(evt);
             }
         });
-        Cart.getContentPane().add(menuFromCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 91, -1));
+        Cart.getContentPane().add(menuFromCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 91, -1));
 
         Checkout.setText("Checkout");
         Checkout.addActionListener(new java.awt.event.ActionListener() {
@@ -331,26 +346,30 @@ public class MainFrame extends javax.swing.JFrame {
                 CheckoutActionPerformed(evt);
             }
         });
-        Cart.getContentPane().add(Checkout, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 91, -1));
+        Cart.getContentPane().add(Checkout, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 91, -1));
 
         deleteOne.setText("Delete");
-        Cart.getContentPane().add(deleteOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, 21));
+        Cart.getContentPane().add(deleteOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, -1, 21));
 
         deleteTwo.setText("Delete");
         deleteTwo.setPreferredSize(new java.awt.Dimension(60, 21));
-        Cart.getContentPane().add(deleteTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 65, -1));
+        Cart.getContentPane().add(deleteTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 65, -1));
 
         deleteThree.setText("Delete");
-        Cart.getContentPane().add(deleteThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, -1, 21));
+        Cart.getContentPane().add(deleteThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, -1, 21));
 
         deleteFour.setText("Delete");
-        Cart.getContentPane().add(deleteFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, -1, 21));
+        Cart.getContentPane().add(deleteFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, -1, 21));
 
         deleteFive.setText("Delete");
-        Cart.getContentPane().add(deleteFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, -1, 21));
+        Cart.getContentPane().add(deleteFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, -1, 21));
 
         deleteSix.setText("Delete");
-        Cart.getContentPane().add(deleteSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, 21));
+        Cart.getContentPane().add(deleteSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 490, -1, 21));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/name.jpg"))); // NOI18N
+        jLabel8.setText("jLabel8");
+        Cart.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 410, -1));
 
         jTextField4.setText("Confirmed");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
@@ -375,12 +394,6 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(330, Short.MAX_VALUE))
         );
-
-        jScrollPane4.setViewportView(jTextPane2);
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
 
         jTextField8.setText("Firstname");
 
@@ -501,16 +514,45 @@ public class MainFrame extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout checkoutJFrameLayout = new javax.swing.GroupLayout(checkoutJFrame.getContentPane());
-        checkoutJFrame.getContentPane().setLayout(checkoutJFrameLayout);
-        checkoutJFrameLayout.setHorizontalGroup(
-            checkoutJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        checkoutJFrameLayout.setVerticalGroup(
-            checkoutJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        checkoutJFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        addressOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        checkoutJFrame.getContentPane().add(addressOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(277, 206, 101, -1));
+
+        cardOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        checkoutJFrame.getContentPane().add(cardOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(277, 261, 101, -1));
+
+        nameOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        checkoutJFrame.getContentPane().add(nameOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(277, 320, 101, -1));
+
+        checkoutAdd.setText("Address:");
+        checkoutJFrame.getContentPane().add(checkoutAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 209, -1, -1));
+
+        checkoutCard.setText("Card:");
+        checkoutJFrame.getContentPane().add(checkoutCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 264, -1, -1));
+
+        checkoutName.setText("Name:");
+        checkoutJFrame.getContentPane().add(checkoutName, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 323, -1, -1));
+
+        complete.setText("Complete Purchase");
+        complete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                completeActionPerformed(evt);
+            }
+        });
+        checkoutJFrame.getContentPane().add(complete, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 401, -1, -1));
+
+        cancel.setText("Cancel");
+        cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelActionPerformed(evt);
+            }
+        });
+        checkoutJFrame.getContentPane().add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 401, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/name.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        checkoutJFrame.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 23, 414, -1));
 
         failedLogIn.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -587,13 +629,13 @@ public class MainFrame extends javax.swing.JFrame {
         //TODO: WHEN ADMIN MENU IS INITIALLIZED I CAN SET MENU PRICES
         
         this.menuJframe.setVisible(true);
-        this.menuJframe.setSize(1000,1000);
+        this.menuJframe.setSize(WIDTH, HEIGHT);
         this.dispose();
     }//GEN-LAST:event_menuActionPerformed
 
     private void cartFromHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartFromHomeActionPerformed
         this.Cart.setVisible(true);
-        this.Cart.setSize(1000, 1000);
+        this.Cart.setSize(WIDTH, HEIGHT);
         this.dispose();
     }//GEN-LAST:event_cartFromHomeActionPerformed
 
@@ -636,7 +678,7 @@ public class MainFrame extends javax.swing.JFrame {
             {
                 
                     
-                this.menuJframe.setSize(1000,1000);                       // if everything matches customer menu will pop open with customer info
+                this.menuJframe.setSize(WIDTH, HEIGHT);                       // if everything matches customer menu will pop open with customer info
                 this.menuJframe.setVisible(true);
                 String curUserStr = "Current user: "+ custArry[i].newFN + " "+custArry[i].newLN;
                 userDisplay.setText(curUserStr);                        // text box shows current user
@@ -651,7 +693,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
             else
             {
-                failedLogIn.setSize(500,500);
+                failedLogIn.setSize(450,450);
                 failedLogIn.setVisible(true);
                 failedLogIn.setTitle("Log In Fail");
                 fail.setText("Incorrect or missing credentials");
@@ -729,6 +771,16 @@ public class MainFrame extends javax.swing.JFrame {
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         failedLogIn.dispose();
     }//GEN-LAST:event_ExitActionPerformed
+
+    private void completeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_completeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_completeActionPerformed
+
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
+        this.Cart.setVisible(true);
+        this.Cart.setSize(1000, 1000);
+        this.checkoutJFrame.dispose();
+    }//GEN-LAST:event_cancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -827,7 +879,10 @@ private void custCart(String name, double cost, int coupon)
     private javax.swing.JButton addItemOne;
     private javax.swing.JButton addItemThree;
     private javax.swing.JButton addItemTwo;
+    private javax.swing.JComboBox<String> addressOption;
     private javax.swing.JFrame adminMenu;
+    private javax.swing.JButton cancel;
+    private javax.swing.JComboBox<String> cardOption;
     private javax.swing.JLabel cartFive;
     private javax.swing.JLabel cartFivePriceName;
     private javax.swing.JLabel cartFour;
@@ -844,7 +899,11 @@ private void custCart(String name, double cost, int coupon)
     private javax.swing.JLabel cartTwo;
     private javax.swing.JLabel cartTwoPriceName;
     private javax.swing.JLabel cartUserDisplay;
+    private javax.swing.JLabel checkoutAdd;
+    private javax.swing.JLabel checkoutCard;
     private javax.swing.JFrame checkoutJFrame;
+    private javax.swing.JLabel checkoutName;
+    private javax.swing.JButton complete;
     private javax.swing.JButton deleteFive;
     private javax.swing.JButton deleteFour;
     private javax.swing.JButton deleteOne;
@@ -873,15 +932,15 @@ private void custCart(String name, double cost, int coupon)
     private javax.swing.JFormattedTextField jFormattedTextField7;
     private javax.swing.JFormattedTextField jFormattedTextField8;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
@@ -890,11 +949,11 @@ private void custCart(String name, double cost, int coupon)
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JTextPane jTextPane2;
     private javax.swing.JButton login;
     private javax.swing.JButton menu;
     private javax.swing.JButton menuFromCart;
     private javax.swing.JFrame menuJframe;
+    private javax.swing.JComboBox<String> nameOption;
     private javax.swing.JPasswordField passwordInput;
     private javax.swing.JLabel queue;
     private javax.swing.JLabel userDisplay;
