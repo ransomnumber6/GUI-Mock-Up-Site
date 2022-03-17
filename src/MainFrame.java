@@ -20,6 +20,7 @@ public class MainFrame extends javax.swing.JFrame {
     Random rand = new Random();
     double n = rand.nextDouble(30.00);
     MainFrame.Customer custArry[] = null;
+    MainFrame.custCart cart[] = null;
 
     /**
      * Creates new form MainFrame
@@ -32,7 +33,7 @@ public class MainFrame extends javax.swing.JFrame {
     public class Customer
     {
         String newFN, newLN, newAdd, User, password;
-        int newCard, coupoun;
+        int newCard, coupon;
         
     }
     
@@ -40,6 +41,13 @@ public class MainFrame extends javax.swing.JFrame {
     {
         String newFN, newLN, newAdd, User, password;
         int newCard;
+    }
+    
+    public class custCart
+    {
+        String foodTitle;
+        double cost;
+        int discount;
     }
     
     /**
@@ -52,16 +60,26 @@ public class MainFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         menuJframe = new javax.swing.JFrame();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        itemOneCost = new javax.swing.JLabel();
+        itemTwo = new javax.swing.JLabel();
+        itemOneName = new javax.swing.JLabel();
         homeFromMenu = new javax.swing.JButton();
         cartFromMenu = new javax.swing.JButton();
         userDisplay = new javax.swing.JLabel();
         queue = new javax.swing.JLabel();
+        addItemOne = new javax.swing.JButton();
+        addItemTwo = new javax.swing.JButton();
+        itemTwoCost = new javax.swing.JLabel();
+        itemThree = new javax.swing.JLabel();
+        itemThreeCost = new javax.swing.JLabel();
+        addItemThree = new javax.swing.JButton();
+        itemThreeName = new javax.swing.JLabel();
+        itemFourName = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        itemTwoName = new javax.swing.JLabel();
+        itemFourCost = new javax.swing.JLabel();
+        addItemFour = new javax.swing.JButton();
         Cart = new javax.swing.JFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
         cartDisplay = new javax.swing.JTextArea();
@@ -101,18 +119,14 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         userNameInput = new javax.swing.JTextField();
 
-        jTextField2.setText("jTextField2");
-
-        jTextField3.setText("jTextField3");
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BLT.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
 
-        jLabel2.setText("jLabel2");
+        itemOneCost.setText("jLabel2");
 
-        jLabel3.setText("jLabel3");
+        itemTwo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lemonchicken.jpg"))); // NOI18N
+        itemTwo.setText("jLabel3");
 
-        jLabel8.setText("Bacon Lettuce Tomato");
+        itemOneName.setText("Bacon Lettuce Tomato");
 
         homeFromMenu.setText("Home");
         homeFromMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -132,6 +146,37 @@ public class MainFrame extends javax.swing.JFrame {
 
         queue.setText("jLabel10");
 
+        addItemOne.setText("jButton1");
+        addItemOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addItemOneActionPerformed(evt);
+            }
+        });
+
+        addItemTwo.setText("jButton1");
+
+        itemTwoCost.setText("jLabel2");
+
+        itemThree.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spaghett.jpg"))); // NOI18N
+        itemThree.setText("jLabel2");
+
+        itemThreeCost.setText("jLabel3");
+
+        addItemThree.setText("jButton2");
+
+        itemThreeName.setText("jLabel8");
+
+        itemFourName.setText("jLabel2");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prociuttopizza.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+
+        itemTwoName.setText("jLabel8");
+
+        itemFourCost.setText("jLabel8");
+
+        addItemFour.setText("jButton1");
+
         javax.swing.GroupLayout menuJframeLayout = new javax.swing.GroupLayout(menuJframe.getContentPane());
         menuJframe.getContentPane().setLayout(menuJframeLayout);
         menuJframeLayout.setHorizontalGroup(
@@ -140,56 +185,117 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menuJframeLayout.createSequentialGroup()
-                        .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
+                        .addComponent(itemThree, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(236, 236, 236))
                     .addGroup(menuJframeLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(homeFromMenu)
-                        .addGap(36, 36, 36)
-                        .addComponent(cartFromMenu)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                        .addComponent(itemTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(211, 211, 211))
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addComponent(itemTwoName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(itemFourName)
+                        .addGap(396, 396, 396))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuJframeLayout.createSequentialGroup()
+                        .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(menuJframeLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(homeFromMenu)
+                                .addGap(28, 28, 28)
+                                .addComponent(cartFromMenu))
+                            .addGroup(menuJframeLayout.createSequentialGroup()
+                                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(itemOneName)
+                                    .addGroup(menuJframeLayout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
+                                        .addComponent(itemOneCost)
+                                        .addGap(34, 34, 34)
+                                        .addComponent(addItemOne)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(itemThreeName)))
+                        .addGap(239, 239, 239)
                         .addComponent(userDisplay)
                         .addGap(18, 18, 18)
                         .addComponent(queue)
                         .addGap(59, 59, 59))))
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(itemTwoCost)
+                .addGap(32, 32, 32)
+                .addComponent(addItemTwo)
+                .addGap(346, 346, 346)
+                .addComponent(itemFourCost)
+                .addGap(43, 43, 43)
+                .addComponent(addItemFour)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuJframeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(itemThreeCost)
+                .addGap(27, 27, 27)
+                .addComponent(addItemThree)
+                .addGap(264, 264, 264))
         );
         menuJframeLayout.setVerticalGroup(
             menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuJframeLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(userDisplay)
+                            .addComponent(queue)))
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cartFromMenu)
+                            .addComponent(homeFromMenu))))
+                .addGap(38, 38, 38)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(itemOneName)
+                            .addComponent(itemThreeName))
+                        .addGap(18, 18, 18)
+                        .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(menuJframeLayout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(addItemOne)
+                                    .addComponent(itemOneCost)))
+                            .addComponent(itemThree, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(itemThreeCost)
+                            .addComponent(addItemThree))
+                        .addGap(43, 43, 43))
+                    .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(itemFourName)
+                        .addComponent(itemTwoName)))
+                .addGap(18, 18, 18)
                 .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(homeFromMenu)
-                    .addComponent(cartFromMenu)
-                    .addComponent(userDisplay)
-                    .addComponent(queue))
-                .addGap(28, 28, 28)
-                .addComponent(jLabel8)
+                    .addComponent(itemTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(75, 75, 75)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(itemTwoCost)
+                    .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(addItemTwo)
+                        .addComponent(itemFourCost)
+                        .addComponent(addItemFour)))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
 
         cartDisplay.setColumns(20);
         cartDisplay.setRows(5);
         jScrollPane1.setViewportView(cartDisplay);
 
-        cartUserDisplay.setText("jLabel9");
+        cartUserDisplay.setText("cust info");
 
-        cartQueueDisplay.setText("jLabel10");
+        cartQueueDisplay.setText("queue display");
 
         javax.swing.GroupLayout CartLayout = new javax.swing.GroupLayout(Cart.getContentPane());
         Cart.getContentPane().setLayout(CartLayout);
@@ -476,11 +582,16 @@ public class MainFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //General sets
+    
    
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+        //initialize menu items;
+        
+        //TODO: WHEN ADMIN MENU IS INITIALLIZED I CAN SET MENU PRICES
+        
         this.menuJframe.setVisible(true);
-        this.menuJframe.setSize(800,800);
+        this.menuJframe.setSize(1000,1000);
         this.dispose();
     }//GEN-LAST:event_menuActionPerformed
 
@@ -498,12 +609,13 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
     
+      
       Password = passwordInput.getText();                                       // passes inputted text to Password and user vars
       user = userNameInput.getText();
       
     if(user.equals(adminUser) && Password.equals( adminPass))                   // checks if strings are equal to admin information
     {
-        this.adminMenu.setSize(800,800);                                        
+        this.adminMenu.setSize(1000,1000);                                        
         this.adminMenu.setVisible(true);
         logIn = true;
         this.dispose();
@@ -517,7 +629,7 @@ public class MainFrame extends javax.swing.JFrame {
             {
                 
                     
-                this.menuJframe.setSize(800,800);                       // if everything matches customer menu will pop open with customer info
+                this.menuJframe.setSize(1000,1000);                       // if everything matches customer menu will pop open with customer info
                 this.menuJframe.setVisible(true);
                 String curUserStr = "Current user: "+ custArry[i].newFN + " "+custArry[i].newLN;
                 userDisplay.setText(curUserStr);                        // text box shows current user
@@ -556,6 +668,10 @@ public class MainFrame extends javax.swing.JFrame {
     private void passwordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputActionPerformed
        Password = passwordInput.toString();        // TODO add your handling code here:
     }//GEN-LAST:event_passwordInputActionPerformed
+
+    private void addItemOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemOneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addItemOneActionPerformed
 
     /**
      * @param args the command line arguments
@@ -626,20 +742,48 @@ private void setCustInfo(String FirstName, String LastName, int card, String add
     
 }
 
-private void getCustInfo(String FirstName, String LastName, int card, String address, String username)
+private void custCart(String name, double cost, int coupon)
 {
+      
+    custCart newCart = new custCart();
+    newCart.foodTitle = name;
+    newCart.cost = cost;
+    newCart.discount = coupon;
+    
+    for(int i = 0; i < cart.length; i++)
+    {
+        if(cart[i] == null)
+        {
+            cart[i] = newCart;
+        }
+    }
     
 }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame Cart;
     private javax.swing.JFrame Confirmation;
     private javax.swing.JFrame CreateAcc;
+    private javax.swing.JButton addItemFour;
+    private javax.swing.JButton addItemOne;
+    private javax.swing.JButton addItemThree;
+    private javax.swing.JButton addItemTwo;
     private javax.swing.JFrame adminMenu;
     private javax.swing.JTextArea cartDisplay;
     private javax.swing.JButton cartFromMenu;
     private javax.swing.JLabel cartQueueDisplay;
     private javax.swing.JLabel cartUserDisplay;
     private javax.swing.JButton homeFromMenu;
+    private javax.swing.JLabel itemFourCost;
+    private javax.swing.JLabel itemFourName;
+    private javax.swing.JLabel itemOneCost;
+    private javax.swing.JLabel itemOneName;
+    private javax.swing.JLabel itemThree;
+    private javax.swing.JLabel itemThreeCost;
+    private javax.swing.JLabel itemThreeName;
+    private javax.swing.JLabel itemTwo;
+    private javax.swing.JLabel itemTwoCost;
+    private javax.swing.JLabel itemTwoName;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
@@ -650,13 +794,11 @@ private void getCustInfo(String FirstName, String LastName, int card, String add
     private javax.swing.JFormattedTextField jFormattedTextField7;
     private javax.swing.JFormattedTextField jFormattedTextField8;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -667,8 +809,6 @@ private void getCustInfo(String FirstName, String LastName, int card, String add
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
