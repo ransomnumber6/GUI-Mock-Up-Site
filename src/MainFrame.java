@@ -1,5 +1,6 @@
 
 import java.util.Random;
+import javax.swing.SwingConstants;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -163,6 +164,9 @@ public class MainFrame extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         adminMenu = new javax.swing.JFrame();
         checkoutJFrame = new javax.swing.JFrame();
+        failedLogIn = new javax.swing.JDialog();
+        fail = new javax.swing.JLabel();
+        Exit = new javax.swing.JButton();
         menu = new javax.swing.JButton();
         cartFromHome = new javax.swing.JButton();
         login = new javax.swing.JButton();
@@ -508,6 +512,19 @@ public class MainFrame extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        failedLogIn.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        fail.setText("Incorrect or missing credentials");
+        failedLogIn.getContentPane().add(fail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
+
+        Exit.setText("OK");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
+        failedLogIn.getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 65, -1));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -602,6 +619,15 @@ public class MainFrame extends javax.swing.JFrame {
         this.dispose();
         
     }
+    if(user.equals("")|| Password.equals(""))
+    {
+        failedLogIn.setSize(450,450);
+        failedLogIn.setVisible(true);
+        failedLogIn.setTitle("Log In Fail");
+        fail.setText("Incorrect or missing credentials");
+        fail.setVerticalAlignment(SwingConstants.CENTER);
+        logIn = false;        
+    }
     else                                                                        // this section checks customer array and makes sure customer logins are correct
     {
         for(int i = 0; i < custArry.length; i++)
@@ -625,6 +651,11 @@ public class MainFrame extends javax.swing.JFrame {
             }
             else
             {
+                failedLogIn.setSize(500,500);
+                failedLogIn.setVisible(true);
+                failedLogIn.setTitle("Log In Fail");
+                fail.setText("Incorrect or missing credentials");
+                fail.setVerticalAlignment(SwingConstants.CENTER);
                 logIn = false;
             }
         }
@@ -694,6 +725,10 @@ public class MainFrame extends javax.swing.JFrame {
         this.checkoutJFrame.setSize(1000, 1000);
         this.dispose();
     }//GEN-LAST:event_CheckoutActionPerformed
+
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+        failedLogIn.dispose();
+    }//GEN-LAST:event_ExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -787,6 +822,7 @@ private void custCart(String name, double cost, int coupon)
     private javax.swing.JButton Checkout;
     private javax.swing.JFrame Confirmation;
     private javax.swing.JFrame CreateAcc;
+    private javax.swing.JButton Exit;
     private javax.swing.JButton addItemFour;
     private javax.swing.JButton addItemOne;
     private javax.swing.JButton addItemThree;
@@ -815,6 +851,8 @@ private void custCart(String name, double cost, int coupon)
     private javax.swing.JButton deleteSix;
     private javax.swing.JButton deleteThree;
     private javax.swing.JButton deleteTwo;
+    private javax.swing.JLabel fail;
+    private javax.swing.JDialog failedLogIn;
     private javax.swing.JButton homeFromMenu;
     private javax.swing.JLabel itemFourCost;
     private javax.swing.JLabel itemFourName;
