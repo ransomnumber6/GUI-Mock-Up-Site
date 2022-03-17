@@ -22,6 +22,8 @@ public class MainFrame extends javax.swing.JFrame {
     double n = rand.nextDouble(30.00);
     MainFrame.Customer custArry[] = null;
     MainFrame.custCart cart[] = null;
+    Customer currentUser = new Customer();
+    String cardinfo = String.valueOf(currentUser.newCard);
     String cartName = "<html>Item Name: <br> Price: </html>";
     
     //constant
@@ -516,13 +518,18 @@ public class MainFrame extends javax.swing.JFrame {
 
         checkoutJFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        addressOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        addressOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { currentUser.newAdd}));
+        addressOption.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addressOptionActionPerformed(evt);
+            }
+        });
         checkoutJFrame.getContentPane().add(addressOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(277, 206, 101, -1));
 
-        cardOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cardOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {cardinfo}));
         checkoutJFrame.getContentPane().add(cardOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(277, 261, 101, -1));
 
-        nameOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        nameOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {currentUser.newFN + " " + currentUser.newLN}));
         checkoutJFrame.getContentPane().add(nameOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(277, 320, 101, -1));
 
         checkoutAdd.setText("Address:");
@@ -677,6 +684,7 @@ public class MainFrame extends javax.swing.JFrame {
             if(custArry[i].User.equals(user) && custArry[i].password.equals(Password))
             {
                 
+                currentUser = custArry[i];
                     
                 this.menuJframe.setSize(WIDTH, HEIGHT);                       // if everything matches customer menu will pop open with customer info
                 this.menuJframe.setVisible(true);
@@ -781,6 +789,10 @@ public class MainFrame extends javax.swing.JFrame {
         this.Cart.setSize(1000, 1000);
         this.checkoutJFrame.dispose();
     }//GEN-LAST:event_cancelActionPerformed
+
+    private void addressOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressOptionActionPerformed
+       
+    }//GEN-LAST:event_addressOptionActionPerformed
 
     /**
      * @param args the command line arguments
