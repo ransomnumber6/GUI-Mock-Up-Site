@@ -13,17 +13,13 @@ public class MainFrame extends javax.swing.JFrame
 {    
     //variables
     String user, Password;
-    String adminUser = "admin";
-    String adminPass = "MyPass";
-    boolean logIn, added;
-    boolean empty;
-    Random rand = new Random();
+    boolean logIn, added, empty;
+    Random rand = new Random();                         // random number for Queue method
     double n = rand.nextDouble(30.00);
-    Customer[] custArr = new Customer[50];
-    Admin[] adminArr = new Admin[2];
-    custCart cart[] = new custCart[20];
-    Customer currentUser = new Customer();
-    String cardinfo = String.valueOf(currentUser.newCard);
+    Customer[] custArr = new Customer[50];              // Customer array for saving customer info
+    Admin[] adminArr = new Admin[2];                    // admin array for the two preset admins
+    custCart cart[] = new custCart[20];                 // customer cart array to keep track of orders
+    Customer currentUser = new Customer();              //
     String cartName = "<html>Item Name: <br> Price: </html>";
     
     //constant
@@ -37,8 +33,22 @@ public class MainFrame extends javax.swing.JFrame
     public MainFrame()
     {
         initComponents();
+        // initialize admin class (hardcoded admin logins)
+        adminArr[0] = new Admin();          // call default constructor for first admin
+        adminArr[1] = new Admin();
+        // initialized objects in array as all null
+        for(int k = 0; k < 50; k++)
+        {
+            custArr[k] = new Customer();
+        }
+        // set second index to admin2
+        adminArr[1].setUsername("admin2");
+        adminArr[1].setAddress("N/A");
+        adminArr[1].setPassword("LetMeIn");
+        adminArr[1].firstName = "Kim";
+        adminArr[1].lastName = "Jones";
         
-        this.setSize(WIDTH, HEIGHT);
+        //set all of the cart boxes to non-visible until customer adds items
         if(cartOneNamePrice.getText().equals("nothing"))
         {
             cartOneNamePrice.setText("Nothing here");
@@ -148,6 +158,8 @@ public class MainFrame extends javax.swing.JFrame
         jLabel18 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         custLastName = new javax.swing.JFormattedTextField();
+        jLabel19 = new javax.swing.JLabel();
+        custEmail = new javax.swing.JTextField();
         adminMenu = new javax.swing.JFrame();
         checkoutJFrame = new javax.swing.JFrame();
         checkoutAdd = new javax.swing.JLabel();
@@ -167,6 +179,18 @@ public class MainFrame extends javax.swing.JFrame
         accountFail = new javax.swing.JDialog();
         jLabel14 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        guestCheckout = new javax.swing.JFrame();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        guestName = new javax.swing.JTextField();
+        guestCard = new javax.swing.JTextField();
+        guestAdd = new javax.swing.JTextField();
+        guestEmail = new javax.swing.JTextField();
+        guestPay = new javax.swing.JButton();
+        guestCancel = new javax.swing.JButton();
         menu = new javax.swing.JButton();
         cartFromHome = new javax.swing.JButton();
         login = new javax.swing.JButton();
@@ -288,34 +312,34 @@ public class MainFrame extends javax.swing.JFrame
         cartOneNamePrice.setText("nothing");
         Cart.getContentPane().add(cartOneNamePrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, -1));
 
-        cartOne.setText("Item 1:");
+        cartOne.setText("Item:");
         Cart.getContentPane().add(cartOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
 
-        cartTwo.setText("Item 2:");
+        cartTwo.setText("Item:");
         Cart.getContentPane().add(cartTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, -1));
 
         cartTwoPriceName.setText("nothing");
         Cart.getContentPane().add(cartTwoPriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, -1, -1));
 
-        cartThree.setText("Item 3:");
+        cartThree.setText("Item:");
         Cart.getContentPane().add(cartThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, -1, -1));
 
         cartThreePriceName.setText("nothing");
         Cart.getContentPane().add(cartThreePriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, -1, -1));
 
-        cartSix.setText("item 6:");
+        cartSix.setText("Item:");
         Cart.getContentPane().add(cartSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, -1, -1));
 
         cartFourPriceName.setText("nothing");
         Cart.getContentPane().add(cartFourPriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, -1, -1));
 
-        cartFour.setText("Item 4:");
+        cartFour.setText("Item:");
         Cart.getContentPane().add(cartFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, -1, -1));
 
         cartFivePriceName.setText("nothing");
         Cart.getContentPane().add(cartFivePriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, -1, -1));
 
-        cartFive.setText("Item 5:");
+        cartFive.setText("Item:");
         Cart.getContentPane().add(cartFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, -1, -1));
 
         cartSixPriceName.setText("nothing");
@@ -338,22 +362,52 @@ public class MainFrame extends javax.swing.JFrame
         Cart.getContentPane().add(Checkout, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 91, -1));
 
         deleteOne.setText("Delete");
+        deleteOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteOneActionPerformed(evt);
+            }
+        });
         Cart.getContentPane().add(deleteOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, -1, 21));
 
         deleteTwo.setText("Delete");
         deleteTwo.setPreferredSize(new java.awt.Dimension(60, 21));
+        deleteTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteTwoActionPerformed(evt);
+            }
+        });
         Cart.getContentPane().add(deleteTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 65, -1));
 
         deleteThree.setText("Delete");
+        deleteThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteThreeActionPerformed(evt);
+            }
+        });
         Cart.getContentPane().add(deleteThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, -1, 21));
 
         deleteFour.setText("Delete");
+        deleteFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteFourActionPerformed(evt);
+            }
+        });
         Cart.getContentPane().add(deleteFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, -1, 21));
 
         deleteFive.setText("Delete");
+        deleteFive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteFiveActionPerformed(evt);
+            }
+        });
         Cart.getContentPane().add(deleteFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, -1, 21));
 
         deleteSix.setText("Delete");
+        deleteSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteSixActionPerformed(evt);
+            }
+        });
         Cart.getContentPane().add(deleteSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 490, -1, 21));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/name.jpg"))); // NOI18N
@@ -384,25 +438,18 @@ public class MainFrame extends javax.swing.JFrame
                 .addContainerGap(330, Short.MAX_VALUE))
         );
 
-        custPassword.setText("jPasswordField1");
-
-        custUserName.setText("Username");
-
-        custAddress.setText("123 Main St");
         custAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 custAddressActionPerformed(evt);
             }
         });
 
-        custCard.setText("123456789");
         custCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 custCardActionPerformed(evt);
             }
         });
 
-        custFirstName.setText("John");
         custFirstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 custFirstNameActionPerformed(evt);
@@ -417,6 +464,11 @@ public class MainFrame extends javax.swing.JFrame
         });
 
         jButton1.setText("Cancel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("First Name:");
 
@@ -433,7 +485,13 @@ public class MainFrame extends javax.swing.JFrame
 
         jLabel16.setText("Last Name:");
 
-        custLastName.setText("Smith");
+        custLastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                custLastNameActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("Email:");
 
         javax.swing.GroupLayout CreateAccLayout = new javax.swing.GroupLayout(CreateAcc.getContentPane());
         CreateAcc.getContentPane().setLayout(CreateAccLayout);
@@ -446,37 +504,44 @@ public class MainFrame extends javax.swing.JFrame
                         .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(CreateAccLayout.createSequentialGroup()
                         .addGap(203, 203, 203)
-                        .addGroup(CreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(CreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(CreateAccLayout.createSequentialGroup()
                                 .addComponent(jButton7)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton1))
-                            .addGroup(CreateAccLayout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addGroup(CreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12))
-                                .addGap(18, 18, 18)
-                                .addGroup(CreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(custAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(custCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(CreateAccLayout.createSequentialGroup()
                                 .addGroup(CreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel16)
                                     .addComponent(jLabel10))
                                 .addGap(18, 18, 18)
                                 .addGroup(CreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(custFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(custLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(custLastName)
+                                    .addComponent(custFirstName)))
+                            .addGroup(CreateAccLayout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(custAddress))
                             .addGroup(CreateAccLayout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addGap(18, 18, 18)
-                                .addComponent(custUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(custUserName))
                             .addGroup(CreateAccLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(jLabel17)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(custPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(custPassword))
+                            .addGroup(CreateAccLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addGroup(CreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(CreateAccLayout.createSequentialGroup()
+                                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(custEmail))
+                                    .addGroup(CreateAccLayout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(custCard)))))))
                 .addGap(0, 131, Short.MAX_VALUE))
         );
         CreateAccLayout.setVerticalGroup(
@@ -496,7 +561,11 @@ public class MainFrame extends javax.swing.JFrame
                 .addGroup(CreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(custCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
+                .addGroup(CreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(custEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
                 .addGroup(CreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(custAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
@@ -508,11 +577,11 @@ public class MainFrame extends javax.swing.JFrame
                 .addGroup(CreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(custPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
-                .addGap(73, 73, 73)
+                .addGap(36, 36, 36)
                 .addGroup(CreateAccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton7)
                     .addComponent(jButton1))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout adminMenuLayout = new javax.swing.GroupLayout(adminMenu.getContentPane());
@@ -613,6 +682,88 @@ public class MainFrame extends javax.swing.JFrame
                 .addContainerGap(110, Short.MAX_VALUE))
         );
 
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/name.jpg"))); // NOI18N
+        jLabel20.setText("jLabel20");
+
+        jLabel21.setText("Name:");
+
+        jLabel22.setText("Card:");
+
+        jLabel23.setText("Address:");
+
+        jLabel24.setText("Email:");
+
+        guestCard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guestCardActionPerformed(evt);
+            }
+        });
+
+        guestPay.setText("Checkout");
+
+        guestCancel.setText("jButton4");
+
+        javax.swing.GroupLayout guestCheckoutLayout = new javax.swing.GroupLayout(guestCheckout.getContentPane());
+        guestCheckout.getContentPane().setLayout(guestCheckoutLayout);
+        guestCheckoutLayout.setHorizontalGroup(
+            guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guestCheckoutLayout.createSequentialGroup()
+                .addContainerGap(113, Short.MAX_VALUE)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88))
+            .addGroup(guestCheckoutLayout.createSequentialGroup()
+                .addGroup(guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guestCheckoutLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel23)
+                        .addGap(77, 77, 77))
+                    .addGroup(guestCheckoutLayout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addGroup(guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(guestPay)
+                            .addGroup(guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(47, 47, 47)))
+                .addGroup(guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(guestName)
+                            .addComponent(guestCard)
+                            .addComponent(guestEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE))
+                        .addComponent(guestAdd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(guestCancel))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        guestCheckoutLayout.setVerticalGroup(
+            guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guestCheckoutLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel20)
+                .addGap(52, 52, 52)
+                .addGroup(guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(guestName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(guestCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(guestAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(guestEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(guestCheckoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(guestPay)
+                    .addComponent(guestCancel))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -702,18 +853,19 @@ public class MainFrame extends javax.swing.JFrame
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
     
-        Password = passwordInput.getText();
-        user = userNameInput.getText();
-      
-    if(user.equals(adminUser) && Password.equals( adminPass))                   // checks if strings are equal to admin information
+        Password = passwordInput.getText();                                     // get password input
+        user = userNameInput.getText();                                         // get username input
+    for(int i = 0; i < adminArr.length; i++)
     {
-        this.adminMenu.setSize(1000,1000);                                        
-        this.adminMenu.setVisible(true);
-        logIn = true;
-        this.setVisible(false);
-        
+        if(user.equals(adminArr[i].getUsername()) && Password.equals( adminArr[i].getPassword()))                   // checks if strings are equal to admin information
+        {
+            this.adminMenu.setSize(1000,1000);                                                                        
+            this.adminMenu.setVisible(true);
+            logIn = true;
+            this.setVisible(false);
+        }
     }
-    if(user.equals("")|| Password.equals(""))
+    if(userNameInput.getText().isBlank()|| passwordInput.getText().isBlank())                                   // if logins are empty return error message
     {
         failedLogIn.setSize(450,450);
         failedLogIn.setVisible(true);
@@ -726,29 +878,26 @@ public class MainFrame extends javax.swing.JFrame
     {
         for(int i = 0; i < custArr.length; i++)
         {
-        
-            String myUser = custArr[i].User.toString();
-            String myPass = custArr[i].password.toString();
-            if(myUser.equals(user) && myPass.equals(Password))
+            if(custArr[i].getUsername().equals(user) && custArr[i].getPassword().equals(Password))
             {
-                
-                System.out.println(custArr[i].newFN);
+                currentUser = custArr[i];                                       // set currentUser to found user in array so that it can be used in other methods
+                System.out.println(custArr[i].firstName);
                     
                 this.menuJframe.setSize(WIDTH, HEIGHT);                       // if everything matches customer menu will pop open with customer info
                 this.menuJframe.setVisible(true);
-                String curUserStr = "Current user: "+ custArr[i].newFN + " "+custArr[i].newLN;
-                userDisplay.setText(curUserStr);                        // text box shows current user
+                String curUserStr = "Current user: "+ custArr[i].firstName + " "+ custArr[i].lastName;
+                userDisplay.setText(curUserStr);                               // text box shows current user
                 cartUserDisplay.setText(curUserStr);
                 String queueStr ="Estimated wait: "+ Queue() + " mins";
-                queue.setText(queueStr);                                // text box shows estimated wait time using random number generator in Queue()
+                queue.setText(queueStr);                                        // text box shows estimated wait time using random number generator in Queue()
                 cartQueueDisplay.setText(queueStr);
-                custCheckoutName.setText(custArr[i].newFN + " " + custArr[i].newLN);
-                custCheckoutCard.setText(custArr[i].newCard);
-                custAddCheckout.setText(custArr[i].newAdd);
-                logIn = true;                                           // log in boolean for other pages to use
+                custCheckoutName.setText(custArr[i].firstName + " " + custArr[i].lastName);
+                custCheckoutCard.setText(custArr[i].getCreditCard());
+                custAddCheckout.setText(custArr[i].getAddress());
+                logIn = true;                                                  // log in boolean for other pages to use
                 this.setVisible(false);                                        // close old window    
             }
-            else 
+            else                                                                // if log in fails then pop-up will show error  message
            {
                 failedLogIn.setSize(450,450);
                 failedLogIn.setVisible(true);
@@ -761,26 +910,31 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_loginActionPerformed
 
     private void custFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custFirstNameActionPerformed
-               // TODO add your handling code here:
+        custFirstName.setText("nothing");
     }//GEN-LAST:event_custFirstNameActionPerformed
 
+    // closes current frame and opens home frame
     private void homeFromMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeFromMenuActionPerformed
         this.setVisible(true); 
         this.menuJframe.dispose(); // TODO add your handling code here:
     }//GEN-LAST:event_homeFromMenuActionPerformed
 
+    // opens cart frame and sets menuframe to not visible
     private void cartFromMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartFromMenuActionPerformed
         this.Cart.setVisible(true);
         this.Cart.setSize(1000, 1000);
         this.menuJframe.dispose();
     }//GEN-LAST:event_cartFromMenuActionPerformed
-
+    
+    // password is passed to a var that will hold it
     private void passwordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputActionPerformed
        Password = passwordInput.toString();        // TODO add your handling code here:
     }//GEN-LAST:event_passwordInputActionPerformed
 
     private void addItemOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemOneActionPerformed
         deleteOne.setVisible(true);
+        cartOne.setText("Item:");
+        cartOne.setVisible(true);
         String cart = "<html>    "+ itemOneName.getText() + "<br>    "+ itemOneCost.getText()+ "</html>";
         cartOneNamePrice.setText(cart);
     }//GEN-LAST:event_addItemOneActionPerformed
@@ -819,9 +973,18 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_menuFromCartActionPerformed
 
     private void CheckoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckoutActionPerformed
+        if(logIn == true)
+        {
         this.checkoutJFrame.setVisible(true);
         this.checkoutJFrame.setSize(1000, 1000);
         this.dispose();
+        }
+        else
+        {
+            this.guestCheckout.setVisible(true);
+            this.guestCheckout.setSize(WIDTH, HEIGHT);
+            this.dispose();
+        }
     }//GEN-LAST:event_CheckoutActionPerformed
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
@@ -849,36 +1012,40 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_custAddressActionPerformed
 
     private void custCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custCardActionPerformed
-        // TODO add your handling code here:
+        custCard.setText("nothing");        // TODO add your handling code here:
     }//GEN-LAST:event_custCardActionPerformed
-
+   // function that saves customer information to the array
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        boolean pass = false;
-        if(custFirstName.getText() != "" && custLastName.getText() != "" && custAddress.getText() != "" && custCard.getText() != "" &&custUserName.getText() != "" && custPassword.getText() != "")
+                              
+        if(custFirstName.getText().isBlank() && custLastName.getText().isBlank() && custAddress.getText().isBlank() && custCard.getText().isBlank() && custUserName.getText().isBlank() && custPassword.getText().isBlank() && custEmail.getText().isBlank()) // if none of the text boxes are empty then proceed
         {
-            int i =0;
-            while(custArr[i] != null)
-            {
-                i++;
-            }
-                if(custArr[i] == null)
-                {
-                    custArr[i] = new Customer(custFirstName.getText(),custLastName.getText(),custCard.getText(),custAddress.getText(),custUserName.getText(),custPassword.getText());
-                    pass = true;
-                }
+            accountFail.setTitle("Account Creation Failed");
+            accountFail.setSize(450,450);
+            accountFail.setVisible(true);
         }
         else
         {
-            pass = false;
-        }
-        if(pass == true)
-        {
-            this.setVisible(true);
-            this.CreateAcc.dispose();
-            
+            int i =0;                           // i will be incremented each pass through but will stop as soon as NULL is reached
+            while(custArr[i].getUsername() != null)
+            {
+                i++;
+            }
+                if(custArr[i].getUsername() == null)          // if current position is null then call parameterized constructor and add new object to the array
+                {
+                    custArr[i].setCreditCard(custCard.getText());
+                    custArr[i].setUsername(custUserName.getText());
+                    custArr[i].setPassword(custPassword.getText().toString());
+                    custArr[i].setEmail(custEmail.getText());
+                    custArr[i].setAddress(custAddress.getText());
+                    custArr[i].firstName = custFirstName.getText();
+                    custArr[i].lastName = custLastName.getText();
+                    this.setVisible(true);
+                    this.CreateAcc.dispose();                // set pass = true as checks were successful
+                }
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    // if OK button is pressed dialog box will close
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
             this.accountFail.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -886,6 +1053,67 @@ public class MainFrame extends javax.swing.JFrame
     private void userNameInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_userNameInputActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        CreateAcc.dispose();
+        this.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void deleteOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteOneActionPerformed
+        cartOneNamePrice.setText("nothing"); 
+        cartOneNamePrice.setVisible(false);
+        cartOne.setText("Item:");
+        cartOne.setVisible(false);
+        deleteOne.setVisible(false);
+    }//GEN-LAST:event_deleteOneActionPerformed
+
+    private void deleteTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteTwoActionPerformed
+        cartTwoPriceName.setText("nothing"); 
+        cartTwoPriceName.setVisible(false);
+        cartTwo.setText("Item:");
+        cartTwo.setVisible(false);
+        deleteTwo.setVisible(false);
+    }//GEN-LAST:event_deleteTwoActionPerformed
+
+    private void deleteThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteThreeActionPerformed
+        cartThreePriceName.setText("nothing"); 
+        cartThreePriceName.setVisible(false);
+        cartThree.setText("Item:");
+        cartThree.setVisible(false);
+        deleteThree.setVisible(false);
+    }//GEN-LAST:event_deleteThreeActionPerformed
+
+    private void deleteFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteFourActionPerformed
+        cartFourPriceName.setText("nothing"); 
+        cartFourPriceName.setVisible(false);
+        cartFour.setText("Item:");
+        cartFour.setVisible(false);  
+        deleteFour.setVisible(false);
+    }//GEN-LAST:event_deleteFourActionPerformed
+
+    private void deleteFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteFiveActionPerformed
+        cartFivePriceName.setText("nothing"); 
+        cartFivePriceName.setVisible(false);
+        cartFive.setText("Item:");
+        cartFive.setVisible(false);
+        deleteFive.setVisible(false);
+    }//GEN-LAST:event_deleteFiveActionPerformed
+
+    private void deleteSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteSixActionPerformed
+        cartSixPriceName.setText("nothing"); 
+        cartSixPriceName.setVisible(false);
+        cartSix.setText("Item:");
+        cartSix.setVisible(false);
+        deleteSix.setVisible(false);
+    }//GEN-LAST:event_deleteSixActionPerformed
+
+    private void guestCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guestCardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_guestCardActionPerformed
+
+    private void custLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custLastNameActionPerformed
+        custLastName.setText("nothing");        // TODO add your handling code here:
+    }//GEN-LAST:event_custLastNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -922,15 +1150,15 @@ public class MainFrame extends javax.swing.JFrame
         });
     }
 
-
+// Queue method that simply generates a number between 0 and 30 
 private double Queue()
 {
-    for(double i = n; i > 0; i--)
+    for(double i = n; i > 0; i--)               // reduce number by 0.001 every loop through
     {
         n = n - 0.0001;
     }
-   double num = Math.round(n);
-    return num;
+   double num = Math.round(n);                  // round to nearest hundreth
+    return num;                                 // return number
 }
 
 
@@ -973,6 +1201,7 @@ private double Queue()
     private javax.swing.JFormattedTextField custCard;
     private javax.swing.JLabel custCheckoutCard;
     private javax.swing.JLabel custCheckoutName;
+    private javax.swing.JTextField custEmail;
     private javax.swing.JFormattedTextField custFirstName;
     private javax.swing.JFormattedTextField custLastName;
     private javax.swing.JPasswordField custPassword;
@@ -986,6 +1215,13 @@ private double Queue()
     private javax.swing.JLabel fail;
     private javax.swing.JDialog failedLogIn;
     private javax.swing.Box.Filler filler1;
+    private javax.swing.JTextField guestAdd;
+    private javax.swing.JButton guestCancel;
+    private javax.swing.JTextField guestCard;
+    private javax.swing.JFrame guestCheckout;
+    private javax.swing.JTextField guestEmail;
+    private javax.swing.JTextField guestName;
+    private javax.swing.JButton guestPay;
     private javax.swing.JButton homeFromMenu;
     private javax.swing.JLabel itemFourCost;
     private javax.swing.JLabel itemFourName;
@@ -1011,7 +1247,13 @@ private double Queue()
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
