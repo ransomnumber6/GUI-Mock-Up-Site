@@ -99,7 +99,7 @@ public class Customer extends User {
                     custArr[i].lastName = custLastName.getText();
         */
         
-        //newCustomer.setAddress(address);
+        //newCustomer.setAddress(address)
         return newCustomer;
     }
     
