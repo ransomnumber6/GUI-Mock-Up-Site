@@ -69,9 +69,9 @@ public class Customer extends User {
         this.creditCard = newCreditCard;
     }
     
-    public void setCoupon(int coupon)
+    public void setCoupon(String coupon)
     {
-        this.coupon = coupon;
+        this.coupon = Integer.parseInt(coupon); 
     }
     
     public String getPassword()

@@ -100,9 +100,9 @@ public class MainFrame extends javax.swing.JFrame
     private void initComponents() {
 
         menuJframe = new javax.swing.JFrame();
-        jLabel1 = new javax.swing.JLabel();
+        pictureOne = new javax.swing.JLabel();
         itemOneCost = new javax.swing.JLabel();
-        itemTwo = new javax.swing.JLabel();
+        pictureThree = new javax.swing.JLabel();
         itemOneName = new javax.swing.JLabel();
         homeFromMenu = new javax.swing.JButton();
         cartFromMenu = new javax.swing.JButton();
@@ -111,18 +111,18 @@ public class MainFrame extends javax.swing.JFrame
         addItemOne = new javax.swing.JButton();
         addItemTwo = new javax.swing.JButton();
         itemTwoCost = new javax.swing.JLabel();
-        itemThree = new javax.swing.JLabel();
+        pictureTwo = new javax.swing.JLabel();
         itemThreeCost = new javax.swing.JLabel();
         addItemThree = new javax.swing.JButton();
         itemThreeName = new javax.swing.JLabel();
         itemFourName = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        pictureFour = new javax.swing.JLabel();
         itemTwoName = new javax.swing.JLabel();
         itemFourCost = new javax.swing.JLabel();
         addItemFour = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
+        pictureFive = new javax.swing.JLabel();
+        pictureSix = new javax.swing.JLabel();
         itemFiveCost = new javax.swing.JLabel();
         addItemFive = new javax.swing.JButton();
         itemSixCost = new javax.swing.JLabel();
@@ -184,30 +184,30 @@ public class MainFrame extends javax.swing.JFrame
         jLabel34 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
+        adminNameOne = new javax.swing.JLabel();
+        adminNameTwo = new javax.swing.JLabel();
+        adminNameThree = new javax.swing.JLabel();
+        adminNameFour = new javax.swing.JLabel();
+        adminNameFive = new javax.swing.JLabel();
+        adminNameSix = new javax.swing.JLabel();
+        adminItemPriceOne = new javax.swing.JTextField();
+        adminItemPriceTwo = new javax.swing.JTextField();
+        adminItemPriceThree = new javax.swing.JTextField();
+        adminItemPriceFour = new javax.swing.JTextField();
+        adminItemPriceSix = new javax.swing.JTextField();
+        adminItemPriceFive = new javax.swing.JTextField();
+        adminAddFive = new javax.swing.JButton();
+        removeFive = new javax.swing.JButton();
+        adminAddSix = new javax.swing.JButton();
+        removeSix = new javax.swing.JButton();
+        adminAddFour = new javax.swing.JButton();
+        removeFour = new javax.swing.JButton();
+        adminAddThree = new javax.swing.JButton();
+        removeThree = new javax.swing.JButton();
+        adminAddOne = new javax.swing.JButton();
+        removeOne = new javax.swing.JButton();
+        adminAddTwo = new javax.swing.JButton();
+        removeTwo = new javax.swing.JButton();
         checkoutJFrame = new javax.swing.JFrame();
         checkoutAdd = new javax.swing.JLabel();
         checkoutCard = new javax.swing.JLabel();
@@ -272,15 +272,15 @@ public class MainFrame extends javax.swing.JFrame
 
         menuJframe.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BLT.jpg"))); // NOI18N
-        menuJframe.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 231, 139));
+        pictureOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BLT.jpg"))); // NOI18N
+        menuJframe.getContentPane().add(pictureOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 231, 139));
 
         itemOneCost.setText("jLabel2");
         menuJframe.getContentPane().add(itemOneCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, -1, -1));
 
-        itemTwo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lemonchicken.jpg"))); // NOI18N
-        itemTwo.setText("jLabel3");
-        menuJframe.getContentPane().add(itemTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 600, 222, 146));
+        pictureThree.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lemonchicken.jpg"))); // NOI18N
+        pictureThree.setText("jLabel3");
+        menuJframe.getContentPane().add(pictureThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 600, 222, 146));
 
         itemOneName.setText("Bacon Lettuce Tomato");
         menuJframe.getContentPane().add(itemOneName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
@@ -326,9 +326,9 @@ public class MainFrame extends javax.swing.JFrame
         itemTwoCost.setText("jLabel2");
         menuJframe.getContentPane().add(itemTwoCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 760, -1, -1));
 
-        itemThree.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spaghett.jpg"))); // NOI18N
-        itemThree.setText("jLabel2");
-        menuJframe.getContentPane().add(itemThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 197, 194));
+        pictureTwo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spaghett.jpg"))); // NOI18N
+        pictureTwo.setText("jLabel2");
+        menuJframe.getContentPane().add(pictureTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 197, 194));
 
         itemThreeCost.setText("jLabel3");
         menuJframe.getContentPane().add(itemThreeCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 500, -1, -1));
@@ -347,9 +347,9 @@ public class MainFrame extends javax.swing.JFrame
         itemFourName.setText("Prociutto Pizza");
         menuJframe.getContentPane().add(itemFourName, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 560, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prociuttopizza.jpg"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        menuJframe.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 590, 222, 154));
+        pictureFour.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prociuttopizza.jpg"))); // NOI18N
+        pictureFour.setText("jLabel3");
+        menuJframe.getContentPane().add(pictureFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 590, 222, 154));
 
         itemTwoName.setText("Lemon Chicken");
         menuJframe.getContentPane().add(itemTwoName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 570, -1, -1));
@@ -369,13 +369,13 @@ public class MainFrame extends javax.swing.JFrame
         jLabel9.setText("jLabel9");
         menuJframe.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 420, -1));
 
-        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gnocchi.jpg"))); // NOI18N
-        jLabel44.setText("jLabel44");
-        menuJframe.getContentPane().add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 840, 260, 170));
+        pictureFive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gnocchi.jpg"))); // NOI18N
+        pictureFive.setText("jLabel44");
+        menuJframe.getContentPane().add(pictureFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 840, 260, 170));
 
-        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lasagna.jpg"))); // NOI18N
-        jLabel45.setText("jLabel45");
-        menuJframe.getContentPane().add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 830, 240, 170));
+        pictureSix.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lasagna.jpg"))); // NOI18N
+        pictureSix.setText("jLabel45");
+        menuJframe.getContentPane().add(pictureSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 830, 240, 170));
 
         itemFiveCost.setText("jLabel46");
         menuJframe.getContentPane().add(itemFiveCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 1030, -1, -1));
@@ -713,68 +713,118 @@ public class MainFrame extends javax.swing.JFrame
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gnocchi.jpg"))); // NOI18N
         jLabel37.setText("jLabel37");
 
-        jLabel38.setText("Bacon Lettuce Tomato");
+        adminNameOne.setText("Bacon Lettuce Tomato");
 
-        jLabel39.setText("Spaghetti");
+        adminNameTwo.setText("Spaghetti");
 
-        jLabel40.setText("Lemon Chicken");
+        adminNameThree.setText("Lemon Chicken");
 
-        jLabel41.setText("Procuitto Pizza");
+        adminNameFour.setText("Procuitto Pizza");
 
-        jLabel42.setText("Gnocchi");
+        adminNameFive.setText("Gnocchi");
 
-        jLabel43.setText("Lasagna");
+        adminNameSix.setText("Lasagna");
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        adminItemPriceOne.setText("jTextField1");
+        adminItemPriceOne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                adminItemPriceOneActionPerformed(evt);
             }
         });
 
-        jTextField2.setText("jTextField2");
+        adminItemPriceTwo.setText("jTextField2");
 
-        jTextField3.setText("jTextField3");
+        adminItemPriceThree.setText("jTextField3");
 
-        jTextField5.setText("jTextField5");
+        adminItemPriceFour.setText("jTextField5");
 
-        jTextField6.setText("jTextField6");
+        adminItemPriceSix.setText("jTextField6");
 
-        jTextField7.setText("jTextField7");
+        adminItemPriceFive.setText("jTextField7");
 
-        jButton4.setText("Add");
-
-        jButton5.setText("Remove");
-
-        jButton8.setText("Add");
-
-        jButton9.setText("Remove");
-
-        jButton10.setText("Add");
-
-        jButton11.setText("Remove");
-
-        jButton12.setText("Add");
-
-        jButton13.setText("Remove");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        adminAddFive.setText("Add");
+        adminAddFive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                adminAddFiveActionPerformed(evt);
             }
         });
 
-        jButton14.setText("Add");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
+        removeFive.setText("Remove");
+        removeFive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
+                removeFiveActionPerformed(evt);
             }
         });
 
-        jButton15.setText("Remove");
+        adminAddSix.setText("Add");
+        adminAddSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddSixActionPerformed(evt);
+            }
+        });
 
-        jButton16.setText("Add");
+        removeSix.setText("Remove");
+        removeSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeSixActionPerformed(evt);
+            }
+        });
 
-        jButton17.setText("Remove");
+        adminAddFour.setText("Add");
+        adminAddFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddFourActionPerformed(evt);
+            }
+        });
+
+        removeFour.setText("Remove");
+        removeFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeFourActionPerformed(evt);
+            }
+        });
+
+        adminAddThree.setText("Add");
+        adminAddThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddThreeActionPerformed(evt);
+            }
+        });
+
+        removeThree.setText("Remove");
+        removeThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeThreeActionPerformed(evt);
+            }
+        });
+
+        adminAddOne.setText("Add");
+        adminAddOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddOneActionPerformed(evt);
+            }
+        });
+
+        removeOne.setText("Remove");
+        removeOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeOneActionPerformed(evt);
+            }
+        });
+
+        adminAddTwo.setText("Add");
+        adminAddTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminAddTwoActionPerformed(evt);
+            }
+        });
+
+        removeTwo.setText("Remove");
+        removeTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeTwoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout adminMenuLayout = new javax.swing.GroupLayout(adminMenu.getContentPane());
         adminMenu.getContentPane().setLayout(adminMenuLayout);
@@ -784,31 +834,31 @@ public class MainFrame extends javax.swing.JFrame
                 .addGap(114, 114, 114)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adminMenuLayout.createSequentialGroup()
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminItemPriceThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton12)
+                        .addComponent(adminAddThree)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton13)
+                        .addComponent(removeThree)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(adminMenuLayout.createSequentialGroup()
                         .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel38)
-                            .addComponent(jLabel40)
-                            .addComponent(jLabel42)
+                            .addComponent(adminNameOne)
+                            .addComponent(adminNameThree)
+                            .addComponent(adminNameFive)
                             .addGroup(adminMenuLayout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(adminItemPriceOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(29, 29, 29)
-                                .addComponent(jButton14)
+                                .addComponent(adminAddOne)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton15))
+                                .addComponent(removeOne))
                             .addGroup(adminMenuLayout.createSequentialGroup()
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(adminItemPriceFive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
-                                .addComponent(jButton4)
+                                .addComponent(adminAddFive)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton5))
+                                .addComponent(removeFive))
                             .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 306, Short.MAX_VALUE)
                         .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -821,34 +871,34 @@ public class MainFrame extends javax.swing.JFrame
                                         .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(adminMenuLayout.createSequentialGroup()
-                                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(adminItemPriceFour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(jButton10)
+                                                .addComponent(adminAddFour)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton11)))
+                                                .addComponent(removeFour)))
                                         .addContainerGap()))
                                 .addGroup(adminMenuLayout.createSequentialGroup()
                                     .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel41)
-                                        .addComponent(jLabel39)
+                                        .addComponent(adminNameFour)
+                                        .addComponent(adminNameTwo)
                                         .addGroup(adminMenuLayout.createSequentialGroup()
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(adminItemPriceTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton16)
+                                            .addComponent(adminAddTwo)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton17)))
+                                            .addComponent(removeTwo)))
                                     .addGap(124, 124, 124)))
                             .addGroup(adminMenuLayout.createSequentialGroup()
                                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel43))
+                                    .addComponent(adminNameSix))
                                 .addGap(146, 146, 146))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, adminMenuLayout.createSequentialGroup()
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(adminItemPriceSix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton8)
+                                .addComponent(adminAddSix)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton9)
+                                .addComponent(removeSix)
                                 .addGap(128, 128, 128))))))
         );
         adminMenuLayout.setVerticalGroup(
@@ -856,64 +906,64 @@ public class MainFrame extends javax.swing.JFrame
             .addGroup(adminMenuLayout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(jLabel39))
+                    .addComponent(adminNameOne)
+                    .addComponent(adminNameTwo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
                     .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton14)
-                    .addComponent(jButton15)
-                    .addComponent(jButton16)
-                    .addComponent(jButton17))
+                    .addComponent(adminItemPriceOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminItemPriceTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminAddOne)
+                    .addComponent(removeOne)
+                    .addComponent(adminAddTwo)
+                    .addComponent(removeTwo))
                 .addGap(33, 33, 33)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel40)
-                    .addComponent(jLabel41))
+                    .addComponent(adminNameThree)
+                    .addComponent(adminNameFour))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adminMenuLayout.createSequentialGroup()
                         .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton12)
-                            .addComponent(jButton13)))
+                            .addComponent(adminItemPriceThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(adminAddThree)
+                            .addComponent(removeThree)))
                     .addGroup(adminMenuLayout.createSequentialGroup()
                         .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton10)
-                            .addComponent(jButton11))))
+                            .addComponent(adminItemPriceFour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(adminAddFour)
+                            .addComponent(removeFour))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adminMenuLayout.createSequentialGroup()
-                        .addComponent(jLabel42)
+                        .addComponent(adminNameFive)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(adminMenuLayout.createSequentialGroup()
-                        .addComponent(jLabel43)
+                        .addComponent(adminNameSix)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adminMenuLayout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8)
-                            .addComponent(jButton9)))
+                            .addComponent(adminItemPriceSix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(adminAddSix)
+                            .addComponent(removeSix)))
                     .addGroup(adminMenuLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton4)
-                                .addComponent(jButton5))
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(adminAddFive)
+                                .addComponent(removeFive))
+                            .addComponent(adminItemPriceFive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
 
@@ -1575,17 +1625,125 @@ public class MainFrame extends javax.swing.JFrame
         passwordInput.setText("");
     }//GEN-LAST:event_adminLogOutActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-       // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
+    private void removeThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeThreeActionPerformed
+       itemThreeCost.setText(adminItemPriceThree.getText());
+        pictureThree.setVisible(false);
+        itemThreeCost.setVisible(false);
+        itemThreeName.setText(adminNameThree.getText());
+        addItemThree.setVisible(false); 
+        itemThreeName.setVisible(false);
+    }//GEN-LAST:event_removeThreeActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
+    private void adminAddOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddOneActionPerformed
+        itemOneCost.setText(adminItemPriceOne.getText());
+        pictureOne.setVisible(true);
+        itemOneCost.setVisible(true);
+        itemOneName.setText(adminNameOne.getText());
+        addItemOne.setVisible(true); 
+        itemOneName.setVisible(true);
+    }//GEN-LAST:event_adminAddOneActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void adminItemPriceOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminItemPriceOneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_adminItemPriceOneActionPerformed
+
+    private void removeOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeOneActionPerformed
+        itemOneCost.setText(adminItemPriceOne.getText());
+        itemOneCost.setVisible(false);
+        pictureOne.setVisible(false);
+        itemOneName.setText(adminNameOne.getText());
+        addItemOne.setVisible(false); 
+        itemOneName.setVisible(false);
+    }//GEN-LAST:event_removeOneActionPerformed
+
+    private void adminAddTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddTwoActionPerformed
+        itemTwoCost.setText(adminItemPriceOne.getText());
+        pictureTwo.setVisible(true);
+        itemTwoCost.setVisible(true);
+        itemTwoName.setText(adminNameTwo.getText());
+        addItemTwo.setVisible(true); 
+        itemTwoName.setVisible(true);
+    }//GEN-LAST:event_adminAddTwoActionPerformed
+
+    private void removeTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTwoActionPerformed
+        itemTwoCost.setText(adminItemPriceTwo.getText());
+        pictureTwo.setVisible(false);
+        itemTwoCost.setVisible(false);
+        itemTwoName.setText(adminNameTwo.getText());
+        addItemTwo.setVisible(false); 
+        itemTwoName.setVisible(false);
+    }//GEN-LAST:event_removeTwoActionPerformed
+
+    private void adminAddThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddThreeActionPerformed
+        itemThreeCost.setText(adminItemPriceThree.getText());
+        pictureThree.setVisible(true);
+        itemThreeCost.setVisible(true);
+        itemThreeName.setText(adminNameThree.getText());
+        addItemThree.setVisible(true); 
+        itemThreeName.setVisible(true);
+    }//GEN-LAST:event_adminAddThreeActionPerformed
+
+    private void adminAddFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddFourActionPerformed
+        itemFourCost.setText(adminItemPriceFour.getText());
+        pictureFour.setVisible(true);
+        itemFourCost.setVisible(true);
+        itemFourName.setText(adminNameFour.getText());
+        addItemFour.setVisible(true); 
+        itemFourName.setVisible(true);
+    }//GEN-LAST:event_adminAddFourActionPerformed
+
+    private void removeFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFourActionPerformed
+        itemFourCost.setText(adminItemPriceFour.getText());
+        pictureFour.setVisible(false);
+        itemFourCost.setVisible(false);
+        itemFourName.setText(adminNameFour.getText());
+        addItemFour.setVisible(false); 
+        itemFourName.setVisible(false);
+    }//GEN-LAST:event_removeFourActionPerformed
+
+    private void adminAddFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddFiveActionPerformed
+        itemFiveCost.setText(adminItemPriceFive.getText());
+        pictureFive.setVisible(true);
+        itemFiveCost.setVisible(true);
+        itemFiveName.setText(adminNameFive.getText());
+        addItemFive.setVisible(true); 
+        itemFiveName.setVisible(true);
+    }//GEN-LAST:event_adminAddFiveActionPerformed
+
+    private void removeFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFiveActionPerformed
+        itemFiveCost.setText(adminItemPriceFive.getText());
+        pictureFive.setVisible(false);
+        itemFiveCost.setVisible(false);
+        itemFiveName.setText(adminNameFive.getText());
+        addItemFive.setVisible(false); 
+        itemFiveName.setVisible(false);
+    }//GEN-LAST:event_removeFiveActionPerformed
+
+    private void adminAddSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddSixActionPerformed
+        itemSixCost.setText(adminItemPriceSix.getText());
+        pictureSix.setVisible(true);
+        itemSixCost.setVisible(true);
+        itemSixName.setText(adminNameSix.getText());
+        addItemFive.setVisible(true); 
+        itemSixName.setVisible(true);
+    }//GEN-LAST:event_adminAddSixActionPerformed
+
+    private void removeSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeSixActionPerformed
+        itemSixCost.setText(adminItemPriceSix.getText());
+        pictureSix.setVisible(true);
+        itemSixCost.setVisible(true);
+        itemSixName.setText(adminNameSix.getText());
+        addItemFive.setVisible(true); 
+        itemSixName.setVisible(true);
+    }                                 
+    }//GEN-LAST:event_removeSixActionPerformed
+
+    private void sendCouponOneActionPerformed(java.awt.event.ActionEvent evt) 
+    {
+        String coupon = couponOneAmt.getText();
+        custArr[0].setCoupon(coupon);   
+                                           
+    } 
 
     /**
      * @param args the command line arguments
@@ -1710,8 +1868,26 @@ public void adminLogin()
     private javax.swing.JButton addItemSix;
     private javax.swing.JButton addItemThree;
     private javax.swing.JButton addItemTwo;
+    private javax.swing.JButton adminAddFive;
+    private javax.swing.JButton adminAddFour;
+    private javax.swing.JButton adminAddOne;
+    private javax.swing.JButton adminAddSix;
+    private javax.swing.JButton adminAddThree;
+    private javax.swing.JButton adminAddTwo;
+    private javax.swing.JTextField adminItemPriceFive;
+    private javax.swing.JTextField adminItemPriceFour;
+    private javax.swing.JTextField adminItemPriceOne;
+    private javax.swing.JTextField adminItemPriceSix;
+    private javax.swing.JTextField adminItemPriceThree;
+    private javax.swing.JTextField adminItemPriceTwo;
     private javax.swing.JButton adminLogOut;
     private javax.swing.JFrame adminMenu;
+    private javax.swing.JLabel adminNameFive;
+    private javax.swing.JLabel adminNameFour;
+    private javax.swing.JLabel adminNameOne;
+    private javax.swing.JLabel adminNameSix;
+    private javax.swing.JLabel adminNameThree;
+    private javax.swing.JLabel adminNameTwo;
     private javax.swing.JFrame adminPortal;
     private javax.swing.JButton cancel;
     private javax.swing.JLabel cartFive;
@@ -1779,30 +1955,15 @@ public void adminLogin()
     private javax.swing.JLabel itemOneName;
     private javax.swing.JLabel itemSixCost;
     private javax.swing.JLabel itemSixName;
-    private javax.swing.JLabel itemThree;
     private javax.swing.JLabel itemThreeCost;
     private javax.swing.JLabel itemThreeName;
-    private javax.swing.JLabel itemTwo;
     private javax.swing.JLabel itemTwoCost;
     private javax.swing.JLabel itemTwoName;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1824,7 +1985,6 @@ public void adminLogin()
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -1832,27 +1992,13 @@ public void adminLogin()
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton login;
     private javax.swing.JButton menu;
@@ -1860,7 +2006,19 @@ public void adminLogin()
     private javax.swing.JButton menuFromCart;
     private javax.swing.JFrame menuJframe;
     private javax.swing.JPasswordField passwordInput;
+    private javax.swing.JLabel pictureFive;
+    private javax.swing.JLabel pictureFour;
+    private javax.swing.JLabel pictureOne;
+    private javax.swing.JLabel pictureSix;
+    private javax.swing.JLabel pictureThree;
+    private javax.swing.JLabel pictureTwo;
     private javax.swing.JLabel queue;
+    private javax.swing.JButton removeFive;
+    private javax.swing.JButton removeFour;
+    private javax.swing.JButton removeOne;
+    private javax.swing.JButton removeSix;
+    private javax.swing.JButton removeThree;
+    private javax.swing.JButton removeTwo;
     private javax.swing.JButton sendCouponFour;
     private javax.swing.JButton sendCouponOne;
     private javax.swing.JButton sendCouponThree;

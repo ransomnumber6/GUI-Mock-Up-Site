@@ -39,11 +39,6 @@ public class Admin extends User
         this.username = newUsername;
     }
     
-    public void setCoupdon(int coupon)
-    {
-        this.coupon = coupon;
-    }
-    
     public void sendCoupon(Customer person)
     {
         person.coupon = coupon;
