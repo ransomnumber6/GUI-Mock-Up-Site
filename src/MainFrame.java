@@ -1032,13 +1032,7 @@ public class MainFrame extends javax.swing.JFrame
             }
                 if(custArr[i].getUsername() == null)          // if current position is null then call parameterized constructor and add new object to the array
                 {
-                    custArr[i].setCreditCard(custCard.getText());
-                    custArr[i].setUsername(custUserName.getText());
-                    custArr[i].setPassword(custPassword.getText().toString());
-                    custArr[i].setEmail(custEmail.getText());
-                    custArr[i].setAddress(custAddress.getText());
-                    custArr[i].firstName = custFirstName.getText();
-                    custArr[i].lastName = custLastName.getText();
+                    currentUser.createAcc(user, user, user, user, user, Password, user)
                     this.setVisible(true);
                     this.CreateAcc.dispose();                // set pass = true as checks were successful
                 }
