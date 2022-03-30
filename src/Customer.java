@@ -84,6 +84,25 @@ public class Customer extends User {
         return address;
     }
     
+    public Customer createAcc(String FN, String LN, String Card, String Address, String Email, String Password, String Username)
+    {
+        Customer newCustomer = new Customer();
+        
+        //TODO: Set customer information for createAcc Jframe
+        
+        /*custArr[i].setCreditCard(custCard.getText());
+                    custArr[i].setUsername();
+                    custArr[i].setPassword();
+                    custArr[i].setEmail(custEmail.getText());
+                    custArr[i].setAddress(custAddress.getText());
+                    custArr[i].firstName = custFirstName.getText();
+                    custArr[i].lastName = custLastName.getText();
+        */
+        
+        //newCustomer.setAddress(address);
+        return newCustomer;
+    }
+    
 }
 
 
