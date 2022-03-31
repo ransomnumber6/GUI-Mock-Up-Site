@@ -15,6 +15,8 @@ public class MainFrame extends javax.swing.JFrame
     boolean logIn, added, empty;
     Random rand = new Random();                         // random number for Queue method
     double n = rand.nextInt(30);
+    double price1,price2,price3,price4,price5,price6;
+    double total = 0.00;
     Customer[] custArr = new Customer[50];              // Customer array for saving customer info
     Admin[] adminArr = new Admin[2];                    // admin array for the two preset admins
     custCart cart[] = new custCart[20];                 // customer cart array to keep track of orders
@@ -110,14 +112,14 @@ public class MainFrame extends javax.swing.JFrame
         queue = new javax.swing.JLabel();
         addItemOne = new javax.swing.JButton();
         addItemTwo = new javax.swing.JButton();
-        itemTwoCost = new javax.swing.JLabel();
-        pictureTwo = new javax.swing.JLabel();
         itemThreeCost = new javax.swing.JLabel();
+        pictureTwo = new javax.swing.JLabel();
+        itemTwoCost = new javax.swing.JLabel();
         addItemThree = new javax.swing.JButton();
-        itemThreeName = new javax.swing.JLabel();
+        itemTwoName = new javax.swing.JLabel();
         itemFourName = new javax.swing.JLabel();
         pictureFour = new javax.swing.JLabel();
-        itemTwoName = new javax.swing.JLabel();
+        itemThreeName = new javax.swing.JLabel();
         itemFourCost = new javax.swing.JLabel();
         addItemFour = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
@@ -275,7 +277,7 @@ public class MainFrame extends javax.swing.JFrame
         pictureOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BLT.jpg"))); // NOI18N
         menuJframe.getContentPane().add(pictureOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 231, 139));
 
-        itemOneCost.setText("jLabel2");
+        itemOneCost.setText("6.50");
         menuJframe.getContentPane().add(itemOneCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, -1, -1));
 
         pictureThree.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lemonchicken.jpg"))); // NOI18N
@@ -321,17 +323,17 @@ public class MainFrame extends javax.swing.JFrame
                 addItemTwoActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(addItemTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 760, -1, -1));
+        menuJframe.getContentPane().add(addItemTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 500, -1, -1));
 
-        itemTwoCost.setText("jLabel2");
-        menuJframe.getContentPane().add(itemTwoCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 760, -1, -1));
+        itemThreeCost.setText("10.00");
+        menuJframe.getContentPane().add(itemThreeCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 760, -1, -1));
 
         pictureTwo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spaghett.jpg"))); // NOI18N
         pictureTwo.setText("jLabel2");
         menuJframe.getContentPane().add(pictureTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 197, 194));
 
-        itemThreeCost.setText("jLabel3");
-        menuJframe.getContentPane().add(itemThreeCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 500, -1, -1));
+        itemTwoCost.setText("12.75");
+        menuJframe.getContentPane().add(itemTwoCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 500, -1, -1));
 
         addItemThree.setText("Add");
         addItemThree.addActionListener(new java.awt.event.ActionListener() {
@@ -339,10 +341,10 @@ public class MainFrame extends javax.swing.JFrame
                 addItemThreeActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(addItemThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 500, -1, -1));
+        menuJframe.getContentPane().add(addItemThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 750, -1, -1));
 
-        itemThreeName.setText("Spaghetti");
-        menuJframe.getContentPane().add(itemThreeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, -1, -1));
+        itemTwoName.setText("Spaghetti");
+        menuJframe.getContentPane().add(itemTwoName, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, -1, -1));
 
         itemFourName.setText("Prociutto Pizza");
         menuJframe.getContentPane().add(itemFourName, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 560, -1, -1));
@@ -351,10 +353,10 @@ public class MainFrame extends javax.swing.JFrame
         pictureFour.setText("jLabel3");
         menuJframe.getContentPane().add(pictureFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 590, 222, 154));
 
-        itemTwoName.setText("Lemon Chicken");
-        menuJframe.getContentPane().add(itemTwoName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 570, -1, -1));
+        itemThreeName.setText("Lemon Chicken");
+        menuJframe.getContentPane().add(itemThreeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 570, -1, -1));
 
-        itemFourCost.setText("jLabel8");
+        itemFourCost.setText("15.99");
         menuJframe.getContentPane().add(itemFourCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 760, -1, -1));
 
         addItemFour.setText("Add");
@@ -377,16 +379,26 @@ public class MainFrame extends javax.swing.JFrame
         pictureSix.setText("jLabel45");
         menuJframe.getContentPane().add(pictureSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 830, 240, 170));
 
-        itemFiveCost.setText("jLabel46");
+        itemFiveCost.setText("8.99");
         menuJframe.getContentPane().add(itemFiveCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 1030, -1, -1));
 
         addItemFive.setText("Add");
+        addItemFive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addItemFiveActionPerformed(evt);
+            }
+        });
         menuJframe.getContentPane().add(addItemFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 1020, -1, -1));
 
-        itemSixCost.setText("jLabel47");
+        itemSixCost.setText("10.00");
         menuJframe.getContentPane().add(itemSixCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 1030, -1, -1));
 
         addItemSix.setText("Add");
+        addItemSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addItemSixActionPerformed(evt);
+            }
+        });
         menuJframe.getContentPane().add(addItemSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 1030, -1, -1));
 
         itemSixName.setText("Lasagna");
@@ -1455,6 +1467,8 @@ public class MainFrame extends javax.swing.JFrame
         cartOne.setVisible(true);
         String cart = "<html>    "+ itemOneName.getText() + "<br>    "+ itemOneCost.getText()+ "</html>";
         cartOneNamePrice.setText(cart);
+        price1 = Double.parseDouble(itemOneCost.getText());
+        calcTotal(price1);
     }//GEN-LAST:event_addItemOneActionPerformed
 
     private void addItemTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemTwoActionPerformed
@@ -1462,8 +1476,10 @@ public class MainFrame extends javax.swing.JFrame
         deleteTwo.setVisible(true);
         cartTwo.setVisible(true);
         cartTwo.setText(cartName);
-        String cart = "<html>     "+ itemTwoName.getText() + "<br>    "+ itemTwoCost.getText()+ "</html>";
+        String cart = "<html>     "+ itemThreeName.getText() + "<br>    "+ itemThreeCost.getText()+ "</html>";
         cartTwoPriceName.setText(cart);
+        price2 = Double.parseDouble(itemTwoCost.getText());
+        calcTotal(price2);
     }//GEN-LAST:event_addItemTwoActionPerformed
 
     private void addItemThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemThreeActionPerformed
@@ -1471,8 +1487,10 @@ public class MainFrame extends javax.swing.JFrame
         deleteThree.setVisible(true);
         cartThree.setVisible(true);
         cartThree.setText(cartName);
-        String cart = "<html>     "+ itemThreeName.getText() + "<br>    "+ itemThreeCost.getText()+ "</html>";
+        String cart = "<html>     "+ itemTwoName.getText() + "<br>    "+ itemTwoCost.getText()+ "</html>";
         cartThreePriceName.setText(cart);
+        price3 = Double.parseDouble(itemThreeCost.getText());
+        calcTotal(price3);
     }//GEN-LAST:event_addItemThreeActionPerformed
 
     private void addItemFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemFourActionPerformed
@@ -1482,6 +1500,8 @@ public class MainFrame extends javax.swing.JFrame
         cartFour.setText(cartName);
         String cart = "<html>     "+ itemFourName.getText() + "<br>    "+ itemFourCost.getText()+ "</html>";
         cartFourPriceName.setText(cart);
+        price4 = Double.parseDouble(itemFourCost.getText());
+        calcTotal(price4);
     }//GEN-LAST:event_addItemFourActionPerformed
 
     private void menuFromCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuFromCartActionPerformed
@@ -1577,6 +1597,7 @@ public class MainFrame extends javax.swing.JFrame
         cartOne.setText("Item:");
         cartOne.setVisible(false);
         deleteOne.setVisible(false);
+        minusTotal(price1);
     }//GEN-LAST:event_deleteOneActionPerformed
 
     private void deleteTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteTwoActionPerformed
@@ -1585,6 +1606,7 @@ public class MainFrame extends javax.swing.JFrame
         cartTwo.setText("Item:");
         cartTwo.setVisible(false);
         deleteTwo.setVisible(false);
+        minusTotal(price2);
     }//GEN-LAST:event_deleteTwoActionPerformed
 
     private void deleteThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteThreeActionPerformed
@@ -1593,6 +1615,7 @@ public class MainFrame extends javax.swing.JFrame
         cartThree.setText("Item:");
         cartThree.setVisible(false);
         deleteThree.setVisible(false);
+        minusTotal(price3);
     }//GEN-LAST:event_deleteThreeActionPerformed
 
     private void deleteFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteFourActionPerformed
@@ -1601,6 +1624,7 @@ public class MainFrame extends javax.swing.JFrame
         cartFour.setText("Item:");
         cartFour.setVisible(false);
         deleteFour.setVisible(false);
+        minusTotal(price4);
     }//GEN-LAST:event_deleteFourActionPerformed
 
     private void deleteFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteFiveActionPerformed
@@ -1609,6 +1633,7 @@ public class MainFrame extends javax.swing.JFrame
         cartFive.setText("Item:");
         cartFive.setVisible(false);
         deleteFive.setVisible(false);
+        minusTotal(price5);
     }//GEN-LAST:event_deleteFiveActionPerformed
 
     private void deleteSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteSixActionPerformed
@@ -1617,6 +1642,7 @@ public class MainFrame extends javax.swing.JFrame
         cartSix.setText("Item:");
         cartSix.setVisible(false);
         deleteSix.setVisible(false);
+        minusTotal(price6);
     }//GEN-LAST:event_deleteSixActionPerformed
 
     private void guestCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guestCardActionPerformed
@@ -1635,6 +1661,8 @@ public class MainFrame extends javax.swing.JFrame
             this.checkoutJFrame.setVisible(true);
             this.checkoutJFrame.setSize(1000, 1000);
             this.dispose();
+            String s = String.valueOf(total);
+            checkoutTotal.setText("$ "+ s);
         }
         else
         {
@@ -1690,39 +1718,39 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_removeOneActionPerformed
 
     private void adminAddTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddTwoActionPerformed
-        itemTwoCost.setText(adminItemPriceOne.getText());
+        itemThreeCost.setText(adminItemPriceOne.getText());
         pictureTwo.setVisible(true);
-        itemTwoCost.setVisible(true);
-        itemTwoName.setText(adminNameTwo.getText());
+        itemThreeCost.setVisible(true);
+        itemThreeName.setText(adminNameTwo.getText());
         addItemTwo.setVisible(true); 
-        itemTwoName.setVisible(true);
+        itemThreeName.setVisible(true);
     }//GEN-LAST:event_adminAddTwoActionPerformed
 
     private void removeTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTwoActionPerformed
-        itemTwoCost.setText(adminItemPriceTwo.getText());
+        itemThreeCost.setText(adminItemPriceTwo.getText());
         pictureTwo.setVisible(false);
-        itemTwoCost.setVisible(false);
-        itemTwoName.setText(adminNameTwo.getText());
+        itemThreeCost.setVisible(false);
+        itemThreeName.setText(adminNameTwo.getText());
         addItemTwo.setVisible(false); 
-        itemTwoName.setVisible(false);
+        itemThreeName.setVisible(false);
     }//GEN-LAST:event_removeTwoActionPerformed
 
     private void adminAddThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddThreeActionPerformed
-        itemThreeCost.setText(adminItemPriceThree.getText());
+        itemTwoCost.setText(adminItemPriceThree.getText());
         pictureThree.setVisible(true);
-        itemThreeCost.setVisible(true);
-        itemThreeName.setText(adminNameThree.getText());
+        itemTwoCost.setVisible(true);
+        itemTwoName.setText(adminNameThree.getText());
         addItemThree.setVisible(true); 
-        itemThreeName.setVisible(true);
+        itemTwoName.setVisible(true);
     }//GEN-LAST:event_adminAddThreeActionPerformed
 
     private void removeThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeThreeActionPerformed
-        itemThreeCost.setText(adminItemPriceThree.getText());
+        itemTwoCost.setText(adminItemPriceThree.getText());
         pictureThree.setVisible(false);
-        itemThreeCost.setVisible(false);
-        itemThreeName.setText(adminNameThree.getText());
+        itemTwoCost.setVisible(false);
+        itemTwoName.setText(adminNameThree.getText());
         addItemThree.setVisible(false); 
-        itemThreeName.setVisible(false);
+        itemTwoName.setVisible(false);
     }//GEN-LAST:event_removeThreeActionPerformed
 
     private void adminAddFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddFourActionPerformed
@@ -1787,12 +1815,41 @@ public class MainFrame extends javax.swing.JFrame
 
     //TODO: Calculate total with coupon being applied
     private void useCouponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_useCouponActionPerformed
-        // checkoutTotal - currrentUser.getCoupon()
+        double newTotal = total - currentUser.coupon;
+        String t = String.valueOf(newTotal);
+        checkoutTotal.setText("$" + t);
     }//GEN-LAST:event_useCouponActionPerformed
 
-    private void calcTotal(String cost1, String cost2, String cost3, String cost4)
+    private void addItemFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemFiveActionPerformed
+        cartFivePriceName.setVisible(true);
+        deleteFive.setVisible(true);
+        cartFive.setVisible(true);
+        cartThree.setText(cartName);
+        String cart = "<html>     "+ itemFiveName.getText() + "<br>    "+ itemFiveCost.getText()+ "</html>";
+        cartThreePriceName.setText(cart);
+        price5 = Double.parseDouble(itemFiveCost.getText());
+    }//GEN-LAST:event_addItemFiveActionPerformed
+
+    private void addItemSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemSixActionPerformed
+        cartSixPriceName.setVisible(true);
+        deleteSix.setVisible(true);
+        cartSix.setVisible(true);
+        cartThree.setText(cartName);
+        String cart = "<html>     "+ itemSixName.getText() + "<br>    "+ itemSixCost.getText()+ "</html>";
+        cartSixPriceName.setText(cart);
+        price6 = Double.parseDouble(itemSixCost.getText());
+    }//GEN-LAST:event_addItemSixActionPerformed
+
+    private void calcTotal(double d)
     {
         //takes price of each item added to cart and calcs the total then sends it to checkoutTotal.setText("texthere")
+        total = total + d;
+    }
+    
+    private void minusTotal(double d)
+    {
+        //takes price of each item added to cart and calcs the total then sends it to checkoutTotal.setText("texthere")
+        total = total - d;
     }
     /**
      * @param args the command line arguments
