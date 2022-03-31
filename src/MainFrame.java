@@ -153,7 +153,7 @@ public class MainFrame extends javax.swing.JFrame
         deleteFive = new javax.swing.JButton();
         deleteSix = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        useCoupon = new javax.swing.JToggleButton();
         jLabel27 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         checkoutTotal = new javax.swing.JLabel();
@@ -508,8 +508,13 @@ public class MainFrame extends javax.swing.JFrame
         jLabel8.setText("jLabel8");
         Cart.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 410, -1));
 
-        jToggleButton1.setText("Use Coupon");
-        Cart.getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, -1, -1));
+        useCoupon.setText("Use Coupon");
+        useCoupon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                useCouponActionPerformed(evt);
+            }
+        });
+        Cart.getContentPane().add(useCoupon, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, -1, -1));
 
         jLabel27.setText("Total:");
         Cart.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, -1, -1));
@@ -1780,6 +1785,15 @@ public class MainFrame extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_menuFromAdminActionPerformed
 
+    //TODO: Calculate total with coupon being applied
+    private void useCouponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_useCouponActionPerformed
+        // checkoutTotal - currrentUser.getCoupon()
+    }//GEN-LAST:event_useCouponActionPerformed
+
+    private void calcTotal(String cost1, String cost2, String cost3, String cost4)
+    {
+        //takes price of each item added to cart and calcs the total then sends it to checkoutTotal.setText("texthere")
+    }
     /**
      * @param args the command line arguments
      */
@@ -2034,7 +2048,6 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton login;
     private javax.swing.JButton menu;
     private javax.swing.JButton menuFromAdmin;
@@ -2058,6 +2071,7 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JButton sendCouponOne;
     private javax.swing.JButton sendCouponThree;
     private javax.swing.JButton sendCouponTwo;
+    private javax.swing.JToggleButton useCoupon;
     private javax.swing.JLabel userDisplay;
     private javax.swing.JTextField userNameInput;
     // End of variables declaration//GEN-END:variables
