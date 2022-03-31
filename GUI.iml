@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/dist/lib/AbsoluteLayout.jar!/" />
+          <root url="jar://$USER_HOME$/Documents/NetBeansProjects/GUI/src/AbsoluteLayout-RELEASE130.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
