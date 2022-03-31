@@ -14,7 +14,7 @@ public class MainFrame extends javax.swing.JFrame
     String user, Password;
     boolean logIn, added, empty;
     Random rand = new Random();                         // random number for Queue method
-    double n = rand.nextDouble(30.00);
+    double n = rand.nextInt(30);
     Customer[] custArr = new Customer[50];              // Customer array for saving customer info
     Admin[] adminArr = new Admin[2];                    // admin array for the two preset admins
     custCart cart[] = new custCart[20];                 // customer cart array to keep track of orders
@@ -1408,15 +1408,17 @@ public class MainFrame extends javax.swing.JFrame
                     logIn = true;                                                  // log in boolean for other pages to use
                     this.setVisible(false);                                        // close old window
                 }
-                else                                                                // if log in fails then pop-up will show error  message
-                {
-                    failedLogIn.setSize(450,450);
-                    failedLogIn.setVisible(true);
-                    failedLogIn.setTitle("Log In Fail");
-                    fail.setText("Incorrect or missing credentials");
-                    fail.setVerticalAlignment(SwingConstants.CENTER);
-                }
+
             }
+        }
+        if(logIn == false)
+        {
+           failedLogIn.setSize(450,450);
+           failedLogIn.setVisible(true);
+           failedLogIn.setTitle("Log In Fail");
+           fail.setText("Incorrect or missing credentials");
+           fail.setVerticalAlignment(SwingConstants.CENTER);
+
         }
     }//GEN-LAST:event_loginActionPerformed
 
