@@ -1454,6 +1454,8 @@ public class MainFrame extends javax.swing.JFrame
         this.Cart.setVisible(true);
         this.Cart.setSize(1000, 1000);
         this.menuJframe.dispose();
+        String s = String.valueOf(total);
+        checkoutTotal.setText(s);
     }//GEN-LAST:event_cartFromMenuActionPerformed
 
     // password is passed to a var that will hold it
@@ -1598,6 +1600,8 @@ public class MainFrame extends javax.swing.JFrame
         cartOne.setVisible(false);
         deleteOne.setVisible(false);
         minusTotal(price1);
+        String s = String.valueOf(total);
+        checkoutTotal.setText(s);
     }//GEN-LAST:event_deleteOneActionPerformed
 
     private void deleteTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteTwoActionPerformed
@@ -1607,6 +1611,8 @@ public class MainFrame extends javax.swing.JFrame
         cartTwo.setVisible(false);
         deleteTwo.setVisible(false);
         minusTotal(price2);
+        String s = String.valueOf(total);
+        checkoutTotal.setText(s);
     }//GEN-LAST:event_deleteTwoActionPerformed
 
     private void deleteThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteThreeActionPerformed
@@ -1616,6 +1622,8 @@ public class MainFrame extends javax.swing.JFrame
         cartThree.setVisible(false);
         deleteThree.setVisible(false);
         minusTotal(price3);
+        String s = String.valueOf(total);
+        checkoutTotal.setText(s);
     }//GEN-LAST:event_deleteThreeActionPerformed
 
     private void deleteFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteFourActionPerformed
@@ -1625,6 +1633,8 @@ public class MainFrame extends javax.swing.JFrame
         cartFour.setVisible(false);
         deleteFour.setVisible(false);
         minusTotal(price4);
+        String s = String.valueOf(total);
+        checkoutTotal.setText(s);
     }//GEN-LAST:event_deleteFourActionPerformed
 
     private void deleteFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteFiveActionPerformed
@@ -1634,6 +1644,8 @@ public class MainFrame extends javax.swing.JFrame
         cartFive.setVisible(false);
         deleteFive.setVisible(false);
         minusTotal(price5);
+        String s = String.valueOf(total);
+        checkoutTotal.setText(s);
     }//GEN-LAST:event_deleteFiveActionPerformed
 
     private void deleteSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteSixActionPerformed
@@ -1643,6 +1655,8 @@ public class MainFrame extends javax.swing.JFrame
         cartSix.setVisible(false);
         deleteSix.setVisible(false);
         minusTotal(price6);
+        String s = String.valueOf(total);
+        checkoutTotal.setText(s);
     }//GEN-LAST:event_deleteSixActionPerformed
 
     private void guestCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guestCardActionPerformed
