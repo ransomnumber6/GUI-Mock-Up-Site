@@ -10,7 +10,7 @@
 public class Admin extends User
 {
     private String username, password, address;
-    int coupon;
+    double coupon;
     Admin()
     {
         firstName = "Bob";
@@ -37,11 +37,6 @@ public class Admin extends User
     public void setUsername(String newUsername)
     {
         this.username = newUsername;
-    }
-    
-    public void setCoupdon(int coupon)
-    {
-        this.coupon = coupon;
     }
     
     public void sendCoupon(Customer person)

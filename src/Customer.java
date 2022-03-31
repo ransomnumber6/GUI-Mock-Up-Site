@@ -11,7 +11,7 @@ public class Customer extends User {
     private String username,
             email,
             creditCard, address, password;
-    int coupon;
+    double coupon;
 
     /*public void Login();
     public void createAccount();
@@ -69,9 +69,9 @@ public class Customer extends User {
         this.creditCard = newCreditCard;
     }
     
-    public void setCoupon(int coupon)
+    public void setCoupon(String coupon)
     {
-        this.coupon = coupon;
+        this.coupon = Integer.parseInt(coupon); 
     }
     
     public String getPassword()
@@ -83,6 +83,26 @@ public class Customer extends User {
     {
         return address;
     }
+    
+    public Customer createAcc(String FN, String LN, String Card, String Address, String Email, String Password, String Username)
+    {
+        Customer newCustomer = new Customer();
+        
+        //TODO: Set customer information for createAcc Jframe
+        
+        /*custArr[i].setCreditCard(custCard.getText());
+                    custArr[i].setUsername();
+                    custArr[i].setPassword();
+                    custArr[i].setEmail(custEmail.getText());
+                    custArr[i].setAddress(custAddress.getText());
+                    custArr[i].firstName = custFirstName.getText();
+                    custArr[i].lastName = custLastName.getText();
+        */
+        
+        //newCustomer.setAddress(address)
+        return newCustomer;
+    }
+    
     
 }
 
