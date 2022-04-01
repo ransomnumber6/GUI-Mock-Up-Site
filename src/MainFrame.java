@@ -1,3 +1,4 @@
+import java.awt.event.KeyEvent;
 import java.util.Random;
 import javax.swing.SwingConstants;
 
@@ -14,6 +15,8 @@ public class MainFrame extends javax.swing.JFrame
     String user, Password;
     boolean logIn, added, empty;
     Random rand = new Random();                         // random number for Queue method
+    int hidden1,hidden2,hidden3,hidden4,hidden5,hidden6 = 0;
+    int finder;
     double n = rand.nextInt(30);
     double price1,price2,price3,price4,price5,price6;
     double wait1 = 5.00;
@@ -159,6 +162,8 @@ public class MainFrame extends javax.swing.JFrame
         descFive = new javax.swing.JTextArea();
         jScrollPane7 = new javax.swing.JScrollPane();
         descOne = new javax.swing.JTextArea();
+        jButton10 = new javax.swing.JButton();
+        search = new javax.swing.JTextField();
         Cart = new javax.swing.JFrame();
         cartUserDisplay = new javax.swing.JLabel();
         cartQueueDisplay = new javax.swing.JLabel();
@@ -311,6 +316,16 @@ public class MainFrame extends javax.swing.JFrame
         noCart = new javax.swing.JDialog();
         jButton5 = new javax.swing.JButton();
         jLabel39 = new javax.swing.JLabel();
+        found = new javax.swing.JFrame();
+        foundPic = new javax.swing.JLabel();
+        foundName = new javax.swing.JLabel();
+        foundPrice = new javax.swing.JLabel();
+        foundAdd = new javax.swing.JButton();
+        foundOK = new javax.swing.JButton();
+        jLabel41 = new javax.swing.JLabel();
+        notFound = new javax.swing.JDialog();
+        jLabel40 = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
         menu = new javax.swing.JButton();
         cartFromHome = new javax.swing.JButton();
         login = new javax.swing.JButton();
@@ -501,6 +516,27 @@ public class MainFrame extends javax.swing.JFrame
         jScrollPane7.setViewportView(descOne);
 
         menuJframe.getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
+
+        jButton10.setText("Search");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        jButton10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton10KeyPressed(evt);
+            }
+        });
+        menuJframe.getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 200, -1, -1));
+
+        search.setText("Search");
+        search.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchMouseClicked(evt);
+            }
+        });
+        menuJframe.getContentPane().add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 200, 100, -1));
 
         Cart.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -1593,6 +1629,103 @@ public class MainFrame extends javax.swing.JFrame
                 .addGap(93, 93, 93))
         );
 
+        foundPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gnocchi.jpg"))); // NOI18N
+        foundPic.setText("jLabel40");
+
+        foundName.setText("jLabel40");
+
+        foundPrice.setText("jLabel40");
+
+        foundAdd.setText("Add");
+        foundAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                foundAddActionPerformed(evt);
+            }
+        });
+
+        foundOK.setText("Ok");
+        foundOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                foundOKActionPerformed(evt);
+            }
+        });
+
+        jLabel41.setText("Item has been located");
+
+        javax.swing.GroupLayout foundLayout = new javax.swing.GroupLayout(found.getContentPane());
+        found.getContentPane().setLayout(foundLayout);
+        foundLayout.setHorizontalGroup(
+            foundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(foundLayout.createSequentialGroup()
+                .addGroup(foundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(foundLayout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addGroup(foundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(foundName)
+                            .addComponent(foundPic, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(foundLayout.createSequentialGroup()
+                                .addComponent(foundPrice)
+                                .addGap(156, 156, 156)
+                                .addComponent(foundAdd))))
+                    .addGroup(foundLayout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(foundOK))
+                    .addGroup(foundLayout.createSequentialGroup()
+                        .addGap(247, 247, 247)
+                        .addComponent(jLabel41)))
+                .addContainerGap(174, Short.MAX_VALUE))
+        );
+        foundLayout.setVerticalGroup(
+            foundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(foundLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jLabel41)
+                .addGap(18, 18, 18)
+                .addComponent(foundName)
+                .addGap(18, 18, 18)
+                .addComponent(foundPic)
+                .addGap(18, 18, 18)
+                .addGroup(foundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(foundPrice)
+                    .addComponent(foundAdd))
+                .addGap(18, 18, 18)
+                .addComponent(foundOK)
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+
+        jLabel40.setText("Sorry that's not currently available!");
+
+        jButton11.setText("Ok");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout notFoundLayout = new javax.swing.GroupLayout(notFound.getContentPane());
+        notFound.getContentPane().setLayout(notFoundLayout);
+        notFoundLayout.setHorizontalGroup(
+            notFoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(notFoundLayout.createSequentialGroup()
+                .addGroup(notFoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(notFoundLayout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(jLabel40))
+                    .addGroup(notFoundLayout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addComponent(jButton11)))
+                .addContainerGap(151, Short.MAX_VALUE))
+        );
+        notFoundLayout.setVerticalGroup(
+            notFoundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(notFoundLayout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(jLabel40)
+                .addGap(53, 53, 53)
+                .addComponent(jButton11)
+                .addContainerGap(189, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -2080,6 +2213,7 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_sendCouponFourActionPerformed
 
     private void adminAddOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddOneActionPerformed
+        hidden1 = 0;
         descOne.setVisible(true);
         itemOneCost.setText(adminItemPriceOne.getText());
         pictureOne.setVisible(true);
@@ -2090,6 +2224,7 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_adminAddOneActionPerformed
 
     private void removeOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeOneActionPerformed
+        hidden1 = 1;
         descOne.setVisible(false);
         itemOneCost.setText(adminItemPriceOne.getText());
         cartOneNamePrice.setVisible(false);
@@ -2101,6 +2236,7 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_removeOneActionPerformed
 
     private void adminAddTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddTwoActionPerformed
+        hidden2 = 0;
         descTwo.setVisible(true);
         itemTwoCost.setText(adminItemPriceTwo.getText());
         pictureTwo.setVisible(true);
@@ -2111,6 +2247,7 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_adminAddTwoActionPerformed
 
     private void removeTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTwoActionPerformed
+        hidden2 = 1;
         descTwo.setVisible(false);
         itemTwoCost.setText(adminItemPriceTwo.getText());
         pictureTwo.setVisible(false);
@@ -2121,6 +2258,7 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_removeTwoActionPerformed
 
     private void adminAddThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddThreeActionPerformed
+        hidden3 = 0;
         descThree.setVisible(true);
         itemThreeCost.setText(adminItemPriceThree.getText());
         pictureThree.setVisible(true);
@@ -2131,6 +2269,7 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_adminAddThreeActionPerformed
 
     private void removeThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeThreeActionPerformed
+        hidden3 = 1;
         descThree.setVisible(false);
         itemTwoCost.setText(adminItemPriceThree.getText());
         pictureThree.setVisible(false);
@@ -2141,6 +2280,7 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_removeThreeActionPerformed
 
     private void adminAddFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddFourActionPerformed
+        hidden4 = 0;
         descFour.setVisible(true);
         itemFourCost.setText(adminItemPriceFour.getText());
         pictureFour.setVisible(true);
@@ -2151,6 +2291,7 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_adminAddFourActionPerformed
 
     private void removeFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFourActionPerformed
+        hidden4 = 1;
         descFour.setVisible(false);
         itemFourCost.setText(adminItemPriceFour.getText());
         pictureFour.setVisible(false);
@@ -2161,6 +2302,7 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_removeFourActionPerformed
 
     private void adminAddFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddFiveActionPerformed
+         hidden5 = 0;
         descFive.setVisible(true);
         itemFiveCost.setText(adminItemPriceFive.getText());
         pictureFive.setVisible(true);
@@ -2171,6 +2313,7 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_adminAddFiveActionPerformed
 
     private void removeFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFiveActionPerformed
+        hidden5 = 1;
         descFive.setVisible(false);
         itemFiveCost.setText(adminItemPriceFive.getText());
         pictureFive.setVisible(false);
@@ -2181,6 +2324,7 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_removeFiveActionPerformed
 
     private void adminAddSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddSixActionPerformed
+        hidden6 = 0;
         descSix.setVisible(true);
         itemSixCost.setText(adminItemPriceSix.getText());
         pictureSix.setVisible(true);
@@ -2191,6 +2335,7 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_adminAddSixActionPerformed
 
     private void removeSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeSixActionPerformed
+        hidden6 = 1;
         descSix.setVisible(false);
         itemSixCost.setText(adminItemPriceSix.getText());
         pictureSix.setVisible(false);
@@ -2336,6 +2481,243 @@ public class MainFrame extends javax.swing.JFrame
             hasCoupon.setTitle("You have a coupon!");
         }
     }//GEN-LAST:event_CartWindowOpened
+
+    private void searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseClicked
+        search.setText("");
+    }//GEN-LAST:event_searchMouseClicked
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        
+        foundPic.setText("");
+        if(search.getText().equals(itemOneName.getText()) && hidden1 == 0)
+        {
+            found.setSize(500,550);
+            found.setVisible(true);
+            foundPic.setIcon(pictureOne.getIcon());
+            foundName.setText(itemOneName.getText());
+            foundPrice.setText(itemOneCost.getText());
+            finder = 1;
+        }
+        if(search.getText().equals(itemTwoName.getText())&& hidden2 == 0)
+        {
+            found.setSize(500,550);
+            found.setVisible(true);
+            foundPic.setIcon(pictureTwo.getIcon());
+            foundName.setText(itemTwoName.getText());
+            foundPrice.setText(itemTwoCost.getText());
+            finder = 2;
+        }
+        if(search.getText().equals(itemThreeName.getText())&& hidden3 == 0)
+        {
+            found.setSize(500,550);
+            found.setVisible(true);
+            foundPic.setIcon(pictureThree.getIcon());
+            foundName.setText(itemThreeName.getText());
+            foundPrice.setText(itemThreeCost.getText());
+            finder = 3;
+        }
+        if(search.getText().equals(itemFourName.getText())&& hidden4 == 0)
+        {
+            found.setSize(500,550);
+            found.setVisible(true);
+            foundPic.setIcon(pictureFour.getIcon());
+            foundName.setText(itemFourName.getText());
+            foundPrice.setText(itemFourCost.getText());
+            finder = 4;
+        }
+        if(search.getText().equals(itemFiveName.getText())&& hidden5 == 0)
+        {
+            found.setSize(500,550);
+            found.setVisible(true);
+            foundPic.setIcon(pictureFive.getIcon());
+            foundName.setText(itemFiveName.getText());
+            foundPrice.setText(itemFiveCost.getText());
+            finder = 5;
+        }
+        if(search.getText().equals(itemSixName.getText())&& hidden6 == 0)
+        {
+            found.setSize(500,550);
+            found.setVisible(true);
+            foundPic.setIcon(pictureSix.getIcon());
+            foundName.setText(itemSixName.getText());
+            foundPrice.setText(itemSixCost.getText());
+            finder = 6;
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void foundOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foundOKActionPerformed
+        this.found.dispose();
+    }//GEN-LAST:event_foundOKActionPerformed
+
+    private void foundAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foundAddActionPerformed
+        if(finder == 1)
+        {
+            this.foundAdd.setVisible(false);
+            this.addItemOne.setVisible(false);
+            cartOneNamePrice.setVisible(true);
+            deleteOne.setVisible(true);
+            cartOne.setVisible(true);
+            cartOne.setText(cartName);
+            String cart = "<html>     "+ itemOneName.getText() + "<br>    "+ itemOneCost.getText()+ "</html>";
+            cartOneNamePrice.setText(cart);
+            confirmed1.setText(cart);
+            confirmed1.setVisible(true);
+            price1 = Double.parseDouble(itemOneCost.getText());
+            calcTotal(price1);
+            calcWait(wait1);
+        }
+        if(finder == 2)
+        {
+            this.foundAdd.setVisible(false);
+            cartTwoPriceName.setVisible(true);
+        this.addItemTwo.setVisible(false);
+        deleteTwo.setVisible(true);
+        cartTwo.setVisible(true);
+        cartTwo.setText(cartName);
+        String cart = "<html>     "+ itemTwoName.getText() + "<br>    "+ itemTwoCost.getText()+ "</html>";
+        cartTwoPriceName.setText(cart);
+        price2 = Double.parseDouble(itemTwoCost.getText());
+        calcTotal(price2);
+        confirmed2.setText(cart);
+        confirmed2.setVisible(true);
+        calcWait(wait2);
+        confirmed2.setText(cart);
+        confirmed2.setVisible(true);
+            
+        }
+        if(finder == 3)
+        {
+            this.foundAdd.setVisible(false);
+           this.addItemThree.setVisible(false);
+        cartThreePriceName.setVisible(true);
+        deleteThree.setVisible(true);
+        cartThree.setVisible(true);
+        cartThree.setText(cartName);
+        String cart = "<html>     "+ itemThreeName.getText() + "<br>    "+ itemThreeCost.getText()+ "</html>";
+        cartThreePriceName.setText(cart);
+        price3 = Double.parseDouble(itemThreeCost.getText());
+        calcTotal(price3);
+        confirmed3.setText(cart);
+        confirmed3.setVisible(true);
+        calcWait(wait3);
+        confirmed3.setText(cart);
+        confirmed3.setVisible(true); 
+        }
+        if(finder == 4)
+        {
+            this.foundAdd.setVisible(false);
+            this.addItemFour.setVisible(false);
+        cartFourPriceName.setVisible(true);
+        deleteFour.setVisible(true);
+        cartFour.setVisible(true);
+        cartFour.setText(cartName);
+        String cart = "<html>     "+ itemFourName.getText() + "<br>    "+ itemFourCost.getText()+ "</html>";
+        cartFourPriceName.setText(cart);
+        price4 = Double.parseDouble(itemFourCost.getText());
+        calcTotal(price4);
+        confirmed4.setText(cart);
+        confirmed4.setVisible(true);
+        calcWait(wait4);
+        confirmed4.setText(cart);
+        confirmed4.setVisible(true);
+        }
+        if(finder == 5)
+        {
+            this.foundAdd.setVisible(false);
+            this.addItemFive.setVisible(false);
+        cartFivePriceName.setVisible(true);
+        deleteFive.setVisible(true);
+        cartFive.setVisible(true);
+        cartFive.setText(cartName);
+        String cart = "<html>     "+ itemFiveName.getText() + "<br>    "+ itemFiveCost.getText()+ "</html>";
+        cartThreePriceName.setText(cart);
+        price5 = Double.parseDouble(itemFiveCost.getText());
+        calcTotal(price5);
+        calcWait(wait5);
+        confirmed5.setText(cart);
+        confirmed5.setVisible(true);
+        }
+        if(finder == 6)
+        {
+            this.addItemSix.setVisible(false);
+            this.foundAdd.setVisible(false);
+        cartSixPriceName.setVisible(true);
+        deleteSix.setVisible(true);
+        cartSix.setVisible(true);
+        cartSix.setText(cartName);
+        String cart = "<html>     "+ itemSixName.getText() + "<br>    "+ itemSixCost.getText()+ "</html>";
+        cartSixPriceName.setText(cart);
+        price6 = Double.parseDouble(itemSixCost.getText());
+        calcTotal(price6);
+        calcWait(wait6);
+        confirmed6.setText(cart);
+        confirmed6.setVisible(true);  
+        }
+    }//GEN-LAST:event_foundAddActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        notFound.dispose();
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton10KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton10KeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+        {
+            if(search.getText().equals(itemOneName.getText()) && hidden1 == 0)
+        {
+            found.setSize(800,800);
+            found.setVisible(true);
+            foundPic.setIcon(pictureOne.getIcon());
+            foundName.setText(itemOneName.getText());
+            foundPrice.setText(itemOneCost.getText());
+            finder = 1;
+        }
+        if(search.getText().equals(itemTwoName.getText())&& hidden2 == 0)
+        {
+            found.setSize(800,800);
+            found.setVisible(true);
+            foundPic.setIcon(pictureTwo.getIcon());
+            foundName.setText(itemTwoName.getText());
+            foundPrice.setText(itemTwoCost.getText());
+            finder = 2;
+        }
+        if(search.getText().equals(itemThreeName.getText())&& hidden3 == 0)
+        {
+            found.setSize(800,800);
+            found.setVisible(true);
+            foundPic.setIcon(pictureThree.getIcon());
+            foundName.setText(itemThreeName.getText());
+            foundPrice.setText(itemThreeCost.getText());
+            finder = 3;
+        }
+        if(search.getText().equals(itemFourName.getText())&& hidden4 == 0)
+        {
+            found.setSize(800,800);
+            found.setVisible(true);
+            foundPic.setIcon(pictureFour.getIcon());
+            foundName.setText(itemFourName.getText());
+            foundPrice.setText(itemFourCost.getText());
+            finder = 4;
+        }
+        if(search.getText().equals(itemFiveName.getText())&& hidden5 == 0)
+        {
+            found.setSize(800,800);
+            found.setVisible(true);
+            foundPic.setIcon(pictureFive.getIcon());
+            foundName.setText(itemFiveName.getText());
+            foundPrice.setText(itemFiveCost.getText());
+            finder = 5;
+        }
+        if(search.getText().equals(itemSixName.getText())&& hidden6 == 0)
+        {
+            found.setSize(800,800);
+            found.setVisible(true);
+            foundPic.setIcon(pictureSix.getIcon());
+            foundName.setText(itemSixName.getText());
+            foundPrice.setText(itemSixCost.getText());
+            finder = 6;
+        }
+        }
+    }//GEN-LAST:event_jButton10KeyPressed
 
     private void calcTotal(double d)
     {
@@ -2579,6 +2961,12 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JLabel fail;
     private javax.swing.JDialog failedLogIn;
     private javax.swing.Box.Filler filler1;
+    private javax.swing.JFrame found;
+    private javax.swing.JButton foundAdd;
+    private javax.swing.JLabel foundName;
+    private javax.swing.JButton foundOK;
+    private javax.swing.JLabel foundPic;
+    private javax.swing.JLabel foundPrice;
     private javax.swing.JTextField guestAdd;
     private javax.swing.JButton guestCancel;
     private javax.swing.JTextField guestCard;
@@ -2601,6 +2989,8 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JLabel itemTwoCost;
     private javax.swing.JLabel itemTwoName;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -2643,6 +3033,8 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2660,6 +3052,7 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JButton menuFromCart;
     private javax.swing.JFrame menuJframe;
     private javax.swing.JDialog noCart;
+    private javax.swing.JDialog notFound;
     private javax.swing.JPasswordField passwordInput;
     private javax.swing.JLabel pictureFive;
     private javax.swing.JLabel pictureFour;
@@ -2674,6 +3067,7 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JButton removeSix;
     private javax.swing.JButton removeThree;
     private javax.swing.JButton removeTwo;
+    private javax.swing.JTextField search;
     private javax.swing.JButton sendCouponFour;
     private javax.swing.JButton sendCouponOne;
     private javax.swing.JButton sendCouponThree;
