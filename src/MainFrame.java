@@ -1,3 +1,12 @@
+/*
+Assignment : CSE 360 Project
+Class      : CSE360
+Team       : Team 13 (Trevor Ransom, Liam Cashmore, Derek Sanchez, Adem Cufurovic, Omar Olivas Perez)
+Date       : 04/01/2022
+Description: GUI that functions as a mockup ordering site
+
+ */
+
 import java.awt.event.KeyEvent;
 import java.util.Random;
 import javax.swing.SwingConstants;
@@ -346,11 +355,8 @@ public class MainFrame extends javax.swing.JFrame
         userNameInput = new javax.swing.JTextField();
         Logout = new javax.swing.JButton();
 
-        menuJframe.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         pictureThree.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lemonchicken.jpg"))); // NOI18N
         pictureThree.setText("jLabel3");
-        menuJframe.getContentPane().add(pictureThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 540, 200, 130));
 
         homeFromMenu.setText("Home");
         homeFromMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -358,7 +364,6 @@ public class MainFrame extends javax.swing.JFrame
                 homeFromMenuActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(homeFromMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, -1, -1));
 
         cartFromMenu.setText("Cart");
         cartFromMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -366,13 +371,10 @@ public class MainFrame extends javax.swing.JFrame
                 cartFromMenuActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(cartFromMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, -1, -1));
 
         userDisplay.setText("Customer: Guest");
-        menuJframe.getContentPane().add(userDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 180, -1));
 
         queue.setText("Queue Time");
-        menuJframe.getContentPane().add(queue, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, -1));
 
         addItemTwo.setText("Add");
         addItemTwo.addActionListener(new java.awt.event.ActionListener() {
@@ -380,20 +382,15 @@ public class MainFrame extends javax.swing.JFrame
                 addItemTwoActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(addItemTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 430, -1, -1));
 
         itemThreeCost.setText("10.00");
-        menuJframe.getContentPane().add(itemThreeCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 680, -1, -1));
 
         itemThreeName.setText("Lemon Chicken");
-        menuJframe.getContentPane().add(itemThreeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, -1, -1));
 
         pictureTwo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spaghett.jpg"))); // NOI18N
         pictureTwo.setText("jLabel2");
-        menuJframe.getContentPane().add(pictureTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, 170, 130));
 
         itemTwoCost.setText("12.75");
-        menuJframe.getContentPane().add(itemTwoCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, -1, -1));
 
         addItemThree.setText("Add");
         addItemThree.addActionListener(new java.awt.event.ActionListener() {
@@ -401,20 +398,15 @@ public class MainFrame extends javax.swing.JFrame
                 addItemThreeActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(addItemThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 680, -1, -1));
 
         itemTwoName.setText("Spaghetti");
-        menuJframe.getContentPane().add(itemTwoName, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, -1, -1));
 
         itemFourName.setText("Prociutto Pizza");
-        menuJframe.getContentPane().add(itemFourName, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, -1, -1));
 
         pictureFour.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prociuttopizza.jpg"))); // NOI18N
         pictureFour.setText("jLabel3");
-        menuJframe.getContentPane().add(pictureFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 530, 210, 140));
 
         itemFourCost.setText("15.99");
-        menuJframe.getContentPane().add(itemFourCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 680, -1, -1));
 
         addItemFour.setText("Add");
         addItemFour.addActionListener(new java.awt.event.ActionListener() {
@@ -422,22 +414,17 @@ public class MainFrame extends javax.swing.JFrame
                 addItemFourActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(addItemFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 680, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/name.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
-        menuJframe.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 420, -1));
 
         pictureFive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gnocchi.jpg"))); // NOI18N
         pictureFive.setText("jLabel44");
-        menuJframe.getContentPane().add(pictureFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 770, 200, 150));
 
         pictureSix.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lasagna.jpg"))); // NOI18N
         pictureSix.setText("jLabel45");
-        menuJframe.getContentPane().add(pictureSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 760, 190, 160));
 
         itemFiveCost.setText("8.99");
-        menuJframe.getContentPane().add(itemFiveCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 930, -1, -1));
 
         addItemFive.setText("Add");
         addItemFive.addActionListener(new java.awt.event.ActionListener() {
@@ -445,10 +432,8 @@ public class MainFrame extends javax.swing.JFrame
                 addItemFiveActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(addItemFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 930, -1, -1));
 
         itemSixCost.setText("10.00");
-        menuJframe.getContentPane().add(itemSixCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 940, -1, -1));
 
         addItemSix.setText("Add");
         addItemSix.addActionListener(new java.awt.event.ActionListener() {
@@ -456,20 +441,15 @@ public class MainFrame extends javax.swing.JFrame
                 addItemSixActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(addItemSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 940, -1, -1));
 
         itemSixName.setText("Lasagna");
-        menuJframe.getContentPane().add(itemSixName, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 740, -1, -1));
 
         itemFiveName.setText("Gnocchi");
-        menuJframe.getContentPane().add(itemFiveName, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 750, -1, -1));
 
         pictureOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BLT.jpg"))); // NOI18N
         pictureOne.setText("jLabel3");
-        menuJframe.getContentPane().add(pictureOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 220, 140));
 
         itemOneName.setText("Bacon Lettuce Tomato");
-        menuJframe.getContentPane().add(itemOneName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
 
         addItemOne.setText("Add");
         addItemOne.addActionListener(new java.awt.event.ActionListener() {
@@ -477,10 +457,8 @@ public class MainFrame extends javax.swing.JFrame
                 addItemOneActionPerformed(evt);
             }
         });
-        menuJframe.getContentPane().add(addItemOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, -1, -1));
 
         itemOneCost.setText("6.50");
-        menuJframe.getContentPane().add(itemOneCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, -1, -1));
 
         descSix.setColumns(20);
         descSix.setRows(5);
@@ -488,42 +466,30 @@ public class MainFrame extends javax.swing.JFrame
         descSix.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane2.setViewportView(descSix);
 
-        menuJframe.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 790, 240, 110));
-
         descFour.setColumns(20);
         descFour.setRows(5);
         descFour.setText("Marinara sauce\nMozzarella cheese\nProciutto\nTopped with basil");
         jScrollPane3.setViewportView(descFour);
-
-        menuJframe.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 550, 240, 110));
 
         descTwo.setColumns(20);
         descTwo.setRows(5);
         descTwo.setText("Beef meatballs\nwhole wheat spaghetti noodles\nMarinara sauce\n");
         jScrollPane4.setViewportView(descTwo);
 
-        menuJframe.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 310, 240, -1));
-
         descThree.setColumns(20);
         descThree.setRows(5);
         descThree.setText("Chicken breasts cooked in Olive Oil\nLemon Pepper seasoning and\nserved with lemon garnish");
         jScrollPane5.setViewportView(descThree);
-
-        menuJframe.getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 560, -1, -1));
 
         descFive.setColumns(20);
         descFive.setRows(5);
         descFive.setText("Potato dumplings\nSun dried tomatoes\nBasil leaves\nRicotta cheese\nMarinara sauce");
         jScrollPane6.setViewportView(descFive);
 
-        menuJframe.getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 800, -1, -1));
-
         descOne.setColumns(20);
         descOne.setRows(5);
         descOne.setText("Applewoood bacon \nRomaine Lettuce \nRoma Tomatoes \non white bread");
         jScrollPane7.setViewportView(descOne);
-
-        menuJframe.getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
 
         jButton10.setText("Search");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -536,7 +502,6 @@ public class MainFrame extends javax.swing.JFrame
                 jButton10KeyPressed(evt);
             }
         });
-        menuJframe.getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 200, -1, -1));
 
         search.setText("Search");
         search.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -544,59 +509,223 @@ public class MainFrame extends javax.swing.JFrame
                 searchMouseClicked(evt);
             }
         });
-        menuJframe.getContentPane().add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 200, 100, -1));
 
         inLine.setText("Your place in line: 3");
-        menuJframe.getContentPane().add(inLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 20, 120, -1));
+
+        javax.swing.GroupLayout menuJframeLayout = new javax.swing.GroupLayout(menuJframe.getContentPane());
+        menuJframe.getContentPane().setLayout(menuJframeLayout);
+        menuJframeLayout.setHorizontalGroup(
+            menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(470, 470, 470)
+                .addComponent(userDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(queue)
+                .addGap(96, 96, 96)
+                .addComponent(inLine, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(250, 250, 250)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(370, 370, 370)
+                .addComponent(homeFromMenu)
+                .addGap(25, 25, 25)
+                .addComponent(cartFromMenu)
+                .addGap(155, 155, 155)
+                .addComponent(jButton10)
+                .addGap(13, 13, 13)
+                .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(itemOneName)
+                .addGap(331, 331, 331)
+                .addComponent(itemTwoName))
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(pictureOne, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(pictureTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(itemOneCost)
+                .addGap(119, 119, 119)
+                .addComponent(addItemOne)
+                .addGap(255, 255, 255)
+                .addComponent(itemTwoCost)
+                .addGap(53, 53, 53)
+                .addComponent(addItemTwo))
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(520, 520, 520)
+                .addComponent(itemFourName))
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(itemThreeName)
+                    .addComponent(pictureThree, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(pictureFour, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(itemThreeCost)
+                .addGap(83, 83, 83)
+                .addComponent(addItemThree)
+                .addGap(255, 255, 255)
+                .addComponent(itemFourCost)
+                .addGap(103, 103, 103)
+                .addComponent(addItemFour))
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(itemFiveName)
+                    .addComponent(pictureFive, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(itemSixName)
+                    .addComponent(pictureSix, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(itemFiveCost)
+                .addGap(119, 119, 119)
+                .addComponent(addItemFive)
+                .addGap(255, 255, 255)
+                .addComponent(itemSixCost)
+                .addGap(73, 73, 73)
+                .addComponent(addItemSix))
+        );
+        menuJframeLayout.setVerticalGroup(
+            menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuJframeLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(userDisplay)
+                    .addComponent(queue)
+                    .addComponent(inLine))
+                .addGap(14, 14, 14)
+                .addComponent(jLabel9)
+                .addGap(24, 24, 24)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(homeFromMenu)
+                    .addComponent(cartFromMenu)
+                    .addComponent(jButton10)
+                    .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(itemOneName)
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(itemTwoName)))
+                .addGap(4, 4, 4)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pictureOne, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pictureTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(itemTwoCost)
+                    .addComponent(addItemTwo)
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(itemOneCost)
+                            .addComponent(addItemOne))))
+                .addGap(35, 35, 35)
+                .addComponent(itemFourName)
+                .addGap(4, 4, 4)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addComponent(itemThreeName)
+                        .addGap(4, 4, 4)
+                        .addComponent(pictureThree, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(pictureFour, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(10, 10, 10)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(itemThreeCost)
+                    .addComponent(addItemThree)
+                    .addComponent(itemFourCost)
+                    .addComponent(addItemFour))
+                .addGap(35, 35, 35)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(itemFiveName)
+                        .addGap(4, 4, 4)
+                        .addComponent(pictureFive, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addComponent(itemSixName)
+                        .addGap(4, 4, 4)
+                        .addComponent(pictureSix, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(10, 10, 10)
+                .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(itemFiveCost)
+                    .addComponent(addItemFive)
+                    .addGroup(menuJframeLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(menuJframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(itemSixCost)
+                            .addComponent(addItemSix)))))
+        );
 
         Cart.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 CartWindowOpened(evt);
             }
         });
-        Cart.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cartUserDisplay.setText("Customer: Guest");
-        Cart.getContentPane().add(cartUserDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 180, -1));
 
         cartQueueDisplay.setText("Queue Time");
-        Cart.getContentPane().add(cartQueueDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
 
         cartOneNamePrice.setText("nothing");
-        Cart.getContentPane().add(cartOneNamePrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, -1));
 
         cartOne.setText("Item:");
-        Cart.getContentPane().add(cartOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
 
         cartTwo.setText("Item:");
-        Cart.getContentPane().add(cartTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, -1));
 
         cartTwoPriceName.setText("nothing");
-        Cart.getContentPane().add(cartTwoPriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, -1, -1));
 
         cartThree.setText("Item:");
-        Cart.getContentPane().add(cartThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, -1, -1));
 
         cartThreePriceName.setText("nothing");
-        Cart.getContentPane().add(cartThreePriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, -1, -1));
 
         cartSix.setText("Item:");
-        Cart.getContentPane().add(cartSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, -1, -1));
 
         cartFourPriceName.setText("nothing");
-        Cart.getContentPane().add(cartFourPriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, -1, -1));
 
         cartFour.setText("Item:");
-        Cart.getContentPane().add(cartFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, -1, -1));
 
         cartFivePriceName.setText("nothing");
-        Cart.getContentPane().add(cartFivePriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, -1, -1));
 
         cartFive.setText("Item:");
-        Cart.getContentPane().add(cartFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, -1, -1));
 
         cartSixPriceName.setText("nothing");
-        Cart.getContentPane().add(cartSixPriceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, -1, -1));
 
         menuFromCart.setText("Menu");
         menuFromCart.addActionListener(new java.awt.event.ActionListener() {
@@ -604,7 +733,6 @@ public class MainFrame extends javax.swing.JFrame
                 menuFromCartActionPerformed(evt);
             }
         });
-        Cart.getContentPane().add(menuFromCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 91, -1));
 
         Checkout.setText("Checkout");
         Checkout.addActionListener(new java.awt.event.ActionListener() {
@@ -612,7 +740,6 @@ public class MainFrame extends javax.swing.JFrame
                 CheckoutActionPerformed(evt);
             }
         });
-        Cart.getContentPane().add(Checkout, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 91, -1));
 
         deleteOne.setText("Delete");
         deleteOne.addActionListener(new java.awt.event.ActionListener() {
@@ -620,7 +747,6 @@ public class MainFrame extends javax.swing.JFrame
                 deleteOneActionPerformed(evt);
             }
         });
-        Cart.getContentPane().add(deleteOne, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, -1, 21));
 
         deleteTwo.setText("Delete");
         deleteTwo.setPreferredSize(new java.awt.Dimension(60, 21));
@@ -629,7 +755,6 @@ public class MainFrame extends javax.swing.JFrame
                 deleteTwoActionPerformed(evt);
             }
         });
-        Cart.getContentPane().add(deleteTwo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 65, -1));
 
         deleteThree.setText("Delete");
         deleteThree.addActionListener(new java.awt.event.ActionListener() {
@@ -637,7 +762,6 @@ public class MainFrame extends javax.swing.JFrame
                 deleteThreeActionPerformed(evt);
             }
         });
-        Cart.getContentPane().add(deleteThree, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, -1, 21));
 
         deleteFour.setText("Delete");
         deleteFour.addActionListener(new java.awt.event.ActionListener() {
@@ -645,7 +769,6 @@ public class MainFrame extends javax.swing.JFrame
                 deleteFourActionPerformed(evt);
             }
         });
-        Cart.getContentPane().add(deleteFour, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, -1, 21));
 
         deleteFive.setText("Delete");
         deleteFive.addActionListener(new java.awt.event.ActionListener() {
@@ -653,7 +776,6 @@ public class MainFrame extends javax.swing.JFrame
                 deleteFiveActionPerformed(evt);
             }
         });
-        Cart.getContentPane().add(deleteFive, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, -1, 21));
 
         deleteSix.setText("Delete");
         deleteSix.addActionListener(new java.awt.event.ActionListener() {
@@ -661,11 +783,9 @@ public class MainFrame extends javax.swing.JFrame
                 deleteSixActionPerformed(evt);
             }
         });
-        Cart.getContentPane().add(deleteSix, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 490, -1, 21));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/name.jpg"))); // NOI18N
         jLabel8.setText("jLabel8");
-        Cart.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 410, -1));
 
         useCoupon.setText("Use Coupon");
         useCoupon.addActionListener(new java.awt.event.ActionListener() {
@@ -673,10 +793,8 @@ public class MainFrame extends javax.swing.JFrame
                 useCouponActionPerformed(evt);
             }
         });
-        Cart.getContentPane().add(useCoupon, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, -1, -1));
 
         jLabel27.setText("Total:");
-        Cart.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, -1, -1));
 
         jButton3.setText("Checkout");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -684,19 +802,151 @@ public class MainFrame extends javax.swing.JFrame
                 jButton3ActionPerformed(evt);
             }
         });
-        Cart.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 600, -1, -1));
 
         checkoutTotal.setText("Cost");
-        Cart.getContentPane().add(checkoutTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 560, 50, -1));
 
         jLabel3.setText("Estimated wait:");
-        Cart.getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 590, -1, -1));
 
         waitTime.setText("wait");
-        Cart.getContentPane().add(waitTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 590, -1, -1));
 
         inLine2.setText("Your place in line: 3");
-        Cart.getContentPane().add(inLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 110, -1));
+
+        javax.swing.GroupLayout CartLayout = new javax.swing.GroupLayout(Cart.getContentPane());
+        Cart.getContentPane().setLayout(CartLayout);
+        CartLayout.setHorizontalGroup(
+            CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CartLayout.createSequentialGroup()
+                .addGap(310, 310, 310)
+                .addComponent(cartUserDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(cartQueueDisplay)
+                .addGap(96, 96, 96)
+                .addComponent(inLine2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(CartLayout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(CartLayout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(menuFromCart, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addComponent(Checkout, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(CartLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(cartOne)
+                .addGap(113, 113, 113)
+                .addComponent(cartOneNamePrice)
+                .addGap(108, 108, 108)
+                .addComponent(deleteOne))
+            .addGroup(CartLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(cartTwo)
+                .addGap(113, 113, 113)
+                .addComponent(cartTwoPriceName)
+                .addGap(108, 108, 108)
+                .addComponent(deleteTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(CartLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(cartThree)
+                .addGap(113, 113, 113)
+                .addComponent(cartThreePriceName)
+                .addGap(108, 108, 108)
+                .addComponent(deleteThree))
+            .addGroup(CartLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(cartFour)
+                .addGap(113, 113, 113)
+                .addComponent(cartFourPriceName)
+                .addGap(108, 108, 108)
+                .addComponent(deleteFour))
+            .addGroup(CartLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(cartFive)
+                .addGap(113, 113, 113)
+                .addComponent(cartFivePriceName)
+                .addGap(108, 108, 108)
+                .addComponent(deleteFive))
+            .addGroup(CartLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(cartSix)
+                .addGap(113, 113, 113)
+                .addComponent(cartSixPriceName)
+                .addGap(108, 108, 108)
+                .addComponent(deleteSix))
+            .addGroup(CartLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jLabel27)
+                .addGap(111, 111, 111)
+                .addComponent(checkoutTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80)
+                .addComponent(useCoupon))
+            .addGroup(CartLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jLabel3)
+                .addGap(60, 60, 60)
+                .addComponent(waitTime)
+                .addGap(118, 118, 118)
+                .addComponent(jButton3))
+        );
+        CartLayout.setVerticalGroup(
+            CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CartLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cartUserDisplay)
+                    .addComponent(cartQueueDisplay)
+                    .addComponent(inLine2))
+                .addGap(14, 14, 14)
+                .addComponent(jLabel8)
+                .addGap(54, 54, 54)
+                .addGroup(CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(menuFromCart)
+                    .addComponent(Checkout))
+                .addGap(45, 45, 45)
+                .addGroup(CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cartOne)
+                    .addComponent(cartOneNamePrice)
+                    .addComponent(deleteOne, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cartTwo)
+                    .addComponent(cartTwoPriceName)
+                    .addComponent(deleteTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cartThree)
+                    .addComponent(cartThreePriceName)
+                    .addComponent(deleteThree, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cartFour)
+                    .addComponent(cartFourPriceName)
+                    .addComponent(deleteFour, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cartFive)
+                    .addComponent(cartFivePriceName)
+                    .addComponent(deleteFive, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cartSix)
+                    .addComponent(cartSixPriceName)
+                    .addComponent(deleteSix, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(useCoupon)
+                    .addGroup(CartLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel27)
+                            .addComponent(checkoutTotal))))
+                .addGap(14, 14, 14)
+                .addGroup(CartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(waitTime)
+                    .addGroup(CartLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButton3))))
+        );
 
         confirmDone.setText("Done");
         confirmDone.addActionListener(new java.awt.event.ActionListener() {
@@ -1257,16 +1507,11 @@ public class MainFrame extends javax.swing.JFrame
                 .addContainerGap())
         );
 
-        checkoutJFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         checkoutAdd.setText("Address:");
-        checkoutJFrame.getContentPane().add(checkoutAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
 
         checkoutCard.setText("Card:");
-        checkoutJFrame.getContentPane().add(checkoutCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, -1, -1));
 
         checkoutName.setText("Name:");
-        checkoutJFrame.getContentPane().add(checkoutName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
 
         complete.setText("Complete Purchase");
         complete.addActionListener(new java.awt.event.ActionListener() {
@@ -1274,7 +1519,6 @@ public class MainFrame extends javax.swing.JFrame
                 completeActionPerformed(evt);
             }
         });
-        checkoutJFrame.getContentPane().add(complete, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, -1, -1));
 
         cancel.setText("Cancel");
         cancel.addActionListener(new java.awt.event.ActionListener() {
@@ -1282,31 +1526,81 @@ public class MainFrame extends javax.swing.JFrame
                 cancelActionPerformed(evt);
             }
         });
-        checkoutJFrame.getContentPane().add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/name.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        checkoutJFrame.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 23, 414, -1));
 
         custAddCheckout.setText("jLabel19");
-        checkoutJFrame.getContentPane().add(custAddCheckout, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, -1, -1));
 
         custCheckoutCard.setText("jLabel20");
-        checkoutJFrame.getContentPane().add(custCheckoutCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
 
         custCheckoutName.setText("jLabel21");
-        checkoutJFrame.getContentPane().add(custCheckoutName, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, -1, -1));
 
         jLabel25.setText("Email:");
-        checkoutJFrame.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
 
         checkOutMail.setText("jLabel26");
-        checkoutJFrame.getContentPane().add(checkOutMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, -1, -1));
 
-        failedLogIn.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        javax.swing.GroupLayout checkoutJFrameLayout = new javax.swing.GroupLayout(checkoutJFrame.getContentPane());
+        checkoutJFrame.getContentPane().setLayout(checkoutJFrameLayout);
+        checkoutJFrameLayout.setHorizontalGroup(
+            checkoutJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(checkoutJFrameLayout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(checkoutJFrameLayout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(checkoutName)
+                .addGap(125, 125, 125)
+                .addComponent(custCheckoutName))
+            .addGroup(checkoutJFrameLayout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jLabel25)
+                .addGap(128, 128, 128)
+                .addComponent(checkOutMail))
+            .addGroup(checkoutJFrameLayout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(checkoutAdd)
+                .addGap(115, 115, 115)
+                .addComponent(custAddCheckout))
+            .addGroup(checkoutJFrameLayout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(checkoutCard)
+                .addGap(132, 132, 132)
+                .addComponent(custCheckoutCard))
+            .addGroup(checkoutJFrameLayout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(complete)
+                .addGap(15, 15, 15)
+                .addComponent(cancel))
+        );
+        checkoutJFrameLayout.setVerticalGroup(
+            checkoutJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(checkoutJFrameLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel2)
+                .addGap(51, 51, 51)
+                .addGroup(checkoutJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(checkoutName)
+                    .addComponent(custCheckoutName))
+                .addGap(34, 34, 34)
+                .addGroup(checkoutJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25)
+                    .addComponent(checkOutMail))
+                .addGap(34, 34, 34)
+                .addGroup(checkoutJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(checkoutAdd)
+                    .addComponent(custAddCheckout))
+                .addGap(44, 44, 44)
+                .addGroup(checkoutJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(checkoutCard)
+                    .addComponent(custCheckoutCard))
+                .addGap(54, 54, 54)
+                .addGroup(checkoutJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(complete)
+                    .addComponent(cancel)))
+        );
 
         fail.setText("Incorrect or missing credentials");
-        failedLogIn.getContentPane().add(fail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
 
         Exit.setText("OK");
         Exit.addActionListener(new java.awt.event.ActionListener() {
@@ -1314,7 +1608,26 @@ public class MainFrame extends javax.swing.JFrame
                 ExitActionPerformed(evt);
             }
         });
-        failedLogIn.getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 65, -1));
+
+        javax.swing.GroupLayout failedLogInLayout = new javax.swing.GroupLayout(failedLogIn.getContentPane());
+        failedLogIn.getContentPane().setLayout(failedLogInLayout);
+        failedLogInLayout.setHorizontalGroup(
+            failedLogInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(failedLogInLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(fail))
+            .addGroup(failedLogInLayout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        failedLogInLayout.setVerticalGroup(
+            failedLogInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(failedLogInLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(fail)
+                .addGap(34, 34, 34)
+                .addComponent(Exit))
+        );
 
         jLabel13.setText("jLabel13");
 
@@ -1813,7 +2126,6 @@ public class MainFrame extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 1000));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menu.setText("Menu");
         menu.addActionListener(new java.awt.event.ActionListener() {
@@ -1821,7 +2133,6 @@ public class MainFrame extends javax.swing.JFrame
                 menuActionPerformed(evt);
             }
         });
-        getContentPane().add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, -1));
 
         cartFromHome.setText("Cart");
         cartFromHome.addActionListener(new java.awt.event.ActionListener() {
@@ -1829,7 +2140,6 @@ public class MainFrame extends javax.swing.JFrame
                 cartFromHomeActionPerformed(evt);
             }
         });
-        getContentPane().add(cartFromHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, -1, -1));
 
         login.setText("Log In");
         login.addActionListener(new java.awt.event.ActionListener() {
@@ -1837,7 +2147,6 @@ public class MainFrame extends javax.swing.JFrame
                 loginActionPerformed(evt);
             }
         });
-        getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(302, 400, 86, -1));
 
         jButton6.setText("Create Account");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -1845,34 +2154,27 @@ public class MainFrame extends javax.swing.JFrame
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 470, -1, -1));
 
         passwordInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordInputActionPerformed(evt);
             }
         });
-        getContentPane().add(passwordInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 362, 74, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/name.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 27, 418, -1));
 
         jLabel5.setText("Username");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 325, -1, -1));
 
         jLabel6.setText("Password");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 365, -1, -1));
 
         jLabel7.setText("OR");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 438, -1, -1));
 
         userNameInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userNameInputActionPerformed(evt);
             }
         });
-        getContentPane().add(userNameInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 322, 74, -1));
 
         Logout.setText("Logout");
         Logout.addActionListener(new java.awt.event.ActionListener() {
@@ -1880,7 +2182,70 @@ public class MainFrame extends javax.swing.JFrame
                 LogoutActionPerformed(evt);
             }
         });
-        getContentPane().add(Logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(240, 240, 240)
+                .addComponent(menu)
+                .addGap(27, 27, 27)
+                .addComponent(cartFromHome)
+                .addGap(25, 25, 25)
+                .addComponent(Logout))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addComponent(jLabel5)
+                .addGap(27, 27, 27)
+                .addComponent(userNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addComponent(jLabel6)
+                .addGap(30, 30, 30)
+                .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(302, 302, 302)
+                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(333, 333, 333)
+                .addComponent(jLabel7))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(293, 293, 293)
+                .addComponent(jButton6))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel4)
+                .addGap(77, 77, 77)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(menu)
+                    .addComponent(cartFromHome)
+                    .addComponent(Logout))
+                .addGap(67, 67, 67)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel5))
+                    .addComponent(userNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel6))
+                    .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addComponent(login)
+                .addGap(13, 13, 13)
+                .addComponent(jLabel7)
+                .addGap(16, 16, 16)
+                .addComponent(jButton6))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1979,7 +2344,7 @@ public class MainFrame extends javax.swing.JFrame
     // closes current frame and opens home frame
     private void homeFromMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeFromMenuActionPerformed
         this.setVisible(true);
-        this.menuJframe.dispose(); // TODO add your handling code here:
+        this.menuJframe.dispose();
     }//GEN-LAST:event_homeFromMenuActionPerformed
 
     // opens cart frame and sets menuframe to not visible
@@ -2003,7 +2368,7 @@ public class MainFrame extends javax.swing.JFrame
 
     // password is passed to a var that will hold it
     private void passwordInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordInputActionPerformed
-        Password = passwordInput.toString();        // TODO add your handling code here:
+        Password = passwordInput.toString();
     }//GEN-LAST:event_passwordInputActionPerformed
 
     private void addItemTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemTwoActionPerformed
@@ -2099,15 +2464,15 @@ public class MainFrame extends javax.swing.JFrame
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         this.CreateAcc.setVisible(true);
         this.CreateAcc.setSize(WIDTH, HEIGHT);
-        this.setVisible(false);        // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void custAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custAddressActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_custAddressActionPerformed
 
     private void custCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custCardActionPerformed
-        custCard.setText("nothing");        // TODO add your handling code here:
+        custCard.setText("nothing");
     }//GEN-LAST:event_custCardActionPerformed
     // function that saves customer information to the array
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -2136,16 +2501,16 @@ public class MainFrame extends javax.swing.JFrame
 
     // if OK button is pressed dialog box will close
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.accountFail.dispose();        // TODO add your handling code here:
+        this.accountFail.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void userNameInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameInputActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_userNameInputActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         CreateAcc.dispose();
-        this.setVisible(true);        // TODO add your handling code here:
+        this.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void deleteOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteOneActionPerformed
@@ -2246,11 +2611,11 @@ public class MainFrame extends javax.swing.JFrame
     }//GEN-LAST:event_deleteSixActionPerformed
 
     private void guestCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guestCardActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_guestCardActionPerformed
 
     private void custLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custLastNameActionPerformed
-        custLastName.setText("nothing");        // TODO add your handling code here:
+        custLastName.setText("nothing");
     }//GEN-LAST:event_custLastNameActionPerformed
 
     
@@ -2442,7 +2807,6 @@ public class MainFrame extends javax.swing.JFrame
         this.setVisible(false);
     }//GEN-LAST:event_menuFromAdminActionPerformed
 
-    //TODO: Calculate total with coupon being applied
     private void useCouponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_useCouponActionPerformed
         double newTotal =0;
         if(total > 0)
@@ -3006,6 +3370,8 @@ public class MainFrame extends javax.swing.JFrame
         addItemFour.setVisible(true);
         addItemFive.setVisible(true);
         addItemSix.setVisible(true);
+        total = 0.00;
+        wait =0.00;
 
     }
 
