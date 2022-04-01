@@ -164,6 +164,7 @@ public class MainFrame extends javax.swing.JFrame
         descOne = new javax.swing.JTextArea();
         jButton10 = new javax.swing.JButton();
         search = new javax.swing.JTextField();
+        inLine = new javax.swing.JLabel();
         Cart = new javax.swing.JFrame();
         cartUserDisplay = new javax.swing.JLabel();
         cartQueueDisplay = new javax.swing.JLabel();
@@ -194,6 +195,7 @@ public class MainFrame extends javax.swing.JFrame
         checkoutTotal = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         waitTime = new javax.swing.JLabel();
+        inLine2 = new javax.swing.JLabel();
         Confirmation = new javax.swing.JFrame();
         confirmDone = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -361,10 +363,10 @@ public class MainFrame extends javax.swing.JFrame
         menuJframe.getContentPane().add(cartFromMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, -1, -1));
 
         userDisplay.setText("Customer: Guest");
-        menuJframe.getContentPane().add(userDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 180, -1));
+        menuJframe.getContentPane().add(userDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 180, -1));
 
         queue.setText("Queue Time");
-        menuJframe.getContentPane().add(queue, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, -1, -1));
+        menuJframe.getContentPane().add(queue, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, -1));
 
         addItemTwo.setText("Add");
         addItemTwo.addActionListener(new java.awt.event.ActionListener() {
@@ -538,6 +540,9 @@ public class MainFrame extends javax.swing.JFrame
         });
         menuJframe.getContentPane().add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 200, 100, -1));
 
+        inLine.setText("Your place in line: 3");
+        menuJframe.getContentPane().add(inLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 20, 120, -1));
+
         Cart.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 CartWindowOpened(evt);
@@ -683,6 +688,9 @@ public class MainFrame extends javax.swing.JFrame
 
         waitTime.setText("wait");
         Cart.getContentPane().add(waitTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 590, -1, -1));
+
+        inLine2.setText("Your place in line: 3");
+        Cart.getContentPane().add(inLine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 110, -1));
 
         confirmDone.setText("Done");
         confirmDone.addActionListener(new java.awt.event.ActionListener() {
@@ -1022,17 +1030,47 @@ public class MainFrame extends javax.swing.JFrame
             }
         });
 
-        adminItemPriceSix.setText("jTextField1");
+        adminItemPriceSix.setText("$0.00");
+        adminItemPriceSix.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminItemPriceSixMouseClicked(evt);
+            }
+        });
 
-        adminItemPriceFour.setText("jTextField2");
+        adminItemPriceFour.setText("$0.00");
+        adminItemPriceFour.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminItemPriceFourMouseClicked(evt);
+            }
+        });
 
-        adminItemPriceThree.setText("jTextField3");
+        adminItemPriceThree.setText("$0.00");
+        adminItemPriceThree.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminItemPriceThreeMouseClicked(evt);
+            }
+        });
 
-        adminItemPriceTwo.setText("jTextField5");
+        adminItemPriceTwo.setText("$0.00");
+        adminItemPriceTwo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminItemPriceTwoMouseClicked(evt);
+            }
+        });
 
-        adminItemPriceOne.setText("jTextField6");
+        adminItemPriceOne.setText("$0.00");
+        adminItemPriceOne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminItemPriceOneMouseClicked(evt);
+            }
+        });
 
-        adminItemPriceFive.setText("jTextField7");
+        adminItemPriceFive.setText("$0.00");
+        adminItemPriceFive.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminItemPriceFiveMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout adminMenuLayout = new javax.swing.GroupLayout(adminMenu.getContentPane());
         adminMenu.getContentPane().setLayout(adminMenuLayout);
@@ -1050,66 +1088,69 @@ public class MainFrame extends javax.swing.JFrame
                             .addComponent(adminNameFive)
                             .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(adminMenuLayout.createSequentialGroup()
-                                .addComponent(adminItemPriceFive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
+                                .addComponent(adminItemPriceFive, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)
                                 .addComponent(adminAddFive)
                                 .addGap(18, 18, 18)
                                 .addComponent(removeFive))))
                     .addGroup(adminMenuLayout.createSequentialGroup()
                         .addGap(106, 106, 106)
-                        .addComponent(adminItemPriceThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(adminItemPriceThree, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(adminAddThree)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(removeThree))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(adminItemPriceOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addComponent(adminItemPriceOne, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(adminAddOne)
                         .addGap(25, 25, 25)
                         .addComponent(removeOne)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 294, Short.MAX_VALUE)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createSequentialGroup()
-                                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(172, 172, 172))
-                            .addGroup(adminMenuLayout.createSequentialGroup()
-                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap()))
-                        .addGroup(adminMenuLayout.createSequentialGroup()
-                            .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(adminNameFour)
-                                .addComponent(adminNameTwo))
-                            .addGap(253, 253, 253)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createSequentialGroup()
-                        .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(adminNameSix))
-                        .addGap(146, 146, 146))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createSequentialGroup()
-                        .addComponent(adminItemPriceTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(adminAddTwo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(removeTwo)
-                        .addGap(158, 158, 158))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createSequentialGroup()
-                        .addComponent(adminItemPriceFour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(adminAddFour)
-                        .addGap(18, 18, 18)
-                        .addComponent(removeFour)
-                        .addGap(120, 120, 120))
-                    .addGroup(adminMenuLayout.createSequentialGroup()
-                        .addComponent(adminItemPriceSix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
                         .addComponent(adminAddSix)
                         .addGap(18, 18, 18)
                         .addComponent(removeSix)
-                        .addGap(129, 129, 129))))
+                        .addGap(129, 129, 129))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createSequentialGroup()
+                            .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(adminNameSix))
+                            .addGap(146, 146, 146))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createSequentialGroup()
+                            .addComponent(adminItemPriceFour, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(adminAddFour)
+                            .addGap(18, 18, 18)
+                            .addComponent(removeFour)
+                            .addGap(120, 120, 120))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(adminMenuLayout.createSequentialGroup()
+                                .addComponent(adminItemPriceTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(adminAddTwo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(removeTwo)
+                                .addGap(158, 158, 158))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createSequentialGroup()
+                                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(172, 172, 172))
+                                    .addGroup(adminMenuLayout.createSequentialGroup()
+                                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap()))
+                                .addGroup(adminMenuLayout.createSequentialGroup()
+                                    .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(adminNameFour)
+                                        .addComponent(adminNameTwo))
+                                    .addGap(253, 253, 253))))
+                        .addGroup(adminMenuLayout.createSequentialGroup()
+                            .addComponent(adminItemPriceSix, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap()))))
         );
         adminMenuLayout.setVerticalGroup(
             adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2367,7 +2408,7 @@ public class MainFrame extends javax.swing.JFrame
         if(newTotal < 0)
         {
             newTotal = 0.00;
-            String c = "0.00";
+            String c = "0";
             currentUser.setCoupon(c);
         }
         String t = String.valueOf(newTotal);
@@ -2719,6 +2760,30 @@ public class MainFrame extends javax.swing.JFrame
         }
     }//GEN-LAST:event_jButton10KeyPressed
 
+    private void adminItemPriceOneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminItemPriceOneMouseClicked
+        adminItemPriceOne.setText("");
+    }//GEN-LAST:event_adminItemPriceOneMouseClicked
+
+    private void adminItemPriceTwoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminItemPriceTwoMouseClicked
+        adminItemPriceTwo.setText("");
+    }//GEN-LAST:event_adminItemPriceTwoMouseClicked
+
+    private void adminItemPriceThreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminItemPriceThreeMouseClicked
+        adminItemPriceThree.setText("");
+    }//GEN-LAST:event_adminItemPriceThreeMouseClicked
+
+    private void adminItemPriceFourMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminItemPriceFourMouseClicked
+        adminItemPriceFour.setText("");
+    }//GEN-LAST:event_adminItemPriceFourMouseClicked
+
+    private void adminItemPriceFiveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminItemPriceFiveMouseClicked
+        adminItemPriceFive.setText("");
+    }//GEN-LAST:event_adminItemPriceFiveMouseClicked
+
+    private void adminItemPriceSixMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminItemPriceSixMouseClicked
+        adminItemPriceSix.setText("");
+    }//GEN-LAST:event_adminItemPriceSixMouseClicked
+
     private void calcTotal(double d)
     {
         //takes price of each item added to cart and calcs the total then sends it to checkoutTotal.setText("texthere")
@@ -2796,6 +2861,8 @@ public class MainFrame extends javax.swing.JFrame
         userDisplay.setText(curUserStr);                               // text box shows current user
         cartUserDisplay.setText(curUserStr);
         String queueStr ="Estimated wait: "+ Queue() + " mins";
+        inLine.setText("Place in line: " + 2);
+        inLine2.setText("Place in line: " + 2);
         queue.setText(queueStr);                                        // text box shows estimated wait time using random number generator in Queue()
         cartQueueDisplay.setText(queueStr);
         custCheckoutName.setText(User.firstName + " " + User.lastName);
@@ -2976,6 +3043,8 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JButton guestPay;
     private javax.swing.JDialog hasCoupon;
     private javax.swing.JButton homeFromMenu;
+    private javax.swing.JLabel inLine;
+    private javax.swing.JLabel inLine2;
     private javax.swing.JLabel itemFiveCost;
     private javax.swing.JLabel itemFiveName;
     private javax.swing.JLabel itemFourCost;
