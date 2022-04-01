@@ -2283,7 +2283,7 @@ public class MainFrame extends javax.swing.JFrame
         itemTwoCost.setText(adminItemPriceTwo.getText());
         pictureTwo.setVisible(true);
         itemTwoCost.setVisible(true);
-        itemTwoName.setText(adminNameTwo.getText());
+        itemTwoName.setText(foodNameTwo.getText());
         addItemTwo.setVisible(true); 
         itemTwoName.setVisible(true);
     }//GEN-LAST:event_adminAddTwoActionPerformed
@@ -2294,7 +2294,7 @@ public class MainFrame extends javax.swing.JFrame
         itemTwoCost.setText(adminItemPriceTwo.getText());
         pictureTwo.setVisible(false);
         itemTwoCost.setVisible(false);
-        itemTwoName.setText(adminNameTwo.getText());
+        itemTwoName.setText(foodNameTwo.getText());
         addItemTwo.setVisible(false); 
         itemTwoName.setVisible(false);
     }//GEN-LAST:event_removeTwoActionPerformed
@@ -2305,7 +2305,7 @@ public class MainFrame extends javax.swing.JFrame
         itemThreeCost.setText(adminItemPriceThree.getText());
         pictureThree.setVisible(true);
         itemThreeCost.setVisible(true);
-        itemThreeName.setText(adminNameThree.getText());
+        itemThreeName.setText(foodNameThree.getText());
         addItemThree.setVisible(true); 
         itemThreeName.setVisible(true);
     }//GEN-LAST:event_adminAddThreeActionPerformed
@@ -2316,7 +2316,7 @@ public class MainFrame extends javax.swing.JFrame
         itemTwoCost.setText(adminItemPriceThree.getText());
         pictureThree.setVisible(false);
         itemTwoCost.setVisible(false);
-        itemTwoName.setText(adminNameThree.getText());
+        itemTwoName.setText(foodNameThree.getText());
         addItemThree.setVisible(false); 
         itemTwoName.setVisible(false);
     }//GEN-LAST:event_removeThreeActionPerformed
@@ -2327,7 +2327,7 @@ public class MainFrame extends javax.swing.JFrame
         itemFourCost.setText(adminItemPriceFour.getText());
         pictureFour.setVisible(true);
         itemFourCost.setVisible(true);
-        itemFourName.setText(adminNameFour.getText());
+        itemFourName.setText(foodNameFour.getText());
         addItemFour.setVisible(true); 
         itemFourName.setVisible(true);
     }//GEN-LAST:event_adminAddFourActionPerformed
@@ -2338,7 +2338,7 @@ public class MainFrame extends javax.swing.JFrame
         itemFourCost.setText(adminItemPriceFour.getText());
         pictureFour.setVisible(false);
         itemFourCost.setVisible(false);
-        itemFourName.setText(adminNameFour.getText());
+        itemFourName.setText(foodNameFour.getText());
         addItemFour.setVisible(false); 
         itemFourName.setVisible(false);
     }//GEN-LAST:event_removeFourActionPerformed
@@ -2349,7 +2349,7 @@ public class MainFrame extends javax.swing.JFrame
         itemFiveCost.setText(adminItemPriceFive.getText());
         pictureFive.setVisible(true);
         itemFiveCost.setVisible(true);
-        itemFiveName.setText(adminNameFive.getText());
+        itemFiveName.setText(foodNameFive.getText());
         addItemFive.setVisible(true); 
         itemFiveName.setVisible(true);
     }//GEN-LAST:event_adminAddFiveActionPerformed
@@ -2360,7 +2360,7 @@ public class MainFrame extends javax.swing.JFrame
         itemFiveCost.setText(adminItemPriceFive.getText());
         pictureFive.setVisible(false);
         itemFiveCost.setVisible(false);
-        itemFiveName.setText(adminNameFive.getText());
+        itemFiveName.setText(foodNameFive.getText());
         addItemFive.setVisible(false); 
         itemFiveName.setVisible(false);
     }//GEN-LAST:event_removeFiveActionPerformed
