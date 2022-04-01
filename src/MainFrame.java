@@ -260,7 +260,7 @@ public class MainFrame extends javax.swing.JFrame
         custCheckoutCard = new javax.swing.JLabel();
         custCheckoutName = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
+        checkOutMail = new javax.swing.JLabel();
         failedLogIn = new javax.swing.JDialog();
         fail = new javax.swing.JLabel();
         Exit = new javax.swing.JButton();
@@ -300,6 +300,8 @@ public class MainFrame extends javax.swing.JFrame
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         Sent = new javax.swing.JDialog();
+        jLabel26 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         hasCoupon = new javax.swing.JDialog();
         jLabel35 = new javax.swing.JLabel();
@@ -319,6 +321,7 @@ public class MainFrame extends javax.swing.JFrame
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         userNameInput = new javax.swing.JTextField();
+        Logout = new javax.swing.JButton();
 
         menuJframe.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -499,6 +502,11 @@ public class MainFrame extends javax.swing.JFrame
 
         menuJframe.getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
 
+        Cart.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                CartWindowOpened(evt);
+            }
+        });
         Cart.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cartUserDisplay.setText("Customer: Guest");
@@ -1171,8 +1179,8 @@ public class MainFrame extends javax.swing.JFrame
         jLabel25.setText("Email:");
         checkoutJFrame.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
 
-        jLabel26.setText("jLabel26");
-        checkoutJFrame.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, -1, -1));
+        checkOutMail.setText("jLabel26");
+        checkoutJFrame.getContentPane().add(checkOutMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, -1, -1));
 
         failedLogIn.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1356,13 +1364,33 @@ public class MainFrame extends javax.swing.JFrame
             }
         });
 
-        couponOneAmt.setText("jTextField1");
+        couponOneAmt.setText("enter");
+        couponOneAmt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                couponOneAmtMouseClicked(evt);
+            }
+        });
 
-        couponTwoAmt.setText("jTextField2");
+        couponTwoAmt.setText("enter");
+        couponTwoAmt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                couponTwoAmtMouseClicked(evt);
+            }
+        });
 
-        couponThreeAmt.setText("jTextField3");
+        couponThreeAmt.setText("enter");
+        couponThreeAmt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                couponThreeAmtMouseClicked(evt);
+            }
+        });
 
-        couponFourAmt.setText("jTextField5");
+        couponFourAmt.setText("enter");
+        couponFourAmt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                couponFourAmtMouseClicked(evt);
+            }
+        });
 
         customerOne.setText("Firstname Lastname Username");
 
@@ -1387,23 +1415,23 @@ public class MainFrame extends javax.swing.JFrame
                             .addComponent(customerOne)
                             .addComponent(customerTwo))
                         .addGap(117, 117, 117)
-                        .addGroup(adminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(adminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(adminPortalLayout.createSequentialGroup()
                                 .addComponent(sendCouponOne)
                                 .addGap(18, 18, 18)
-                                .addComponent(couponOneAmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(couponOneAmt))
                             .addGroup(adminPortalLayout.createSequentialGroup()
                                 .addComponent(sendCouponThree)
                                 .addGap(18, 18, 18)
-                                .addComponent(couponThreeAmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(couponThreeAmt))
                             .addGroup(adminPortalLayout.createSequentialGroup()
                                 .addComponent(sendCouponFour)
                                 .addGap(18, 18, 18)
-                                .addComponent(couponFourAmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(couponFourAmt, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(adminPortalLayout.createSequentialGroup()
                                 .addComponent(sendCouponTwo)
                                 .addGap(18, 18, 18)
-                                .addComponent(couponTwoAmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(couponTwoAmt))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminPortalLayout.createSequentialGroup()
                         .addGroup(adminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(menuFromAdmin)
@@ -1452,15 +1480,36 @@ public class MainFrame extends javax.swing.JFrame
 
         jLabel30.setText("jLabel30");
 
+        jLabel26.setText("Coupon Sent!");
+
+        jButton9.setText("Ok");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout SentLayout = new javax.swing.GroupLayout(Sent.getContentPane());
         Sent.getContentPane().setLayout(SentLayout);
         SentLayout.setHorizontalGroup(
             SentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(SentLayout.createSequentialGroup()
+                .addGap(167, 167, 167)
+                .addGroup(SentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel26)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SentLayout.createSequentialGroup()
+                        .addComponent(jButton9)
+                        .addGap(14, 14, 14)))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         SentLayout.setVerticalGroup(
             SentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(SentLayout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addComponent(jLabel26)
+                .addGap(39, 39, 39)
+                .addComponent(jButton9)
+                .addContainerGap(89, Short.MAX_VALUE))
         );
 
         jButton8.setText("jButton8");
@@ -1553,7 +1602,7 @@ public class MainFrame extends javax.swing.JFrame
                 menuActionPerformed(evt);
             }
         });
-        getContentPane().add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 228, -1, -1));
+        getContentPane().add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, -1));
 
         cartFromHome.setText("Cart");
         cartFromHome.addActionListener(new java.awt.event.ActionListener() {
@@ -1561,7 +1610,7 @@ public class MainFrame extends javax.swing.JFrame
                 cartFromHomeActionPerformed(evt);
             }
         });
-        getContentPane().add(cartFromHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 228, -1, -1));
+        getContentPane().add(cartFromHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, -1, -1));
 
         login.setText("Log In");
         login.addActionListener(new java.awt.event.ActionListener() {
@@ -1606,29 +1655,41 @@ public class MainFrame extends javax.swing.JFrame
         });
         getContentPane().add(userNameInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 322, 74, -1));
 
+        Logout.setText("Logout");
+        Logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
     //General sets
 
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+        // sets menudescriptions to non-editable
         descOne.setEditable(false);
         descTwo.setEditable(false);
         descThree.setEditable(false);
         descFour.setEditable(false);
         descFive.setEditable(false);
         descSix.setEditable(false);
+        // opens menuJframe
         this.menuJframe.setVisible(true);
         this.menuJframe.setSize(1050, 1050);
         this.setVisible(false);
     }//GEN-LAST:event_menuActionPerformed
 
     private void cartFromHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartFromHomeActionPerformed
+        // if logIn is false then coupon button is not visible (guests dont have coupons)
         if(logIn == false)
         {
             useCoupon.setVisible(false);
         }
-        if(currentUser.coupon > 0.00)
+        //if guest has a coupone then let them know
+        if(currentUser.hasCoupon(currentUser) == true)
         {
             hasCoupon.setSize(400,400);
             hasCoupon.setVisible(true);
@@ -1643,19 +1704,9 @@ public class MainFrame extends javax.swing.JFrame
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
 
+        logIn = false;
         Password = passwordInput.getText();                                     // get password input
         user = userNameInput.getText();                                         // get username input
-        for(int i = 0; i < adminArr.length; i++)
-        {
-            if(user.equals(adminArr[i].getUsername()) && Password.equals( adminArr[i].getPassword()))                   // checks if strings are equal to admin information
-            {
-                this.adminMenu.setSize(1000,1000);
-                this.adminMenu.setVisible(true);
-                adminLogin();
-                logIn = true;
-                this.setVisible(false);
-            }
-        }
         if(userNameInput.getText().isBlank()|| passwordInput.getText().isBlank())                                   // if logins are empty return error message
         {
             failedLogIn.setSize(450,450);
@@ -1665,20 +1716,32 @@ public class MainFrame extends javax.swing.JFrame
             fail.setVerticalAlignment(SwingConstants.CENTER);
             logIn = false;
         }
-        else                                                                        // this section checks customer array and makes sure customer logins are correct
+        else
         {
-            for(int i = 0; i < custArr.length; i++)
+            for(int i = 0; i < adminArr.length; i++)
             {
-                if(custArr[i].getUsername().equals(user) && custArr[i].getPassword().equals(Password))
+                if(user.equals(adminArr[i].getUsername()) && Password.equals( adminArr[i].getPassword()))                   // checks if strings are equal to admin information
                 {
-                    currentUser = custArr[i];                                       // set currentUser to found user in array so that it can be used in other methods
-                    Login(currentUser);
-                    logIn = true;                                                  // log in boolean for other pages to use
-                    this.setVisible(false);                                        // close old window
+                    this.adminMenu.setSize(1000,1000);
+                    this.adminMenu.setVisible(true);
+                    adminLogin();
+                    logIn = true;
+                    this.setVisible(false);
                 }
-
             }
-        }
+            for(int i = 0; i < custArr.length; i++)
+                {
+                    if(custArr[i].getUsername().equals(user) && custArr[i].getPassword().equals(Password))
+                    {
+                        currentUser = custArr[i];                                       // set currentUser to found user in array so that it can be used in other methods
+                        Login(currentUser);
+                        logIn = true;                                                  // log in boolean for other pages to use
+                        this.setVisible(false);                                        // close old window
+                    }
+
+                }
+            }        
+        //if login fails then pop-up error message
         if(logIn == false)
         {
            failedLogIn.setSize(450,450);
@@ -1705,14 +1768,6 @@ public class MainFrame extends javax.swing.JFrame
         if(logIn == false)
         {
             useCoupon.setVisible(false);
-        }
-        if(currentUser.coupon != 0.00)
-        {
-            hasCoupon.setSize(400,400);
-            hasCoupon.setVisible(true);
-            String c = String.valueOf(currentUser.coupon);
-            couponAmt.setText(c);
-            hasCoupon.setTitle("You have a coupon!");
         }
         this.Cart.setVisible(true);
         this.Cart.setSize(1000, 1000);
@@ -1842,12 +1897,12 @@ public class MainFrame extends javax.swing.JFrame
         }
         else
         {
-            int i =0;                           // i will be incremented each pass through but will stop as soon as NULL is reached
-            while(custArr[i].getUsername() != null)
+            int i =0;                           // i will be incremented each pass through but will stop as soon as nothing is reached
+            while(custArr[i].getUsername() != "nothing")
             {
                 i++;
             }
-            if(custArr[i].getUsername() == null)          // if current position is null then call parameterized constructor and add new object to the array
+            if(custArr[i].getUsername().equals("nothing"))          // if current position is nothing then call parameterized constructor and add new object to the array
             {
                 custArr[i] = currentUser.createAcc(custFirstName.getText(), custLastName.getText(), custCard.getText(), custAddress.getText(), custEmail.getText(), custPassword.getText().toString(), custUserName.getText());
                 this.setVisible(true);
@@ -2005,6 +2060,8 @@ public class MainFrame extends javax.swing.JFrame
     private void sendCouponOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendCouponOneActionPerformed
        String coupon = couponOneAmt.getText();
         custArr[0].setCoupon(coupon); 
+        this.Sent.setVisible(true);
+        this.Sent.setSize(400,400);
     }//GEN-LAST:event_sendCouponOneActionPerformed
 
     private void sendCouponTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendCouponTwoActionPerformed
@@ -2245,6 +2302,41 @@ public class MainFrame extends javax.swing.JFrame
         noCart.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
+        logOut();
+    }//GEN-LAST:event_LogoutActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+       this.Sent.dispose();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void couponFourAmtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_couponFourAmtMouseClicked
+        couponFourAmt.setText("");
+    }//GEN-LAST:event_couponFourAmtMouseClicked
+
+    private void couponOneAmtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_couponOneAmtMouseClicked
+        couponOneAmt.setText("");
+    }//GEN-LAST:event_couponOneAmtMouseClicked
+
+    private void couponTwoAmtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_couponTwoAmtMouseClicked
+        couponTwoAmt.setText("");
+    }//GEN-LAST:event_couponTwoAmtMouseClicked
+
+    private void couponThreeAmtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_couponThreeAmtMouseClicked
+        couponThreeAmt.setText("");
+    }//GEN-LAST:event_couponThreeAmtMouseClicked
+
+    private void CartWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_CartWindowOpened
+        if(currentUser.coupon > 0)
+        {
+            hasCoupon.setSize(400,400);
+            hasCoupon.setVisible(true);
+            String c = String.valueOf(currentUser.coupon);
+            couponAmt.setText(c);
+            hasCoupon.setTitle("You have a coupon!");
+        }
+    }//GEN-LAST:event_CartWindowOpened
+
     private void calcTotal(double d)
     {
         //takes price of each item added to cart and calcs the total then sends it to checkoutTotal.setText("texthere")
@@ -2327,12 +2419,13 @@ public class MainFrame extends javax.swing.JFrame
         custCheckoutName.setText(User.firstName + " " + User.lastName);
         custCheckoutCard.setText(User.getCreditCard());
         custAddCheckout.setText(User.getAddress());
+        checkOutMail.setText(User.getEmail());
 
     }
 
     public void adminLogin()
     {
-        if(custArr[0].getUsername() != null)
+        if(custArr[0].getUsername() != "nothing")
         {
             customerOne.setText(custArr[0].firstName + " " + custArr[0].lastName + ", " + custArr[0].getEmail() );
         }
@@ -2342,7 +2435,7 @@ public class MainFrame extends javax.swing.JFrame
             sendCouponOne.setVisible(false);
             couponOneAmt.setVisible(false);
         }
-        if(custArr[1].getUsername() != null)
+        if(custArr[1].getUsername() != "nothing")
         {
             customerTwo.setText(custArr[1].firstName + " " + custArr[1].lastName + ", " + custArr[1].getEmail() );
         }
@@ -2352,7 +2445,7 @@ public class MainFrame extends javax.swing.JFrame
             sendCouponTwo.setVisible(false);
             couponTwoAmt.setVisible(false);
         }
-        if(custArr[2].getUsername() != null)
+        if(custArr[2].getUsername() != "nothing")
         {
             customerThree.setText(custArr[2].firstName + " " + custArr[2].lastName + ", " + custArr[2].getEmail() );
         }
@@ -2362,7 +2455,7 @@ public class MainFrame extends javax.swing.JFrame
             sendCouponThree.setVisible(false);
             couponThreeAmt.setVisible(false);
         }
-        if(custArr[3].getUsername() != null)
+        if(custArr[3].getUsername() != "nothing")
         {
             customerFour.setText(custArr[3].firstName + " " + custArr[3].lastName + ", " + custArr[3].getEmail() );
         }
@@ -2376,6 +2469,14 @@ public class MainFrame extends javax.swing.JFrame
         this.adminPortal.setSize(WIDTH, HEIGHT);
         this.adminPortal.setVisible(true);
     }
+    
+    public void logOut()
+    {
+        logIn = false;
+        userDisplay.setText("Customer: Guest");
+        userNameInput.setText("");
+        passwordInput.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame Cart;
@@ -2383,6 +2484,7 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JFrame Confirmation;
     private javax.swing.JFrame CreateAcc;
     private javax.swing.JButton Exit;
+    private javax.swing.JButton Logout;
     private javax.swing.JDialog Sent;
     private javax.swing.JDialog accountFail;
     private javax.swing.JButton addItemFive;
@@ -2429,6 +2531,7 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JLabel cartTwo;
     private javax.swing.JLabel cartTwoPriceName;
     private javax.swing.JLabel cartUserDisplay;
+    private javax.swing.JLabel checkOutMail;
     private javax.swing.JLabel checkoutAdd;
     private javax.swing.JLabel checkoutCard;
     private javax.swing.JFrame checkoutJFrame;
@@ -2505,6 +2608,7 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

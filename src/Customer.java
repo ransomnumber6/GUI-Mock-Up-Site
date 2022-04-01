@@ -23,8 +23,8 @@ public class Customer extends User {
        firstName = null;
        lastName = null;
        address = null;
-       username = null;
-       password = null;
+       username = "nothing";
+       password = "nothing";
        creditCard = null;
        coupon = 0;
     }
@@ -83,27 +83,27 @@ public class Customer extends User {
     {
         return address;
     }
+    public boolean hasCoupon(Customer cust)
+    {
+        if (cust.coupon != 0)
+            return true;
+        else
+            return false;
+    }
     
+    // sets customer information 
     public Customer createAcc(String FN, String LN, String Card, String Address, String Email, String Password, String Username)
     {
         Customer newCustomer = new Customer();
-        
-        //TODO: Set customer information for createAcc Jframe
-        
-        /*custArr[i].setCreditCard(custCard.getText());
-                    custArr[i].setUsername();
-                    custArr[i].setPassword();
-                    custArr[i].setEmail(custEmail.getText());
-                    custArr[i].setAddress(custAddress.getText());
-                    custArr[i].firstName = custFirstName.getText();
-                    custArr[i].lastName = custLastName.getText();
-        */
-        
-        //newCustomer.setAddress(address)
+        newCustomer.firstName = FN;
+        newCustomer.lastName = LN;
+        newCustomer.setEmail(Email);
+        newCustomer.setCreditCard(Card);
+        newCustomer.setAddress(Address);
+        newCustomer.setPassword(Password);
+        newCustomer.setUsername(Username);
         return newCustomer;
     }
-    
-    
 }
 
 
