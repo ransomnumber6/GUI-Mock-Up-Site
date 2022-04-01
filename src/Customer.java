@@ -11,7 +11,7 @@ public class Customer extends User {
     private String username,
             email,
             creditCard, address, password;
-    double coupon;
+    double coupon = 0.00;
 
     /*public void Login();
     public void createAccount();
