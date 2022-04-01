@@ -256,6 +256,12 @@ public class MainFrame extends javax.swing.JFrame
         adminItemPriceTwo = new javax.swing.JTextField();
         adminItemPriceOne = new javax.swing.JTextField();
         adminItemPriceFive = new javax.swing.JTextField();
+        foodNameOne = new javax.swing.JTextField();
+        foodNameTwo = new javax.swing.JTextField();
+        foodNameThree = new javax.swing.JTextField();
+        foodNameFour = new javax.swing.JTextField();
+        foodNameFive = new javax.swing.JTextField();
+        foodNameSix = new javax.swing.JTextField();
         checkoutJFrame = new javax.swing.JFrame();
         checkoutAdd = new javax.swing.JLabel();
         checkoutCard = new javax.swing.JLabel();
@@ -1072,6 +1078,18 @@ public class MainFrame extends javax.swing.JFrame
             }
         });
 
+        foodNameOne.setText("jTextField1");
+
+        foodNameTwo.setText("jTextField2");
+
+        foodNameThree.setText("jTextField3");
+
+        foodNameFour.setText("jTextField4");
+
+        foodNameFive.setText("jTextField5");
+
+        foodNameSix.setText("jTextField6");
+
         javax.swing.GroupLayout adminMenuLayout = new javax.swing.GroupLayout(adminMenu.getContentPane());
         adminMenu.getContentPane().setLayout(adminMenuLayout);
         adminMenuLayout.setHorizontalGroup(
@@ -1083,9 +1101,18 @@ public class MainFrame extends javax.swing.JFrame
                         .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(adminNameOne)
-                            .addComponent(adminNameThree)
-                            .addComponent(adminNameFive)
+                            .addGroup(adminMenuLayout.createSequentialGroup()
+                                .addComponent(adminNameOne)
+                                .addGap(18, 18, 18)
+                                .addComponent(foodNameOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(adminMenuLayout.createSequentialGroup()
+                                .addComponent(adminNameThree)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(foodNameThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(adminMenuLayout.createSequentialGroup()
+                                .addComponent(adminNameFive)
+                                .addGap(18, 18, 18)
+                                .addComponent(foodNameFive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(adminMenuLayout.createSequentialGroup()
                                 .addComponent(adminItemPriceFive, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1118,7 +1145,10 @@ public class MainFrame extends javax.swing.JFrame
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createSequentialGroup()
                             .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(adminNameSix))
+                                .addGroup(adminMenuLayout.createSequentialGroup()
+                                    .addComponent(adminNameSix)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(foodNameSix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(146, 146, 146))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminMenuLayout.createSequentialGroup()
                             .addComponent(adminItemPriceFour, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1145,9 +1175,15 @@ public class MainFrame extends javax.swing.JFrame
                                         .addContainerGap()))
                                 .addGroup(adminMenuLayout.createSequentialGroup()
                                     .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(adminNameFour)
-                                        .addComponent(adminNameTwo))
-                                    .addGap(253, 253, 253))))
+                                        .addGroup(adminMenuLayout.createSequentialGroup()
+                                            .addComponent(adminNameTwo)
+                                            .addGap(35, 35, 35)
+                                            .addComponent(foodNameTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(adminMenuLayout.createSequentialGroup()
+                                            .addComponent(adminNameFour)
+                                            .addGap(26, 26, 26)
+                                            .addComponent(foodNameFour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(200, 200, 200))))
                         .addGroup(adminMenuLayout.createSequentialGroup()
                             .addComponent(adminItemPriceSix, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addContainerGap()))))
@@ -1155,10 +1191,12 @@ public class MainFrame extends javax.swing.JFrame
         adminMenuLayout.setVerticalGroup(
             adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminMenuLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
+                .addGap(61, 61, 61)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(adminNameOne)
-                    .addComponent(adminNameTwo))
+                    .addComponent(adminNameTwo)
+                    .addComponent(foodNameOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(foodNameTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
@@ -1171,10 +1209,12 @@ public class MainFrame extends javax.swing.JFrame
                     .addComponent(removeTwo)
                     .addComponent(adminItemPriceTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(adminItemPriceOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(35, 35, 35)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(adminNameThree)
-                    .addComponent(adminNameFour))
+                    .addComponent(adminNameFour)
+                    .addComponent(foodNameThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(foodNameFour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adminMenuLayout.createSequentialGroup()
@@ -1194,11 +1234,15 @@ public class MainFrame extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adminMenuLayout.createSequentialGroup()
-                        .addComponent(adminNameFive)
+                        .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(adminNameFive)
+                            .addComponent(foodNameFive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(adminMenuLayout.createSequentialGroup()
-                        .addComponent(adminNameSix)
+                        .addGroup(adminMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(adminNameSix)
+                            .addComponent(foodNameSix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1863,7 +1907,7 @@ public class MainFrame extends javax.swing.JFrame
         {
             useCoupon.setVisible(false);
         }
-        //if guest has a coupone then let them know
+        //if guest has a coupon then let them know
         if(currentUser.hasCoupon(currentUser) == true)
         {
             hasCoupon.setSize(400,400);
@@ -1943,6 +1987,10 @@ public class MainFrame extends javax.swing.JFrame
         if(logIn == false)
         {
             useCoupon.setVisible(false);
+        }
+        else if(logIn == true)
+        {
+            useCoupon.setVisible(true);            
         }
         this.Cart.setVisible(true);
         this.Cart.setSize(1000, 1000);
@@ -2228,6 +2276,7 @@ public class MainFrame extends javax.swing.JFrame
     private void adminLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminLogOutActionPerformed
         this.adminPortal.dispose();
         this.setVisible(true);
+        logIn = false;
         userNameInput.setText("");
         passwordInput.setText("");
     }//GEN-LAST:event_adminLogOutActionPerformed
@@ -2260,8 +2309,8 @@ public class MainFrame extends javax.swing.JFrame
         itemOneCost.setText(adminItemPriceOne.getText());
         pictureOne.setVisible(true);
         itemOneCost.setVisible(true);
-        itemOneName.setText(adminNameOne.getText());
-        addItemOne.setVisible(true); 
+        itemOneName.setText(foodNameOne.getText());
+        addItemOne.setVisible(true);
         itemOneName.setVisible(true);
     }//GEN-LAST:event_adminAddOneActionPerformed
 
@@ -2272,7 +2321,7 @@ public class MainFrame extends javax.swing.JFrame
         cartOneNamePrice.setVisible(false);
         itemOneCost.setVisible(false);
         pictureOne.setVisible(false);
-        itemOneName.setText(adminNameOne.getText());
+        itemOneName.setText(foodNameOne.getText());
         addItemOne.setVisible(false); 
         itemOneName.setVisible(false);
     }//GEN-LAST:event_removeOneActionPerformed
@@ -2371,7 +2420,7 @@ public class MainFrame extends javax.swing.JFrame
         itemSixCost.setText(adminItemPriceSix.getText());
         pictureSix.setVisible(true);
         itemSixCost.setVisible(true);
-        itemSixName.setText(adminNameSix.getText());
+        itemSixName.setText(foodNameSix.getText());
         addItemFive.setVisible(true); 
         itemSixName.setVisible(true);
     }//GEN-LAST:event_adminAddSixActionPerformed
@@ -2382,7 +2431,7 @@ public class MainFrame extends javax.swing.JFrame
         itemSixCost.setText(adminItemPriceSix.getText());
         pictureSix.setVisible(false);
         itemSixCost.setVisible(false);
-        itemSixName.setText(adminNameSix.getText());
+        itemSixName.setText(foodNameSix.getText());
         addItemFive.setVisible(false); 
         itemSixName.setVisible(false);
     }//GEN-LAST:event_removeSixActionPerformed
@@ -2423,7 +2472,7 @@ public class MainFrame extends javax.swing.JFrame
         cartFive.setVisible(true);
         cartFive.setText(cartName);
         String cart = "<html>     "+ itemFiveName.getText() + "<br>    "+ itemFiveCost.getText()+ "</html>";
-        cartThreePriceName.setText(cart);
+        cartFivePriceName.setText(cart);
         price5 = Double.parseDouble(itemFiveCost.getText());
         calcTotal(price5);
         calcWait(wait5);
@@ -2918,10 +2967,46 @@ public class MainFrame extends javax.swing.JFrame
     
     public void logOut()
     {
+        // this function will reset values that have been used by a logged in user
         logIn = false;
         userDisplay.setText("Customer: Guest");
         userNameInput.setText("");
         passwordInput.setText("");
+        cartOneNamePrice.setVisible(false);
+        cartTwoPriceName.setVisible(false);
+        cartThreePriceName.setVisible(false);
+        cartFourPriceName.setVisible(false);
+        cartFivePriceName.setVisible(false);
+        cartSixPriceName.setVisible(false);
+
+        deleteOne.setVisible(false);
+        deleteTwo.setVisible(false);
+        deleteThree.setVisible(false);
+        deleteFour.setVisible(false);
+        deleteFive.setVisible(false);
+        deleteSix.setVisible(false);
+
+        cartOne.setVisible(false);
+        cartTwo.setVisible(false);
+        cartThree.setVisible(false);
+        cartFour.setVisible(false);
+        cartFive.setVisible(false);
+        cartSix.setVisible(false);
+
+        confirmed1.setVisible(false);
+        confirmed2.setVisible(false);
+        confirmed3.setVisible(false);
+        confirmed4.setVisible(false);
+        confirmed5.setVisible(false);
+        confirmed6.setVisible(false);
+
+        addItemOne.setVisible(true);
+        addItemTwo.setVisible(true);
+        addItemThree.setVisible(true);
+        addItemFour.setVisible(true);
+        addItemFive.setVisible(true);
+        addItemSix.setVisible(true);
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -3025,6 +3110,12 @@ public class MainFrame extends javax.swing.JFrame
     private javax.swing.JLabel fail;
     private javax.swing.JDialog failedLogIn;
     private javax.swing.Box.Filler filler1;
+    private javax.swing.JTextField foodNameFive;
+    private javax.swing.JTextField foodNameFour;
+    private javax.swing.JTextField foodNameOne;
+    private javax.swing.JTextField foodNameSix;
+    private javax.swing.JTextField foodNameThree;
+    private javax.swing.JTextField foodNameTwo;
     private javax.swing.JFrame found;
     private javax.swing.JButton foundAdd;
     private javax.swing.JLabel foundName;
