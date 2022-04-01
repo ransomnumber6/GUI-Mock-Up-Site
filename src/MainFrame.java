@@ -42,7 +42,6 @@ public class MainFrame extends javax.swing.JFrame
      */
     public MainFrame()
     {
-        //this.setVisible(true);
         initComponents();
         // initialize admin class (hardcoded admin logins)
         adminArr[0] = new Admin();          // call default constructor for first admin
@@ -107,6 +106,7 @@ public class MainFrame extends javax.swing.JFrame
     }
     String queueStr ="Estimated wait: "+ Queue() + " mins";
     queue.setText(queueStr);
+    cartQueueDisplay.setText(queueStr);
 
     }
 
@@ -551,10 +551,10 @@ public class MainFrame extends javax.swing.JFrame
         Cart.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cartUserDisplay.setText("Customer: Guest");
-        Cart.getContentPane().add(cartUserDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 180, -1));
+        Cart.getContentPane().add(cartUserDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 180, -1));
 
         cartQueueDisplay.setText("Queue Time");
-        Cart.getContentPane().add(cartQueueDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
+        Cart.getContentPane().add(cartQueueDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
 
         cartOneNamePrice.setText("nothing");
         Cart.getContentPane().add(cartOneNamePrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, -1));
@@ -1768,6 +1768,7 @@ public class MainFrame extends javax.swing.JFrame
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1000, 1000));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menu.setText("Menu");
@@ -2818,7 +2819,7 @@ public class MainFrame extends javax.swing.JFrame
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Flatlaf Dark".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -2845,11 +2846,7 @@ public class MainFrame extends javax.swing.JFrame
     // Queue method that simply generates a number between 0 and 30
     private double Queue()
     {
-        for(double i = n; i > 0; i--)               // reduce number by 0.001 every loop through
-        {
-            n = n - 0.0001;
-        }
-        double num = Math.round(n);                  // round to nearest hundreth
+        double num = 20 + 32 + 10;                  
         return num;                                 // return number
     }
 
